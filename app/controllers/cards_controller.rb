@@ -5,35 +5,41 @@ class CardsController < ApplicationController
   # GET /decks.json
   def index
     @deck = Deck.find(params[:deck_id])
-    @cards = @deck.cards
+    @cards = @deck.cards.all
   end
 
   # GET /cards/1
   # GET /cards/1.json
   def show
+    @deck = Deck.find(params[:deck_id])
+    @card = @deck.cards.find(params[:id])
   end
 
   # GET /cards/new
   def new
-    @card = Card.new
+    @deck = Deck.find(params[:deck_id])
+    @card = @deck.cards.new
   end
 
   # GET /cards/1/edit
   def edit
+    @deck = Deck.find(params[:deck_id])
+    @card = @deck.cards.find(params[:id])
   end
 
   # POST /cards
   # POST /cards.json
   def create
-    @card = Card.new(card_params)
+    @deck = Deck.find(params[:deck_id])
+    @card = @deck.cards.new(card_params)
 
     respond_to do |format|
       if @card.save
-        format.html { redirect_to @deck, notice: 'Card was successfully created.' }
-        format.json { render :show, status: :created, location: @card }
+        format.html { redirect_to deck_card_path(@deck, @card), notice: 'Card was successfully created.' }
+#        format.json { render :show, status: :created, location: @card }
       else
         format.html { render :new }
-        format.json { render json: @card.errors, status: :unprocessable_entity }
+#        format.json { render json: @card.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,7 +63,7 @@ class CardsController < ApplicationController
   def destroy
     @card.destroy
     respond_to do |format|
-      format.html { redirect_to cards_url, notice: 'Card was successfully destroyed.' }
+      format.html { redirect_to deck_cards_path(@deck, @card), notice: 'Card was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -65,7 +71,8 @@ class CardsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
   def set_card
-    @card = Card.find(params[:id])
+    @deck = Deck.find(params[:deck_id])
+    @card = @deck.cards.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

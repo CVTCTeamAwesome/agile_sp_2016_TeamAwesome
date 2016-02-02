@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', deck_card(:deck_id) %> |
-<%= link_to 'Back', deck_cards_path(:deck_id) %>
+<%= link_to 'Show', deck_card_path(@deck, @card) %> |
+<%= link_to 'Back', deck_cards_path(@deck, @cards) %>
