@@ -1,0 +1,13 @@
+<h1>Card Listing</h1>
+
+<% @cards.each do |card| %>
+  <ul>
+    <li><%= card.id %></li>
+    <li><%= card.visible %></li>
+    <li><%= link_to 'Show', deck_card_path(@deck, card) %></li>
+    <li><%= link_to 'Edit', edit_deck_card_path(@deck, card) %></li>
+    <li><%= link_to 'Destroy', [@deck, card], method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  </ul>
+<% end %>
+
+<%= link_to 'Back to Deck', deck_path(@deck, @card) %>
