@@ -9,3 +9,5 @@
     <li><%= link_to 'Destroy', [@deck, card], method: :delete, data: { confirm: 'Are you sure?' } %></li>
   </ul>
 <% end %>
+
+<%= link_to 'Back to Deck', deck_path(@deck, @card) %>
