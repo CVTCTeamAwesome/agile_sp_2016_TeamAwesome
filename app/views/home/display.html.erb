@@ -20,13 +20,17 @@
 <span style="color:blue;font-size:2em">
   
 <% if defined?(@selectedDeck) && (@selectedDeck != nil) %>
-  <% @bbb = Deck.find(@selectedDeck) %>
-  <p>Here is the name of the Deck: <%= @bbb.title %></p>
-  <p>Here is the id of the Deck: <%= @bbb.id %></p>
-  <p>This deck has <%= @bbb.cards.size %> cards</p>
-  <% @bbb.cards.each do |card| %>
-  <%= card.id %>
+  <% @pickedDeck = Deck.find(@selectedDeck) %>
+  <p>Here is the name of the Deck: <%= @pickedDeck.title %></p>
+  <p>Here is the id of the Deck: <%= @pickedDeck.id %></p>
+  <p>This deck has <%= @pickedDeck.cards.size %> cards</p>
+  <% if @pickedDeck.cards.size > 0 %>
+    <p>The card ids are:
   <% end %>
+  <% @pickedDeck.cards.each do |card| %>
+    <%= card.id %>
+  <% end %>
+    </p>
 <% else %>
   <p>No Deck Selected</p>
 <% end %>
