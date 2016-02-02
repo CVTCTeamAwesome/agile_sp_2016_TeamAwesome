@@ -5,5 +5,5 @@
   <%= @card.visible %>
 </p>
 
-<%= link_to 'Edit', edit_deck_card_path(@deck) %> |
-<%= link_to 'Back', deck_path(:deck_id) %>
+<%= link_to 'Edit', edit_deck_card_path(@deck, @card) %> |
+<%= link_to 'Back', deck_cards_path(@deck, @card) %>
