@@ -1,38 +1,15 @@
 <h1>Flash Cards</h1>
 <div>
   <section>
-    <h2>Deck</h2>
     <p>Select Your Deck</p>
+  </section>
+  <section>
+    <%= form_tag("/displayDeck", method: "post", :remote => true) do %>
+      <%= select_tag 'deck_select', options_from_collection_for_select(@decks, "id", "title") %>
+      <%= button_tag "Select Deck" %>
+    <% end %>
 
-  </section>  
-
+    <div id="render_partial_deck" style="display:none;"></div>
+    
+  </section>
 </div>
-<%= form_tag("/display", method: "get") do %>
-
-  <%= select_tag 'deck_select', options_from_collection_for_select(@decks, "id", "title") %>
-  <%= submit_tag("Search") %>
-<% end %>
-
-
-<span>Here is the name of the Deck with ID #2:</span>
-<br>
-<br>
-<span style="color:blue;font-size:2em">
-  
-<% if defined?(@selectedDeck) && (@selectedDeck != nil) %>
-  <% @pickedDeck = Deck.find(@selectedDeck) %>
-  <p>Here is the name of the Deck: <%= @pickedDeck.title %></p>
-  <p>Here is the id of the Deck: <%= @pickedDeck.id %></p>
-  <p>This deck has <%= @pickedDeck.cards.size %> cards</p>
-  <% if @pickedDeck.cards.size > 0 %>
-    <p>The card ids are:
-  <% end %>
-  <% @pickedDeck.cards.each do |card| %>
-    <%= card.id %>
-  <% end %>
-    </p>
-<% else %>
-  <p>No Deck Selected</p>
-<% end %>
-
-  </span>

@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   end
   
   get '/display', to: 'home#display', as: 'display'
+  
+  post '/displayDeck' => 'home#render_partial_deck'
+  
+  post '/displayCard' => 'home#render_partial_card'
+  
   #root controller: 'home', action: 'index'
   root to: 'home#index'
 
