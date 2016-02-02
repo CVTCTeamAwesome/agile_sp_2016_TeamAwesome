@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :decks
   get '/display', to: 'home#display', as: 'display'
   #root controller: 'home', action: 'index'
   root to: 'home#index'
