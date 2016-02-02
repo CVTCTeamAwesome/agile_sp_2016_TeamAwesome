@@ -3,5 +3,6 @@ class HomeController < ApplicationController
   end
 
   def display
+  @selectedDeck = params[:deck_select]
   end
 end
