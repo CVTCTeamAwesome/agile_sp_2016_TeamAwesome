@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Visible:</strong>
+  <%= @card.visible %>
+</p>
+
+<%= link_to 'Edit', edit_deck_card_path(@deck) %> |
+<%= link_to 'Back', deck_path(:deck_id) %>

@@ -22,3 +22,6 @@
 
 <%= link_to 'Edit', edit_deck_path(@deck) %> |
 <%= link_to 'Back', decks_path %>
+
+<%= link_to 'New Card', new_deck_card_path(:deck_id) %>
+<%= link_to "manage cards", deck_cards_path(:deck_id) %>
