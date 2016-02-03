@@ -1,0 +1,8 @@
+<h3><%= @selectedDeck.title %> has the following cards:</h3>
+
+<%= form_tag("/displayCard", method: "post", :remote => true) do %>
+          <%= select_tag 'card_select', options_from_collection_for_select(@selectedDeck.cards, "id", "id") %>
+          <%= button_tag "Select Card" %>
+      <% end %>
+      
+<div id="render_partial_card" style="display:none;"></div>
