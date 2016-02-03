@@ -7,12 +7,14 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-  <nav>
-    <%=link_to_unless_current 'Home', root_url %>
-    <%=link_to_unless_current 'Display', display_url %>
-    <%=link_to_unless_current 'Decks', decks_url %>
-  </nav>
-  <%= yield %>
+    <div id="wrapper">
+      <nav>
+        <%=link_to_unless_current 'Home', root_url %>
+        <%=link_to_unless_current 'Display', display_url %>
+        <%=link_to_unless_current 'Decks', decks_url %>
+      </nav>
+      <%= yield %>
+    </div>
 
   </body>
 </html>

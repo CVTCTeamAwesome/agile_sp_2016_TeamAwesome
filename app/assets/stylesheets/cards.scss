@@ -1,3 +1,98 @@
 // Place all the styles related to the cards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#wrapper {
+  background: #fff;
+  box-shadow: 3px 3px 6px #333;
+  min-height: 92%;
+  margin: 1% auto;
+  overflow: hidden;
+  padding: 1%;
+  position: relative;
+  width: 95%;
+}
+
+ul.card_details,
+ul.card_management {
+  text-align: center;
+}
+
+ul.card_details li,
+ul.card_management li {
+  display: inline;
+  padding: 1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+ul.card_list li {
+  display: inline;
+  padding: 2em;
+}
+
+ul.card_list li:first-of-type {
+  padding-left: 2%;
+}
+
+/* Index (show all cards) Page */
+
+div.cards_view_all {
+  border: 1px dashed #000;
+  border-radius: 2em;
+  float: left;
+  margin: 1%;
+  padding: 1em;
+  width: 31%;
+}
+
+/* New/Edit Card Page */
+div.card_editor {
+  float: left;
+  min-width: 15em;
+  padding: 1em;
+  width: 15%;
+}
+
+div.card_display {
+  float: left;
+  min-width: 80%;
+}
+
+/* Each Card's Display */
+div.card_front,
+div.card_back {
+  border: 1px solid #000;
+  border-radius: 1em;
+  box-shadow: 3px 3px 3px #333;
+  display: inline-block;
+  margin: 1% 0 1% 1%;
+  max-height: 100%;
+  padding: 1%;
+  position: relative;
+  width: 45%;
+}
+
+.card_front:after,
+.card_back:after {
+  content: '';
+  display: block;
+  padding-top: 150%;
+}
+
+.card_side_description {
+  color: #000;
+  font-size: 1em;
+  left: 3px;
+  opacity: 80%;
+  position: absolute;
+  text-shadow: 1px 1px 1px #fff;
+  top: 2px;
+}
+
+.card_text {
+  position: absolute;
+  text-align: center;
+  top: 45%;
+  width: 100%;
+}
