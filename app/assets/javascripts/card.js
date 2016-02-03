@@ -1,13 +1,14 @@
+var $cardDivs = $('.cardDiv');
 var index = 0
 
 var _jumpToCard = function (e) {
   
   var clickedClass = $( this ).attr("class");
-  var $cardDivs = $('.cardDiv');
   var $clickedCard = $('.cardDiv.' + clickedClass);
   
   e.preventDefault();
   $cardDivs.hide();
+  _toggleCardSide();
   $clickedCard.fadeIn();
   index = $clickedCard.index();
   
@@ -16,9 +17,7 @@ var _jumpToCard = function (e) {
 var _nextCard = function () {
 
   index++;
-  var $cardDivs = $('.cardDiv');
-  $('.answerTextDiv').hide();
-  console.log(index);
+  _toggleCardSide();
   if (index > $cardDivs.length - 1) {
     index = 0;
   }
@@ -30,9 +29,7 @@ var _nextCard = function () {
 var _previousCard = function () {
 
   index--;
-  var $cardDivs = $('.cardDiv');
-  $('.answerTextDiv').hide();
-  console.log(index);
+  _toggleCardSide();
   if (index < 0) {
     index = $cardDivs.length - 1;
   }
@@ -43,11 +40,11 @@ var _previousCard = function () {
 
 var _toggleCardSide = function () {
 
+  $( this).html("Show Question");
   $('.cardSide').toggle();
 
 };
 
-$('.answerTextDiv').hide();
 $('#showAnswerButton').click(_toggleCardSide);
 $('#nextCardButton').click(_nextCard);
 $('#previousCardButton').click(_previousCard);

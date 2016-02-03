@@ -23,8 +23,8 @@
                background-color:<%= card.background_color %>;
                font-style:<%= card.font_style %>;
                font-size:<%= card.font_size %>;">
-        <div><%= card.question_text %></div>
-        <div class="cardSide answerTextDiv"><%= card.answer_text %></div>
+        <div class="cardSide questionTextDiv"><%= card.question_text %></div>
+        <div class="cardSide answerTextDiv" style="display:none;"><%= card.answer_text %></div>
       </div>
     <% else %>
       <div class="cardDiv <%= card.name %><%= card.id %>" style="display:none;"
@@ -32,8 +32,8 @@
                background-color:<%= card.background_color %>;
                font-style:<%= card.font_style %>;
                font-size:<%= card.font_size %>;">
-        <div><%= card.question_text %></div>
-        <div class="cardSide answerTextDiv"><%= card.answer_text %></div>
+        <div class="cardSide questionTextDiv"><%= card.question_text %></div>
+        <div class="cardSide answerTextDiv" style="display:none;"><%= card.answer_text %></div>
       </div>
     <% end %>
   <% end %>
