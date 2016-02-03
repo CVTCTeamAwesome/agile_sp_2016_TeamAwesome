@@ -1,10 +1,10 @@
 <h3>Card Selected:</h3>
 <p>Card <%= @card.name %></p>
-<%= button_tag %>
-<%= button_tag %>
-<%= button_tag %>
-<div id="cardSide"><%= @card.question_text %></div>
-<p>Card <%= @card.answer_text %></p>
+
+<%= button_tag "Show Answer", :id => 'showAnswerButton' %>
+
+<div class="cardSide" id="questionTextDiv"><%= @card.question_text %></div>
+<div class="cardSide" id="answerTextDiv"><%= @card.answer_text %></div>
 <p>Card <%= @card.background_color %></p>
 <p>Card <%= @card.foreground_color %></p>
 <p>Card <%= @card.font_size %></p>
