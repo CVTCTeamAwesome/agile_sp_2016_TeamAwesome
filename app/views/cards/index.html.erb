@@ -1,8 +1,15 @@
 <h1>Card Listing</h1>
-
+<p>NOTE: This is coming from the cards/index.html.erb file</p>
 <% @cards.each do |card| %>
   <ul>
     <li><%= card.id %></li>
+    <li><%= card.name %></li>
+    <li><%= card.question_text %></li>
+    <li><%= card.answer_text %></li>
+    <li><%= card.background_color %></li>
+    <li><%= card.foreground_color %></li>
+    <li><%= card.font_style %></li>
+    <li><%= card.font_size %></li>
     <li><%= card.visible %></li>
     <li><%= link_to 'Show', deck_card_path(@deck, card) %></li>
     <li><%= link_to 'Edit', edit_deck_card_path(@deck, card) %></li>

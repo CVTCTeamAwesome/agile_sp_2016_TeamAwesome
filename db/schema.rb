@@ -11,13 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202005445) do
+ActiveRecord::Schema.define(version: 20160203002507) do
 
   create_table "cards", force: :cascade do |t|
     t.boolean  "visible"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.integer  "deck_id"
+    t.string   "name"
+    t.string   "question_text"
+    t.text     "answer_text"
+    t.text     "background_color"
+    t.text     "foreground_color"
+    t.text     "font_size"
+    t.text     "font_style"
   end
 
   add_index "cards", ["deck_id"], name: "index_cards_on_deck_id"
