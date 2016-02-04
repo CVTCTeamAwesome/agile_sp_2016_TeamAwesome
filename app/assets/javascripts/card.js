@@ -1,5 +1,6 @@
 var $cardDivs = $('.cardDiv');
-var index = 0
+var index = 0;
+var $showAnswerButton = $('#showAnswerButton');
 
 var _jumpToCard = function (e) {
   
@@ -8,7 +9,7 @@ var _jumpToCard = function (e) {
   
   e.preventDefault();
   $cardDivs.hide();
-  _toggleCardSide();
+  _resetCard();
   $clickedCard.fadeIn();
   index = $clickedCard.index();
   
@@ -17,7 +18,7 @@ var _jumpToCard = function (e) {
 var _nextCard = function () {
 
   index++;
-  _toggleCardSide();
+  _resetCard();
   if (index > $cardDivs.length - 1) {
     index = 0;
   }
@@ -29,7 +30,7 @@ var _nextCard = function () {
 var _previousCard = function () {
 
   index--;
-  _toggleCardSide();
+  _resetCard();
   if (index < 0) {
     index = $cardDivs.length - 1;
   }
@@ -38,14 +39,26 @@ var _previousCard = function () {
 
 };
 
+var _resetCard = function () {
+
+  $('.answerTextDiv').hide();
+  $('.questionTextDiv').show();
+  $showAnswerButton.html("Show Answer");
+};
+
 var _toggleCardSide = function () {
 
-  $( this).html("Show Question");
+  if ($showAnswerButton.html() == "Show Question") {
+    $showAnswerButton.html("Show Answer");
+  }else{
+    $showAnswerButton.html("Show Question");
+  }
+  
   $('.cardSide').toggle();
 
 };
 
-$('#showAnswerButton').click(_toggleCardSide);
+$showAnswerButton.click(_toggleCardSide);
 $('#nextCardButton').click(_nextCard);
 $('#previousCardButton').click(_previousCard);
 $('#render_partial_deck a').click(_jumpToCard);
