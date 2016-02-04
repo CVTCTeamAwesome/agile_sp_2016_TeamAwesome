@@ -8,11 +8,8 @@ class HomeController < ApplicationController
     @decks = Deck.all
   end
   
-  def render_partial_card
-    @card = Card.find(params[:card_select])
-  end
-    
   def render_partial_deck
     @selectedDeck = Deck.find(params[:deck_select])
   end
+  
 end
