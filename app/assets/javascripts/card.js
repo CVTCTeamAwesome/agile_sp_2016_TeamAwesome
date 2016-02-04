@@ -58,6 +58,7 @@ var _toggleCardSide = function () {
 
 };
 
+$('.answerTextDiv').hide();
 $showAnswerButton.click(_toggleCardSide);
 $('#nextCardButton').click(_nextCard);
 $('#previousCardButton').click(_previousCard);
