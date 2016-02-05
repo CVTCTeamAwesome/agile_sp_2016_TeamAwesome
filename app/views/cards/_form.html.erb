@@ -1,3 +1,4 @@
+<%= javascript_include_tag 'card_editor', 'data-turbolinks-track' => true %>
 <%= form_for [@deck, @card]  do |f| %>
   <% if @card.errors.any? %>
     <div id="error_explanation">
