@@ -1,37 +1,32 @@
 class CardsController < ApplicationController
+  before_action :set_deck
   before_action :set_card, only: [:show, :edit, :update, :destroy]
 
   # GET /decks
   # GET /decks.json
   def index
-    @deck = Deck.find(params[:deck_id])
     @cards = @deck.cards.all
   end
 
   # GET /cards/1
   # GET /cards/1.json
   def show
-    @deck = Deck.find(params[:deck_id])
-    @card = @deck.cards.find(params[:id])
   end
 
   # GET /cards/new
   def new
-    @deck = Deck.find(params[:deck_id])
-    @card = @deck.cards.new
+    #@card = @deck.cards.new   # Use this if we don't want default values for new cards
+    @card = @deck.cards.build(background_color: "#FFFFFF", name: "Card") #Default values in new card
   end
 
   # GET /cards/1/edit
-  def edit
-    @deck = Deck.find(params[:deck_id])
-    @card = @deck.cards.find(params[:id])
+  def edit 
   end
 
   # POST /cards
   # POST /cards.json
   def create
-    @deck = Deck.find(params[:deck_id])
-    @card = @deck.cards.new(card_params)
+     @card = @deck.cards.build(card_params)
 
     respond_to do |format|
       if @card.save
@@ -63,18 +58,23 @@ class CardsController < ApplicationController
   def destroy
     @card.destroy
     respond_to do |format|
-      format.html { redirect_to deck_cards_path(@deck, @card), notice: 'Card was successfully destroyed.' }
+      format.html { redirect_to deck_cards_path(@deck), notice: 'Card was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-  def set_card
+  
+  def set_deck
     @deck = Deck.find(params[:deck_id])
+  end
+  
+    # Use callbacks to share common setup or constraints between actions.
+  
+  def set_card
     @card = @deck.cards.find(params[:id])
   end
-
+  
   # Never trust parameters from the scary internet, only allow the white list through.
   def card_params
     params.require(:card).permit(:visible, :name, :question_text, :answer_text, :background_color, :foreground_color, :font_size, :font_style)
