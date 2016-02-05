@@ -1,65 +1,62 @@
-var $cardDivs = $('.cardDiv');
 var index = 0;
-var $showAnswerButton = $('#showAnswerButton');
 
-var _jumpToCard = function (e) {
+var jumpToCard = function (e) {
   
   var clickedClass = $( this ).attr("class");
   var $clickedCard = $('.cardDiv.' + clickedClass);
   
   e.preventDefault();
-  $cardDivs.hide();
-  _resetCard();
+  $('.cardDiv').hide();
+  resetCard();
   $clickedCard.fadeIn();
   index = $clickedCard.index();
   
 };
 
-var _nextCard = function () {
+var nextCard = function () {
 
   index++;
-  _resetCard();
-  if (index > $cardDivs.length - 1) {
+  resetCard();
+  if (index > $('.cardDiv').length - 1) {
     index = 0;
   }
-  $cardDivs.hide();
-  $cardDivs.eq(index).fadeIn();
+  $('.cardDiv').hide();
+  $('.cardDiv').eq(index).fadeIn();
 
 };
 
-var _previousCard = function () {
+var previousCard = function () {
 
   index--;
-  _resetCard();
+  resetCard();
   if (index < 0) {
-    index = $cardDivs.length - 1;
+    index = $('.cardDiv').length - 1;
   }
-  $cardDivs.hide();
-  $cardDivs.eq(index).fadeIn();
+  $('.cardDiv').hide();
+  $('.cardDiv').eq(index).fadeIn();
 
 };
 
-var _resetCard = function () {
+var resetCard = function () {
 
   $('.answerTextDiv').hide();
   $('.questionTextDiv').show();
-  $showAnswerButton.html("Show Answer");
+  $('#showAnswerButton').html("Show Answer");
 };
 
-var _toggleCardSide = function () {
+var toggleCardSide = function () {
 
-  if ($showAnswerButton.html() == "Show Question") {
-    $showAnswerButton.html("Show Answer");
+  if ($( this ).html() == "Show Question") {
+    $( this ).html("Show Answer");
   }else{
-    $showAnswerButton.html("Show Question");
+    $( this ).html("Show Question");
   }
   
   $('.cardSide').toggle();
 
 };
 
-$('.answerTextDiv').hide();
-$showAnswerButton.click(_toggleCardSide);
-$('#nextCardButton').click(_nextCard);
-$('#previousCardButton').click(_previousCard);
-$('#render_partial_deck a').click(_jumpToCard);
+$( document ).on( "click", "#showAnswerButton" , toggleCardSide);
+$( document ).on( "click", "#nextCardButton" , nextCard);
+$( document ).on( "click", "#previousCardButton" , previousCard);
+$( document ).on( "click", "renderpartialdeck a" , jumpToCard);
