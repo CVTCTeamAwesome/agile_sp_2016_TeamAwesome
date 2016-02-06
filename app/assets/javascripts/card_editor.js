@@ -12,15 +12,6 @@ $(document).ready(function () {
   var $foregroundColor = $("input#card_foreground_color");
   var $backgroundColor = $("input#card_background_color");
   
-  
-  $frontTextField.keyup(function () {
-    $cardFrontText.html($frontTextField.val());
-  });
-  
-  $backTextField.keyup(function () {
-    $cardBackText.html($backTextField.val());
-  });
-  
   $foregroundColor.on("change", function () {
     $cardFrontText.css("color", $foregroundColor.val());
     $cardBackText.css("color", $foregroundColor.val());
@@ -29,6 +20,12 @@ $(document).ready(function () {
   $backgroundColor.on("change", function () {
     $cardFront.css("background", $backgroundColor.val());
     $cardBack.css("background", $backgroundColor.val());
+
+$( document ).on ( "keyup", "textarea#card_question_text", function () {
+    $("div.card_front p.card_text").html($( this ).val());
   });
-  
+
+$( document ).on ( "keyup", "textarea#card_answer_text", function () {
+    $("div.card_back p.card_text").html($( this ).val());
+
 });

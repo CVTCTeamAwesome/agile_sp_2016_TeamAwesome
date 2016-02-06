@@ -44,13 +44,13 @@
     </div>
 
     <div class="field">
-      <%= f.label :font_style %><br>
-      <%= f.text_field :font_style %>
+	    <%= f.label :font_style %>
+      <%= f.select :font_style, [ 'Arial', 'Comic Sans MS', 'Courier New', 'Georgia', 'Lucida Sans Typewriter', 'Palatino', 'Papyrus', 'Times New Roman', 'Trebushet MS', 'Verdana' ], :prompt => 'Select One' %>
     </div>
 
     <div class="field">
       <%= f.label :font_size %><br>
-      <%= f.text_field :font_size %>
+      <%= f.select :font_style, [ '10pt', '12pt', '14pt', '16pt', '18pt', '20pt', '22pt', '24pt', '26pt', '28pt', '30pt' ], :prompt => 'Select One' %>
     </div>
 
     <div class="actions">
