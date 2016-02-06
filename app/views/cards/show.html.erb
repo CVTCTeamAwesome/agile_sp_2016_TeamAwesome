@@ -1,12 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<ul class="card_details">
-  <li>Card ID: <%= @card.id %></li>
-  <li>Card Name: <%= @card.name %></li>
-  <li>Visible: <%= @card.visible %></li>
-</ul>
+<div class="card_display_full">
+  <ul class="card_details">
+    <li>Card ID: <%= @card.id %></li>
+    <li>Card Name: <%= @card.name %></li>
+    <li>Visible: <%= @card.visible %></li>
+  </ul>
 
-<%= render 'card_display' %>
+  <%= render 'card_display' %>
 
-<%= link_to 'Edit', edit_deck_card_path(@deck, @card) %> |
-<%= link_to 'Back', deck_cards_path(@deck, @card) %>
+  <ul class="card_details">
+    <li><%= link_to 'Edit', edit_deck_card_path(@deck, @card) %></li>
+    <li><%= link_to 'Back', deck_cards_path(@deck, @card) %></li>
+  </ul>
+
+</div>

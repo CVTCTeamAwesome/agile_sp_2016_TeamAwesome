@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Decks</h1>
+<h1>All Decks</h1>
 
 <table>
   <thead>
@@ -30,4 +30,6 @@
 
 <br>
 
-<%= link_to 'New Deck', new_deck_path(@deck) %>
+  <ul class="card_details">
+    <li><%= link_to 'New Deck', new_deck_path(@deck) %></li>
+  </ul>
