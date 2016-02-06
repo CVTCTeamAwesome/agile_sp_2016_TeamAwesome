@@ -42,10 +42,11 @@ var resetCard = function () {
   $('.answerTextDiv').hide();
   $('.questionTextDiv').show();
   $('#showAnswerButton').html("Show Answer");
+
 };
 
 var toggleCardSide = function () {
-
+  
   if ($( this ).html() == "Show Question") {
     $( this ).html("Show Answer");
   }else{
