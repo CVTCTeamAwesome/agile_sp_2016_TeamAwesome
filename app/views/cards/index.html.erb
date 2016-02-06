@@ -1,5 +1,6 @@
 <h1>Cards in this Deck:</h1>
 <br>
+<div>
 <% @cards.each do |card| %>
 
   <div class="cards_view_all">
@@ -26,4 +27,7 @@
   </div>
 <% end %>
 
-<%= link_to 'Back to Deck', deck_path(@deck, @card) %>
+  <ul class="card_details">
+    <li><%= link_to 'Back to Deck', deck_path(@deck, @card) %></li>
+  </ul>
+</div>
