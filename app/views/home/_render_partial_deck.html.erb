@@ -1,8 +1,55 @@
-<h3><%= @selectedDeck.title %> has the following cards:</h3>
+<% cardsArray = Array.new %>
 
-<%= form_tag("/displayCard", method: "post", :remote => true) do %>
-          <%= select_tag 'card_select', options_from_collection_for_select(@selectedDeck.cards, "id", "name") %>
-          <%= button_tag "Select Card" %>
+<% @selectedDeck.cards.each do |card| %>
+  <% if card.visible == true %>
+    <% cardsArray.push(card) %>
+    <a href="#" class="<%= cardsArray.last.name %><%= cardsArray.last.id %>"><%= cardsArray.last.name %></a>
+  <% end %>
+<% end %>
+  
+
+<% if cardsArray.size > 0 %> 
+
+  <h3><%= @selectedDeck.title %> has the following cards:</h3>
+  
+  <h3>Current Card:</h3>
+
+  <%= button_tag "Previous Card", :id => 'previousCardButton' %>
+  <%= button_tag "Next Card", :id => 'nextCardButton' %>
+  <%= button_tag "Show Answer", :id => 'showAnswerButton' %>
+
+  <div>
+    <% cardsArray.each_with_index do |card, index| %>
+      <% if index == 0 %>
+        <div class="cardDiv card_display <%= card.name %><%= card.id %>">
+          <div style="color:<%= card.foreground_color %>;
+                 background-color:<%= card.background_color %>;" class="cardSide card_front questionTextDiv">
+            <p class="card_text" style="font-style:<%= card.font_style %>;
+                 font-size:<%= card.font_size %>;"><%= card.question_text %></p>
+          </div>
+          <div style="color:<%= card.foreground_color %>; display:none;
+                 background-color:<%= card.background_color %>;" class="cardSide card_back answerTextDiv">
+            <p class="card_text" style="font-style:<%= card.font_style %>;
+                 font-size:<%= card.font_size %>;"><%= card.answer_text %></p>
+          </div>
+        </div>
+      <% else %>
+        <div class="cardDiv card_display <%= card.name %><%= card.id %>" style="display:none;">
+          <div style="color:<%= card.foreground_color %>;
+                 background-color:<%= card.background_color %>;" class="cardSide card_front questionTextDiv">
+            <p class="card_text" style="font-style:<%= card.font_style %>;
+                 font-size:<%= card.font_size %>;"><%= card.question_text %></p>
+          </div>
+          <div style="color:<%= card.foreground_color %>; display:none;
+                 background-color:<%= card.background_color %>;" class="cardSide card_back answerTextDiv">
+            <p class="card_text" style="font-style:<%= card.font_style %>;
+                 font-size:<%= card.font_size %>;"><%= card.answer_text %></p>
+          </div>
+        </div>
       <% end %>
-      
-<div id="render_partial_card" style="display:none;"></div>
+    <% end %>
+  </div>
+
+<% else %>
+  <h3><%= @selectedDeck.title %> has no cards yet.</h3>
+<% end %>

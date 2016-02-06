@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160203002507) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cards", force: :cascade do |t|
     t.boolean  "visible"
     t.datetime "created_at",       null: false
@@ -27,7 +30,7 @@ ActiveRecord::Schema.define(version: 20160203002507) do
     t.text     "font_style"
   end
 
-  add_index "cards", ["deck_id"], name: "index_cards_on_deck_id"
+  add_index "cards", ["deck_id"], name: "index_cards_on_deck_id", using: :btree
 
   create_table "decks", force: :cascade do |t|
     t.string   "title"
@@ -38,4 +41,5 @@ ActiveRecord::Schema.define(version: 20160203002507) do
     t.datetime "updated_at",    null: false
   end
 
+  add_foreign_key "cards", "decks"
 end
