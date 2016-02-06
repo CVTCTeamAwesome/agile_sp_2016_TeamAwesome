@@ -59,4 +59,4 @@ var toggleCardSide = function () {
 $( document ).on( "click", "#showAnswerButton" , toggleCardSide);
 $( document ).on( "click", "#nextCardButton" , nextCard);
 $( document ).on( "click", "#previousCardButton" , previousCard);
-$( document ).on( "click", "renderpartialdeck a" , jumpToCard);
+$( document ).on( "click", "#render_partial_deck a" , jumpToCard);
