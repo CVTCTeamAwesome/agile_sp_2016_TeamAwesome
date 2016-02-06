@@ -13,6 +13,39 @@
   width: 95%;
 }
 
+nav {
+  margin: 20px auto;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  font-size: 1.5em;
+  margin: 0 1em;
+}
+
+nav a {
+  border: 1px solid #999;
+  border-radius: 5em;
+  box-shadow: 2px 2px 4px #ccc inset,
+    -4px -4px 8px #ccc inset;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+}
+
+table {
+  background: #eee;
+  box-shadow: 2px 2px 4px #ccc;
+  margin-top: 2em;
+}
+
+table th,
+table td {
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  padding: 1em;
+}
+
 ul.card_details,
 ul.card_management {
   text-align: center;
@@ -36,14 +69,14 @@ ul.card_list li:first-of-type {
 }
 
 /* Index (show all cards) Page */
-
 div.cards_view_all {
-  border: 1px dashed #000;
+  border: 1px solid #aaa;
   border-radius: 2em;
+  box-shadow: 1px 1px 3px #ccc inset;
   float: left;
   margin: 1%;
   padding: 1em;
-  width: 31%;
+  width: 28%;
 }
 
 /* New/Edit Card Page */
@@ -81,12 +114,15 @@ div.card_back {
 }
 
 .card_side_description {
-  color: #000;
+  color: #fff;
   font-size: 1em;
-  left: 3px;
+  left: 4px;
   opacity: 80%;
   position: absolute;
-  text-shadow: 1px 1px 1px #fff;
+  text-shadow: 1px 1px 1px #000,
+    1px 0 1px #000,
+    -1px -1px 1px #000,
+    -1px 0 1px #000;
   top: 2px;
 }
 
@@ -95,4 +131,25 @@ div.card_back {
   text-align: center;
   top: 45%;
   width: 100%;
+}
+
+/* Card Display for Single Card */
+div.card_display_full {
+  margin: 0 auto;
+  width: 80%;
+}
+
+div.card_display_full div.card_front,
+div.card_display_full div.card_back {
+  float: none;
+  width: 45%;
+}
+
+div.card_display_full ul.card_details li {
+  font-size: 1.5em;
+  margin: 2%;
+}
+
+div.card_display_full ul.card_management {
+  font-size: 1.5em;
 }
