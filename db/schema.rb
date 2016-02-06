@@ -28,10 +28,6 @@ ActiveRecord::Schema.define(version: 20160206060559) do
     t.text     "foreground_color"
     t.text     "font_size"
     t.text     "font_style"
-    t.string   "picture_file_name"
-    t.string   "picture_content_type"
-    t.integer  "picture_file_size"
-    t.datetime "picture_updated_at"
   end
 
   add_index "cards", ["deck_id"], name: "index_cards_on_deck_id", using: :btree

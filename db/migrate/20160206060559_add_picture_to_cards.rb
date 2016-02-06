@@ -1,9 +1,5 @@
 class AddPictureToCards < ActiveRecord::Migration
-  def self.up
+  def change
     add_attachment :cards, :picture
-  end
-
-  def self.down
-    remove_attachment :cards, :picture
   end
 end
