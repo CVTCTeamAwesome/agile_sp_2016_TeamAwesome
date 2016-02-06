@@ -1,7 +1,5 @@
 // Auto-update Card Editing page on attribute values changed
-$(document).ready(function () {
-  
-  var $frontTextField = $("textarea#card_question_text");
+var $frontTextField = $("textarea#card_question_text");
   var $cardFront = $("div.card_front");
   var $cardFrontText = $("div.card_front p.card_text");
   
@@ -20,12 +18,12 @@ $(document).ready(function () {
   $backgroundColor.on("change", function () {
     $cardFront.css("background", $backgroundColor.val());
     $cardBack.css("background", $backgroundColor.val());
-
+  });
+    
 $( document ).on ( "keyup", "textarea#card_question_text", function () {
     $("div.card_front p.card_text").html($( this ).val());
   });
 
 $( document ).on ( "keyup", "textarea#card_answer_text", function () {
     $("div.card_back p.card_text").html($( this ).val());
-
 });
