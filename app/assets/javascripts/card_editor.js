@@ -23,6 +23,6 @@ $( document ).on ( "change", "#card_background_color", function () {
   });
 
 $( document ).on ( "change", "#card_foreground_color", function () {
-    $("div.card_back").css("background", $( this ).val());
-    $("div.card_front").css("background", $( this ).val());
+    $("div.card_back").css("color", $( this ).val());
+    $("div.card_front").css("color", $( this ).val());
   });
