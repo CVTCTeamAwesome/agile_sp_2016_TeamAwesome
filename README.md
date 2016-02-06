@@ -6,9 +6,9 @@ When doing the latest pull, we've updated to postgres as our database and added 
 
 You should see `pg` on the bundle list; if not then:
 
-  *`brew install postgresql` if you have a Mac and brew
-  *otherwise visit http://www.postgresql.org/download/ for your OS
-  *after postgresql installed, run `gem install pg`
+  - `brew install postgresql` if you have a Mac and brew
+  - otherwise visit http://www.postgresql.org/download/ for your OS
+  - after postgresql installed, run `gem install pg`
 
 You should also now see 'figaro' on the bundle list
 
@@ -20,9 +20,10 @@ To set up figaro, you will have to type `figaro install` at the terminal,
 then edit the `config/application.yml` file it created
 
 Use this structure:
-
+```
   S3_BUCKET_NAME: 'nameofbucket'
   AWS_ACCESS_KEY_ID: 'awsaccesskeynumber'
   AWS_SECRET_ACCESS_KEY: 'awssecretcaccesskeynumber'
+```
 
-**The values to put in the '' are in the file `teamawesome_credentials.csv` located in our Slack files online**
+*The values to put in the '' are in the file `teamawesome_credentials.csv` located in our Slack files online*
