@@ -58,14 +58,25 @@
           <option value="Times New Roman">Times New Roman</option>
           <option value="Trebushet MS">Trebushet MS</option>
           <option value="Verdana">Verdana</option>
-        
+  
         </select>
-      <%= f.text_field :font_style %>
+      <%= f.label :font_style %>
     </div>
 
     <div class="field">
       <%= f.label :font_size %><br>
-      <%= f.text_field :font_size %>
+      <select>
+        <option value="10pt">10</option>
+        <option value="12pt">12</option>
+        <option value="14pt">14</option>
+        <option value="16pt">16</option>
+        <option value="18pt">18</option>
+        <option value="20pt">20</option>
+        <option value="22pt">22</option>
+        <option value="24pt">24</option>
+        <option value="28pt">28</option>
+        <option value="30pt">30</option>
+      </select>
     </div>
 
     <div class="actions">
