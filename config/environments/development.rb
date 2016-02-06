@@ -41,10 +41,13 @@ Rails.application.configure do
     # Config for paperclip
   config.paperclip_defaults = {
     :storage => :s3,
+    :bucket => ENV['S3_BUCKET'],
+    :s3_region => "us-west-2",
     :s3_credentials => {
-      :bucket => ENV['cvtcphotos'],
-      :access_key_id => ENV['AKIAJXQXJXB6NC7HNZRA'],
-      :secret_access_key => ENV['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']
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
+  
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 end
