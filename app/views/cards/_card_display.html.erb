@@ -1,7 +1,7 @@
-<div class="card_front" style="<%= picture_styles %>">
+<div class="card_front" style="<%= picture_style %>">
 
   <p class="card_side_description">QUESTION</p>
-  <p class="card_text" style="color:<%= @card.foreground_color %>;font-size:<%= @card.font_size %>;font-style:<%= @card.font_style %>"><%= @card.question_text %></p>
+  <p class="card_text" style="<%= questionText %>"><%= @card.question_text %></p>
   
 </div>
 <div class="card_back" style="background:<%= @card.background_color %>">
