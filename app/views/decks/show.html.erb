@@ -1,27 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @deck.title %>
-</p>
+<div class="deck_show">
+  <p class="title">
+    <strong>Title:</strong>
+    <%= @deck.title %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @deck.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @deck.description %>
+  </p>
 
-<p>
-  <strong>Creation date:</strong>
-  <%= @deck.creation_date %>
-</p>
+  <p>
+    <strong>Creation date:</strong>
+    <%= @deck.creation_date %>
+  </p>
 
-<p>
-  <strong>Last modified:</strong>
-  <%= @deck.last_modified %>
-</p>
+  <p>
+    <strong>Last modified:</strong>
+    <%= @deck.last_modified %>
+  </p>
 
-<%= link_to 'Edit', edit_deck_path(@deck) %> |
-<%= link_to 'Back', decks_path %>
+  <br>
+  
+  <ul class="card_nav left">
+    <li><%= link_to 'Edit', edit_deck_path(@deck) %></li>
+    <li><%= link_to 'Back', decks_path %></li>
+    <li><%= link_to 'New Card', new_deck_card_path(@deck) %></li>
+    <li><%= link_to "manage cards", deck_cards_path(@deck, @cards) %></li>
+  </ul>
 
-<%= link_to 'New Card', new_deck_card_path(@deck) %>
-<%= link_to "manage cards", deck_cards_path(@deck, @cards) %>
+</div>

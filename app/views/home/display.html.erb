@@ -1,8 +1,11 @@
 <h1>Flash Cards</h1>
-<div>
+
+<div class="home_display">
+  
   <section>
     <p>Select Your Deck</p>
   </section>
+  
   <section>
     <%= form_tag("/displayDeck", method: "post", :remote => true) do %>
       <%= select_tag 'deck_select', options_from_collection_for_select(@decks, "id", "title") %>
@@ -12,4 +15,5 @@
     <div id="render_partial_deck" style="display:none;"></div>
     
   </section>
+  
 </div>
