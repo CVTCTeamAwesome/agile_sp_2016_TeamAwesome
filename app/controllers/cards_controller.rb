@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_deck
-  before_action :set_card, only: [:show, :edit, :update, :destroy]
+  before_action :set_card, only: [:show, :edit, :update, :destroy, :remove_photo]
 
   # GET /decks
   # GET /decks.json
@@ -63,6 +63,19 @@ class CardsController < ApplicationController
     end
   end
 
+   def remove_picture
+    @card = @deck.cards.find(params[:id])
+    @card.picture = nil
+    @card.save
+    respond_to do |format|
+      format.html { redirect_to deck_cards_path(@deck, @card), notice: 'Card was successfully updated.' }
+      format.json { render :show, status: :ok, location: @card }
+    end
+    
+    #redirect_to @card, flash: { success: 'Card picture has been removed.' }
+  end
+  
+  
   private
   
   def set_deck

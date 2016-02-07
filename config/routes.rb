@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   
   post '/displayDeck' => 'home#render_partial_deck'
   
+  get 'decks/:deck_id/cards/:id/remove_picture', to: 'cards#remove_picture', as: 'remove_card_picture'
+  
   #root controller: 'home', action: 'index'
   root to: 'home#index'
 
