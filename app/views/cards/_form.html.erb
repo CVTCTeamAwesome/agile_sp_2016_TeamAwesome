@@ -58,6 +58,12 @@
       <%= f.file_field :picture %>
     </div>
 
+    <% if @card.persisted? %>
+      <div class="field">
+        <%= link_to 'Remove card picture', remove_card_picture_path %>
+      </div>
+    <% end %>
+    
     <div class="actions">
       <%= f.submit %>
     </div>
