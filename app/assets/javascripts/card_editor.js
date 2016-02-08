@@ -9,14 +9,12 @@ $( document ).on("change", "input#card_background_color", function () {
   $("div.card_back").css("background", $( this ).val());
 });
 
-$( document ).on("change", "card_font_style", function () {
- $("div.card_front").css("font-family", $( this ).val());
- $("div.card_back").css("font-family", $( this ).val());
+$( document ).on("change", "#card_font_style", function () {
+ $("p.card_text").css("font-family", $( this ).val());
 });
 
-$( document ).on("change", "card_font_size", function () {
- $("div.card_front").css("font-size", $( this ).val());
- $("div.card_back").css("font-size", $( this ).val());
+$( document ).on("change", "#card_font_size", function () {
+ $("p.card_text").css("font-size", $( this ).val());
 });
     
 $( document ).on ( "keyup", "textarea#card_question_text", function () {
