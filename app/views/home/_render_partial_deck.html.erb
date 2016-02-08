@@ -3,7 +3,7 @@
 <% @selectedDeck.cards.each do |card| %>
   <% if card.visible == true %>
     <% cardsArray.push(card) %>
-    <a href="#" class="card_list <%= cardsArray.last.id %>"><%= cardsArray.last.name %></a>
+    <a href="#" class="<%= cardsArray.last.name %><%= cardsArray.last.id %>"><%= cardsArray.last.name %></a>
   <% end %>
 <% end %>
   
