@@ -13,6 +13,7 @@
   width: 95%;
 }
 
+
 /* Main Layout Nav */
 nav {
   margin: 5px auto 20px;
@@ -34,7 +35,8 @@ nav a {
   text-decoration: none;
 }
 
-/* Home > Display */
+
+/* Views > Home > Display */
 div.home_display section {
   margin: 1em;
 }
@@ -55,7 +57,8 @@ div.home_display div.current_deck div.buttons {
   margin: 2em 0 0 6em;
 }
 
-/* (ALL VIEWS) > Index */
+
+/* Views > (ALL VIEWS) > Index */
 table {
   background: #efefef;
   box-shadow: 2px 2px 4px #ccc;
@@ -73,7 +76,8 @@ table td {
   padding: 0.75em;
 }
 
-/* Sub-Navs for all views */
+
+/* Views > (ALL VIEWS) > Sub-Nav Divs */
 ul.div_nav {
   margin: 1em;
 }
@@ -110,7 +114,7 @@ ul.div_nav.right {
 }
 
 
-/* Decks > Show */
+/* Views > Decks > Show */
 div.deck_show p{
   font-size: 1.25em;
   margin: 0.5em 0;
@@ -127,8 +131,8 @@ div.card_display {
   min-width: 66%;
 }
 
-div.card_display div.card_front,
-div.card_display div.card_back {
+div.card_front,
+div.card_back {
   border: 1px solid #000;
   border-radius: 1em;
   box-shadow: 3px 3px 3px #333;
@@ -140,14 +144,14 @@ div.card_display div.card_back {
   width: 45%;
 }
 
-div.card_display div.card_front:after,
-div.card_display div.card_back:after {
+div.card_front:after,
+div.card_back:after {
   content: '';
   display: block;
   padding-top: 150%;
 }
 
-div.card_display p.card_side_description {
+p.card_side_description {
   color: #fff;
   font-size: 1em;
   left: 4px;
@@ -160,7 +164,7 @@ div.card_display p.card_side_description {
   top: 2px;
 }
 
-div.card_display p.card_text {
+p.card_text {
   position: absolute;
   text-align: center;
   top: 45%;
@@ -168,8 +172,8 @@ div.card_display p.card_text {
 }
 
 
-/* Cards > Index */
-div.card_list {
+/* Views > Cards > Index */
+div.cards_display_index {
   border: 1px solid #aaa;
   border-radius: 2em;
   box-shadow: 1px 1px 3px #ccc inset;
@@ -179,7 +183,7 @@ div.card_list {
   width: 28%;
 }
 
-/* Cards > New/Edit */
+/* Views > Cards > New/Edit */
 div.card_editor {
   float: left;
   min-width: 15em;
@@ -187,7 +191,7 @@ div.card_editor {
   width: 15%;
 }
 
-/* Cards > Show */
+/* Views > Cards > Show */
 div.card_show {
   margin: 2em auto;
   width: 66%;

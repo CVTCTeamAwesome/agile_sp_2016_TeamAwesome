@@ -6,10 +6,10 @@
     <li><%= link_to 'Back to Deck', deck_path(@deck, @card) %></li>
   </ul>
 
-  <div class="card_list">
+  <div>
   <% @cards.each do |card| %>
 
-    <div class="card_display">
+    <div class="cards_display_index">
 
       <div class="card_front" style="<%= picture_styles card %>">
 
@@ -17,7 +17,6 @@
         <p class="card_text" style="<%= questionsText card %>"><%= card.question_text %></p>
 
       </div>
-      
       <div class="card_back" style="background:<%= card.background_color %>">
 
         <p class="card_side_description">ANSWER</p>
@@ -32,8 +31,8 @@
       </ul>
 
     </div>
-  
   <% end %>
+
   </div>
 
 </div>
