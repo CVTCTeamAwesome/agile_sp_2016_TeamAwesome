@@ -165,9 +165,10 @@ p.card_side_description {
 }
 
 p.card_text {
+  line-height: normal;
   position: absolute;
   text-align: center;
-  top: 45%;
+  top: 35%;
   width: 95%;
   word-break: break-all;
 }
