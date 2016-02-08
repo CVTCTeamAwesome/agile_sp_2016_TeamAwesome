@@ -13,6 +13,7 @@
           <li><%=link_to_unless_current 'Home', root_url %></li>
           <li><%=link_to_unless_current 'Display', display_url %></li>
           <li><%=link_to_unless_current 'Decks', decks_url %></li>
+          <li><%= link_to_unless_current 'Categories', categories_url %></li>
         </ul>
       </nav>
       <%= yield %>

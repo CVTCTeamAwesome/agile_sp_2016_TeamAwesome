@@ -19,6 +19,12 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.select :category_id, @categories, :include_blank => true %>
+  </div>
+
   <div class="field">
     <%= f.label :creation_date %><br>
     <%= f.datetime_select :creation_date %>

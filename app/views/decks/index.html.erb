@@ -18,6 +18,7 @@
       <tr>
         <td><%= deck.title %></td>
         <td><%= deck.description %></td>
+        <td><%= deck.category.name rescue "No category assigned"%></td>
         <td><%= deck.creation_date %></td>
         <td><%= deck.last_modified %></td>
         <td><%= link_to 'Show', deck %></td>
