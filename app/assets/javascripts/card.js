@@ -4,7 +4,6 @@ var jumpToCard = function (e) {
   
   var clickedClass = $( this ).attr("class");
   var $clickedCard = $('.cardDiv.' + clickedClass);
-  
   e.preventDefault();
   $('.cardDiv').hide();
   resetCard();
