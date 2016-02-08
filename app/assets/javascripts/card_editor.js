@@ -5,8 +5,8 @@ $( document ).on("change", "input#card_foreground_color", function () {
 });
 
 $( document ).on("change", "input#card_background_color", function () {
-  $("div.card_front").css("background", $( this ).val());
-  $("div.card_back").css("background", $( this ).val());
+  $("div.card_front").css("background-color", $( this ).val());
+  $("div.card_back").css("background-color", $( this ).val());
 });
 
 $( document ).on("change", "#card_font_style", function () {
