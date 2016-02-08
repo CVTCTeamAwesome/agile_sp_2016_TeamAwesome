@@ -1,34 +1,39 @@
 <h1>Cards in this Deck:</h1>
-<br>
-<ul class="card_nav left">
-  <li><%= link_to 'Back to Deck', deck_path(@deck, @card) %></li>
-</ul>
 
-<div>
-<% @cards.each do |card| %>
+<div class="cards_index">
+  
+  <ul class="div_nav left">
+    <li><%= link_to 'Back to Deck', deck_path(@deck, @card) %></li>
+  </ul>
 
-  <div class="cards_index">
+  <div class="card_list">
+  <% @cards.each do |card| %>
 
-    <div class="card_front" style="<%= picture_styles card %>">
+    <div class="card_display">
 
-      <p class="card_side_description">QUESTION</p>
-      <p class="card_text" style="<%= questionsText card %>"><%= card.question_text %></p>
+      <div class="card_front" style="<%= picture_styles card %>">
+
+        <p class="card_side_description">QUESTION</p>
+        <p class="card_text" style="<%= questionsText card %>"><%= card.question_text %></p>
+
+      </div>
+      
+      <div class="card_back" style="background:<%= card.background_color %>">
+
+        <p class="card_side_description">ANSWER</p>
+        <p class="card_text" style="color:<%= card.foreground_color %>;font-size:<%= card.font_size %>;font-style:<%= card.font_style %>"><%= card.answer_text %></p>
+
+      </div>
+
+      <ul class="div_nav center">
+        <li><%= link_to 'Show', deck_card_path(@deck, card) %></li>
+        <li><%= link_to 'Edit', edit_deck_card_path(@deck, card) %></li>
+        <li><%= link_to 'Destroy', [@deck, card], method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
 
     </div>
-    <div class="card_back" style="background:<%= card.background_color %>">
-
-      <p class="card_side_description">ANSWER</p>
-      <p class="card_text" style="color:<%= card.foreground_color %>;font-size:<%= card.font_size %>;font-style:<%= card.font_style %>"><%= card.answer_text %></p>
-
-    </div>
-    
-    <ul class="card_nav center">
-      <li><%= link_to 'Show', deck_card_path(@deck, card) %></li>
-      <li><%= link_to 'Edit', edit_deck_card_path(@deck, card) %></li>
-      <li><%= link_to 'Destroy', [@deck, card], method: :delete, data: { confirm: 'Are you sure?' } %></li>
-    </ul>
-    
+  
+  <% end %>
   </div>
-<% end %>
 
 </div>
