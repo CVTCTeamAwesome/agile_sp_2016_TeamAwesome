@@ -4,7 +4,7 @@
 Open terminal and type:
   `rake db:drop`
   `rake db:create`
-  `rake db:schmea:load`
+  `rake db:schema:load`
 
 This seems to be a force fix for any issues we're having with migrating and etc.
 
