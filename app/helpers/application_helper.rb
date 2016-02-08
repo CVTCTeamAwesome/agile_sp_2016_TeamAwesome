@@ -26,7 +26,7 @@ module ApplicationHelper
     if card.picture?
       "opacity:0;"
     else
-      "color:#{card.foreground_color};font-size:#{card.font_size};font-family:#{card.font_style};"
+      "color:#{card.foreground_color};font-family:#{card.font_style};"
     end
   end
   
