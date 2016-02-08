@@ -1,5 +1,15 @@
 # agile_sp_2016_TeamAwesome
 
+###If you're having any database issues:
+Open terminal and type:
+  `rake db:drop`
+  `rake db:create`
+  `rake db:schmea:load`
+
+This seems to be a force fix for any issues we're having with migrating and etc.
+
+
+
 ###Feb 7th: Project Update to PostgreSQL & Figaro - Setup Guide
 When doing the latest pull, we've updated to postgres as our database and added figaro. You will need to run the following:
   `bundle install`
