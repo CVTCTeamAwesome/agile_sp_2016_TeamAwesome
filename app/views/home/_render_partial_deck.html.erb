@@ -26,14 +26,14 @@
         <div class="cardDiv card_display <%= card.name %><%= card.id %>">
           <div style="<%= picture_styles card %>" class="cardSide card_front questionTextDiv">
             <% if card.picture.url === "" %>
-              <p class="card_text front" style="font-style:<%= card.font_style %>;
+              <p class="card_text front" style="font-family:<%= card.font_style %>;
                  font-size:<%= card.font_size %>;
                 "><%= card.question_text %></p>
             <% end %>
           </div>
           <div style="color:<%= card.foreground_color %>; display:none;
                  background-color:<%= card.background_color %>;" class="cardSide card_back answerTextDiv">
-            <p class="card_text" style="font-style:<%= card.font_style %>;
+            <p class="card_text" style="font-family:<%= card.font_style %>;
                  font-size:<%= card.font_size %>;"><%= card.answer_text %></p>
           </div>
         </div>
@@ -41,14 +41,14 @@
         <div class="cardDiv card_display <%= card.name %><%= card.id %>" style="display:none;">
           <div style="<%= picture_styles card %>" class="cardSide card_front questionTextDiv">
             <% if card.picture.url === "" %>
-              <p class="card_text front" style="font-style:<%= card.font_style %>;
+              <p class="card_text front" style="font-family:<%= card.font_style %>;
                  font-size:<%= card.font_size %>;
                 "><%= card.question_text %></p>
             <% end %>
           </div>
           <div style="color:<%= card.foreground_color %>; display:none;
                  background-color:<%= card.background_color %>;" class="cardSide card_back answerTextDiv">
-            <p class="card_text" style="font-style:<%= card.font_style %>;
+            <p class="card_text" style="font-family:<%= card.font_style %>;
                  font-size:<%= card.font_size %>;"><%= card.answer_text %></p>
           </div>
         </div>
