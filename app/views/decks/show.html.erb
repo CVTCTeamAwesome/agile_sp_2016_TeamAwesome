@@ -20,10 +20,8 @@
     <strong>Last modified:</strong>
     <%= @deck.last_modified %>
   </p>
-
-  <br>
   
-  <ul class="card_nav left">
+  <ul class="div_nav left">
     <li><%= link_to 'Edit', edit_deck_path(@deck) %></li>
     <li><%= link_to 'Back', decks_path %></li>
     <li><%= link_to 'New Card', new_deck_card_path(@deck) %></li>

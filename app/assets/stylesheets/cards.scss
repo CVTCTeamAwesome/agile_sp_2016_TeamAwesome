@@ -13,6 +13,8 @@
   width: 95%;
 }
 
+
+/* Main Layout Nav */
 nav {
   margin: 5px auto 20px;
   text-align: center;
@@ -33,15 +35,17 @@ nav a {
   text-decoration: none;
 }
 
+
+/* Views > Home > Display */
 div.home_display section {
   margin: 1em;
 }
 
-div.current_deck {
+div.home_display div.current_deck {
   margin: 1em auto;
 }
 
-div.current_deck h3 {
+div.home_display div.current_deck h3 {
   border: 1px solid #000;
   display: inline;
   font-size: 1.5em;
@@ -49,10 +53,12 @@ div.current_deck h3 {
   padding: 0.25em;
 }
 
-div.current_deck div.buttons {
+div.home_display div.current_deck div.buttons {
   margin: 2em 0 0 6em;
 }
 
+
+/* Views > (ALL VIEWS) > Index */
 table {
   background: #efefef;
   box-shadow: 2px 2px 4px #ccc;
@@ -70,19 +76,20 @@ table td {
   padding: 0.75em;
 }
 
-/* Nav for cards views */
-ul.card_nav {
+
+/* Views > (ALL VIEWS) > Sub-Nav Divs */
+ul.div_nav {
   margin: 1em;
 }
 
-ul.card_nav li {
+ul.div_nav li {
   display: inline;
   padding: 0.25em 0.5em;
   text-align: center;
   text-transform: uppercase;
 }
 
-ul.card_nav li a {
+ul.div_nav li a {
   border: 1px solid #999;
   border-radius: 5em;
   box-shadow: 2px 2px 4px #ccc inset,
@@ -91,25 +98,23 @@ ul.card_nav li a {
   text-decoration: none;
 }
 
-ul.card_nav.center {
+/* Sub-Navs, Center-Aligning (use class="div_nav left") */
+ul.div_nav.center {
   text-align: center;
 }
 
-ul.card_nav.left {
+/* Sub-Navs, Left-Aligning (use class="div_nav center") */
+ul.div_nav.left {
   text-align: left;
 }
 
-
-/*   */
-ul.card_list li {
-  display: inline;
-  padding: 2em;
+/* Sub-Navs, Right-Aligning (use class="div_nav right") */
+ul.div_nav.right {
+  text-align: right;
 }
 
-ul.card_list li:first-of-type {
-  padding-left: 2%;
-}
 
+/* Views > Decks > Show */
 div.deck_show p{
   font-size: 1.25em;
   margin: 0.5em 0;
@@ -119,31 +124,13 @@ div.deck_show p.title {
   font-size: 1.75em;
 }
 
-/* Index (show all cards) Page */
-div.cards_index {
-  border: 1px solid #aaa;
-  border-radius: 2em;
-  box-shadow: 1px 1px 3px #ccc inset;
-  float: left;
-  margin: 1%;
-  padding: 1em;
-  width: 28%;
-}
 
-/* New/Edit Card Page */
-div.card_editor {
-  float: left;
-  min-width: 15em;
-  padding: 1em;
-  width: 15%;
-}
-
+/* Card's Actual On-Screen Presentation */
 div.card_display {
   float: left;
   min-width: 66%;
 }
 
-/* Each Card's Display */
 div.card_front,
 div.card_back {
   border: 1px solid #000;
@@ -157,14 +144,14 @@ div.card_back {
   width: 45%;
 }
 
-.card_front:after,
-.card_back:after {
+div.card_front:after,
+div.card_back:after {
   content: '';
   display: block;
   padding-top: 150%;
 }
 
-.card_side_description {
+p.card_side_description {
   color: #fff;
   font-size: 1em;
   left: 4px;
@@ -177,14 +164,34 @@ div.card_back {
   top: 2px;
 }
 
-.card_text {
+p.card_text {
   position: absolute;
   text-align: center;
   top: 45%;
   width: 100%;
 }
 
-/* Card Display for Single Card */
+
+/* Views > Cards > Index */
+div.cards_display_index {
+  border: 1px solid #aaa;
+  border-radius: 2em;
+  box-shadow: 1px 1px 3px #ccc inset;
+  float: left;
+  margin: 1%;
+  padding: 1em;
+  width: 28%;
+}
+
+/* Views > Cards > New/Edit */
+div.card_editor {
+  float: left;
+  min-width: 15em;
+  padding: 1em;
+  width: 15%;
+}
+
+/* Views > Cards > Show */
 div.card_show {
   margin: 2em auto;
   width: 66%;
@@ -196,7 +203,7 @@ div.card_show div.card_back {
   width: 45%;
 }
 
-div.card_show ul.card_nav li {
+div.card_show ul.div_nav li {
   font-size: 1.5em;
   margin: 2%;
 }

@@ -1,6 +1,12 @@
 <h1>Editing Category</h1>
 
+<div class="category_edit">
+
 <%= render 'form' %>
 
-<%= link_to 'Show', @category %> |
-<%= link_to 'Back', categories_path %>
+  <ul class="div_nav">
+    <li><%= link_to 'Show', @category %></li>
+    <li><%= link_to 'Back', categories_path %></li>
+  </ul>
+  
+</div>
