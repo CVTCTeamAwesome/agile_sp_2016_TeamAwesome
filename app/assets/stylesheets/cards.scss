@@ -5,7 +5,7 @@
 #wrapper {
   background: #fff;
   box-shadow: 3px 3px 6px #333;
-  min-height: 92%;
+  min-height: 90%;
   margin: 1% auto;
   overflow: hidden;
   padding: 1%;
@@ -14,13 +14,13 @@
 }
 
 nav {
-  margin: 20px auto;
+  margin: 5px auto 20px;
   text-align: center;
 }
 
 nav ul li {
   display: inline;
-  font-size: 1.5em;
+  font-size: 1.25em;
   margin: 0 1em;
 }
 
@@ -29,36 +29,78 @@ nav a {
   border-radius: 5em;
   box-shadow: 2px 2px 4px #ccc inset,
     -4px -4px 8px #ccc inset;
-  padding: 0.25em 0.5em;
+  padding: 0.25em 0.5em 0.375em;
   text-decoration: none;
 }
 
+div.home_display section {
+  margin: 1em;
+}
+
+div.current_deck {
+  margin: 1em auto;
+}
+
+div.current_deck h3 {
+  border: 1px solid #000;
+  display: inline;
+  font-size: 1.5em;
+  margin: 0.5em auto;
+  padding: 0.25em;
+}
+
+div.current_deck div.buttons {
+  margin: 2em 0 0 6em;
+}
+
 table {
-  background: #eee;
+  background: #efefef;
   box-shadow: 2px 2px 4px #ccc;
   margin-top: 2em;
+}
+
+table th {
+  background: #cecece;
 }
 
 table th,
 table td {
   border-top: 1px solid #ccc;
   border-left: 1px solid #ccc;
-  padding: 1em;
+  padding: 0.75em;
 }
 
-ul.card_details,
-ul.card_management {
-  text-align: center;
+/* Nav for cards views */
+ul.card_nav {
+  margin: 1em;
 }
 
-ul.card_details li,
-ul.card_management li {
+ul.card_nav li {
   display: inline;
-  padding: 1em;
+  padding: 0.25em 0.5em;
   text-align: center;
   text-transform: uppercase;
 }
 
+ul.card_nav li a {
+  border: 1px solid #999;
+  border-radius: 5em;
+  box-shadow: 2px 2px 4px #ccc inset,
+   -4px -4px 8px #ccc inset;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+}
+
+ul.card_nav.center {
+  text-align: center;
+}
+
+ul.card_nav.left {
+  text-align: left;
+}
+
+
+/*   */
 ul.card_list li {
   display: inline;
   padding: 2em;
@@ -68,8 +110,17 @@ ul.card_list li:first-of-type {
   padding-left: 2%;
 }
 
+div.deck_show p{
+  font-size: 1.25em;
+  margin: 0.5em 0;
+}
+
+div.deck_show p.title {
+  font-size: 1.75em;
+}
+
 /* Index (show all cards) Page */
-div.cards_view_all {
+div.cards_index {
   border: 1px solid #aaa;
   border-radius: 2em;
   box-shadow: 1px 1px 3px #ccc inset;
@@ -89,7 +140,7 @@ div.card_editor {
 
 div.card_display {
   float: left;
-  min-width: 80%;
+  min-width: 66%;
 }
 
 /* Each Card's Display */
@@ -134,22 +185,18 @@ div.card_back {
 }
 
 /* Card Display for Single Card */
-div.card_display_full {
-  margin: 0 auto;
-  width: 80%;
+div.card_show {
+  margin: 2em auto;
+  width: 66%;
 }
 
-div.card_display_full div.card_front,
-div.card_display_full div.card_back {
+div.card_show div.card_front,
+div.card_show div.card_back {
   float: none;
   width: 45%;
 }
 
-div.card_display_full ul.card_details li {
+div.card_show ul.card_nav li {
   font-size: 1.5em;
   margin: 2%;
-}
-
-div.card_display_full ul.card_management {
-  font-size: 1.5em;
 }

@@ -2,7 +2,7 @@ module ApplicationHelper
 #Styles for when @card is used:
   def picture_style
     if @card.picture?
-      "background:#{@card.background_color} url(\"#{@card.picture.url}\") no-repeat center;background-size: cover;color: rgba(0,0,0,0.0);"
+      "background:#{@card.background_color} url(\"#{@card.picture.url}\") no-repeat center;background-size: contain;color: rgba(0,0,0,0.0);"
     else
       "background:#{@card.background_color};"
     end

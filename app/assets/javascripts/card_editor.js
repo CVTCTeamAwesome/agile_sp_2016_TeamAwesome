@@ -16,3 +16,14 @@ $( document ).on ( "keyup", "textarea#card_question_text", function () {
 $( document ).on ( "keyup", "textarea#card_answer_text", function () {
     $("div.card_back p.card_text").html($( this ).val());
 });
+
+// code to update image after one selected, not working right now due
+// to inability to access the full file path; looking into this
+//$( document ).on ( "change", "input#card_picture", function () {
+//  var image = $( this ).val();
+//  image = image.replace("C:\\fakepath\\", "");
+//  $("div.card_front").css({
+//    "background" : "url(\"" + image + "\") no-repeat center",
+//    "background-size" : "contain"
+//  });
+//});

@@ -7,16 +7,18 @@
   <% end %>
 <% end %>
   
+<br>
 
 <% if cardsArray.size > 0 %> 
 
-  <h3><%= @selectedDeck.title %> has the following cards:</h3>
-  
-  <h3>Current Card:</h3>
-
-  <%= button_tag "Previous Card", :id => 'previousCardButton' %>
-  <%= button_tag "Next Card", :id => 'nextCardButton' %>
-  <%= button_tag "Show Answer", :id => 'showAnswerButton' %>
+  <div class="current_deck">
+    <h3><%= @selectedDeck.title %> - Current Card:</h3>
+    <div class="buttons">
+      <%= button_tag "Previous Card", :id => 'previousCardButton' %>
+      <%= button_tag "Next Card", :id => 'nextCardButton' %>
+      <%= button_tag "Show Answer", :id => 'showAnswerButton' %>
+    </div>
+  </div>
 
   <div>
     <% cardsArray.each_with_index do |card, index| %>
