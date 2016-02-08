@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :cards
   end
   
+  resources :categories
+  
   get '/display', to: 'home#display', as: 'display'
   
   post '/displayDeck' => 'home#render_partial_deck'
