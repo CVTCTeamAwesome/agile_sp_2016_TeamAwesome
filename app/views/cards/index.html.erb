@@ -27,7 +27,7 @@
       <ul class="div_nav center">
         <li><%= link_to 'Show', deck_card_path(@deck, card) %></li>
         <li><%= link_to 'Edit', edit_deck_card_path(@deck, card) %></li>
-        <li><%= link_to 'Delete', [@deck, card], method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <li><%= link_to 'Delete', [@deck, card], method: :delete, data: { confirm: 'Are you sure you want to delete the card ' + card.name + '?' } %></li>
       </ul>
 
     </div>
