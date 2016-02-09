@@ -19,12 +19,11 @@
     <tbody>
       <% @decks.each do |deck| %>
         <tr>
-          <td><%= deck.title %></td>
+          <td><%= link_to deck.title, deck %></td>
           <td><%= deck.description %></td>
           <td><%= deck.category.name rescue "No category assigned"%></td>
           <td><%= deck.creation_date %></td>
           <td><%= time_ago_in_words(deck.last_modified) %> ago</td>
-          <td><%= link_to 'Show', deck %></td>
           <td><%= link_to 'Edit', edit_deck_path(deck) %></td>
           <td><%= link_to 'Destroy', deck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
