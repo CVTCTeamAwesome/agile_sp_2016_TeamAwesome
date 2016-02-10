@@ -54,7 +54,7 @@ div.home_display div.current_deck h3 {
 }
 
 div.home_display div.current_deck div.buttons {
-  margin: 2em 0 0 6em;
+  margin: 1em 0 3em 6em;
 }
 
 
@@ -171,6 +171,13 @@ p.card_text {
   top: 35%;
   width: 95%;
   word-break: break-all;
+}
+
+p#showAnswerText {
+  position: absolute;
+  top: 240px;
+  left: 160px;
+  font-size: 20px;
 }
 
 

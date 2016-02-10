@@ -40,23 +40,24 @@ var resetCard = function () {
 
   $('.answerTextDiv').hide();
   $('.questionTextDiv').show();
-  $('#showAnswerButton').html("Show Answer");
-
+//  $('#showAnswerButton').html("Show Answer");
+  $('#showAnswerText').html("Question");
+  
 };
 
 var toggleCardSide = function () {
   
-  if ($( this ).html() == "Show Question") {
-    $( this ).html("Show Answer");
+  if ($('#showAnswerText').html() == "Question") {
+    $('#showAnswerText').html("Answer");
   }else{
-    $( this ).html("Show Question");
+    $('#showAnswerText').html("Question");
   }
   
   $('.cardSide').toggle();
 
 };
 
-$( document ).on( "click", "#showAnswerButton" , toggleCardSide);
+$( document ).on( "click", ".cardSide" , toggleCardSide);
 $( document ).on( "click", "#nextCardButton" , nextCard);
 $( document ).on( "click", "#previousCardButton" , previousCard);
 $( document ).on( "click", "#render_partial_deck a" , jumpToCard);
