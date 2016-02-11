@@ -77,6 +77,26 @@ table td {
 }
 
 
+ul.card_name {
+  margin: 1em;
+  text-align: center;
+}
+
+ul.card_name li {
+  display: inline;
+  text-align: center;
+}
+
+ul.card_name li a {
+  border: 1px solid #999;
+  border-radius: 0.25em;
+  box-shadow: 2px 2px 4px #ccc inset,
+   -4px -4px 8px #ccc inset;
+  font-size: 2em;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+}
+
 /* Views > (ALL VIEWS) > Sub-Nav Divs */
 ul.div_nav {
   margin: 1em;
