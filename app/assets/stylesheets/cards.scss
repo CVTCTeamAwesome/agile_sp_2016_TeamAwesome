@@ -54,7 +54,7 @@ div.home_display div.current_deck h3 {
 }
 
 div.home_display div.current_deck div.buttons {
-  margin: 2em 0 0 6em;
+  margin: 1em 0 3em 6em;
 }
 
 
@@ -76,6 +76,26 @@ table td {
   padding: 0.75em;
 }
 
+
+ul.card_name {
+  margin: 1em;
+  text-align: center;
+}
+
+ul.card_name li {
+  display: inline;
+  text-align: center;
+}
+
+ul.card_name li a {
+  border: 1px solid #999;
+  border-radius: 0.25em;
+  box-shadow: 2px 2px 4px #ccc inset,
+   -4px -4px 8px #ccc inset;
+  font-size: 2em;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+}
 
 /* Views > (ALL VIEWS) > Sub-Nav Divs */
 ul.div_nav {
@@ -171,6 +191,14 @@ p.card_text {
   top: 35%;
   width: 95%;
   word-break: break-all;
+}
+
+p#showAnswerText {
+  position: absolute;
+  top: 240px;
+  left: 150px;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 

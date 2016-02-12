@@ -54,7 +54,7 @@ class CategoriesController < ApplicationController
   # DELETE /decks/1
   # DELETE /decks/1.json
   def destroy
-    @category.destroy
+    @category.delete
     respond_to do |format|
       format.html { redirect_to categories_url, notice: 'Deck was successfully destroyed.' }
       format.json { head :no_content }

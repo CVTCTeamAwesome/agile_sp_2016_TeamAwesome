@@ -4,12 +4,17 @@
   
   <ul class="div_nav left">
     <li><%= link_to 'Back to Deck', deck_path(@deck, @card) %></li>
+    <li><%= link_to 'Create New Card', new_deck_card_path(@deck, @card) %></li>
   </ul>
 
   <div>
   <% @cards.each do |card| %>
 
     <div class="cards_display_index">
+
+      <ul class="card_name">
+        <li><%= link_to card.name, deck_card_path(@deck, card) %></li>
+      </ul>
 
       <div class="card_front" style="<%= picture_styles card %>">
 
@@ -25,7 +30,6 @@
       </div>
 
       <ul class="div_nav center">
-        <li><%= link_to 'Show', deck_card_path(@deck, card) %></li>
         <li><%= link_to 'Edit', edit_deck_card_path(@deck, card) %></li>
         <li><%= link_to 'Delete', [@deck, card], method: :delete, data: { confirm: 'Are you sure you want to delete the card ' + card.name + '?' } %></li>
       </ul>

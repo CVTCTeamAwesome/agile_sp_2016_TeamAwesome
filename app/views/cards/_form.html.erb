@@ -20,17 +20,17 @@
 
     <div class="field">
       <%= f.label :name %><br>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, :required => true %>
     </div>
 
     <div class="field">
       <%= f.label :question_text %><br>
-      <%= f.text_area :question_text %>
+      <%= f.text_area :question_text, :required => true %>
     </div>
 
     <div class="field">
       <%= f.label :answer_text %><br>
-      <%= f.text_area :answer_text %>
+      <%= f.text_area :answer_text, :required => true %>
     </div>
 
     <div class="field">
