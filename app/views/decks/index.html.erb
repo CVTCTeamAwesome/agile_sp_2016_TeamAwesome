@@ -10,6 +10,7 @@
         <th>Title</th>
         <th>Description</th>
         <th>Category</th>
+        <th>Number of Cards</th>
         <th>Last Modified</th>
         <th colspan="4"></th>
       </tr>
@@ -21,6 +22,7 @@
           <td><%= link_to deck.title, deck %></td>
           <td><%= deck.description %></td>
           <td><%= deck.category.name rescue "No category assigned"%></td>
+          <td><%= deck.cards.size %></td>
           <td><%= time_ago_in_words(deck.last_modified) %> ago</td>
           <td><%= link_to 'Edit', edit_deck_path(deck) %></td>
           <td><%= link_to 'Delete', deck, method: :delete, data: { confirm: 'Are you sure you want to delete the deck ' + deck.title + '?' } %></td>
