@@ -26,12 +26,10 @@
   </div>
 
   <div class="field">
-    <%= f.label :creation_date %><br>
-    <%= f.label DateTime.current %>
+    <%= f.label "Creation date: #{Date.current}" %><br>
   </div>
   <div class="field">
-    <%= f.label :last_modified %><br>
-    <%= f.label DateTime.current %>
+    <%= f.label "Last modified: #{Date.current}" %><br>
   </div>
   <div class="actions">
     <%= f.submit %>
