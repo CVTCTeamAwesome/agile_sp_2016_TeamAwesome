@@ -50,4 +50,7 @@ Rails.application.configure do
   }
   
   Paperclip.options[:command_path] = "/usr/local/bin/"
+  
+  config.web_console.whitelisted_ips = '192.168.1.138'
+  
 end
