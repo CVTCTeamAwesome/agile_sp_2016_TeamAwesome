@@ -44,6 +44,7 @@ class DecksController < ApplicationController
   # PATCH/PUT /decks/1
   # PATCH/PUT /decks/1.json
   def update
+     @deck.last_modified = DateTime.current
     respond_to do |format|
       if @deck.update(deck_params)
         format.html { redirect_to @deck, notice: 'Deck was successfully updated.' }
