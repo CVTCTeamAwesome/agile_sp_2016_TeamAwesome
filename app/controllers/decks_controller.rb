@@ -27,7 +27,9 @@ class DecksController < ApplicationController
   # POST /decks.json
   def create
     @deck = Deck.new(deck_params)
-
+    @deck.creation_date = DateTime.current
+    @deck.last_modified = DateTime.current
+    
     respond_to do |format|
       if @deck.save
         format.html { redirect_to @deck, notice: 'Deck was successfully created.' }
@@ -42,6 +44,7 @@ class DecksController < ApplicationController
   # PATCH/PUT /decks/1
   # PATCH/PUT /decks/1.json
   def update
+     @deck.last_modified = DateTime.current
     respond_to do |format|
       if @deck.update(deck_params)
         format.html { redirect_to @deck, notice: 'Deck was successfully updated.' }
