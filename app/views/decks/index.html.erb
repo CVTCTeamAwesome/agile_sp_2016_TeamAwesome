@@ -23,7 +23,7 @@
           <td><%= deck.description %></td>
           <td><%= deck.category.name rescue "No category assigned"%></td>
           <td><%= deck.creation_date %></td>
-          <td><%= deck.last_modified %> ago</td>
+          <td><%= time_ago_in_words(deck.last_modified) %> ago</td>
           <td><%= link_to 'Edit', edit_deck_path(deck) %></td>
           <td><%= link_to 'Delete', deck, method: :delete, data: { confirm: 'Are you sure you want to delete the deck ' + deck.title + '?' } %></td>
           <td><%= link_to "Manage Cards", deck_cards_path(deck, @cards) %></td>
