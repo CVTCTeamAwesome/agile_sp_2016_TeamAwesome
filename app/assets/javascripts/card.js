@@ -66,12 +66,12 @@ $( document ).on( "click", ".fa-chevron-left" , previousCard);
 $( document ).on( "click", "#render_partial_deck a" , jumpToCard);
 
 //http://wowmotty.blogspot.com/2011/10/adding-swipe-support.html
-$( document ).on( "mousedown", ".cardDiv", function() {
+
   var maxTime = 1000,
   // allow movement if < 1000 ms (1 sec)
   maxDistance = 50,
   // swipe movement of 50 pixels triggers the swipe
-  $target = $('.cardDiv'),
+  $target = $('.cardContainer'),
   startX = 0,
   startTime = 0,
   touch = "ontouchend" in document,
@@ -90,7 +90,7 @@ $( document ).on( "mousedown", ".cardDiv", function() {
   }).bind(moveEvent, function(e) {
     e.preventDefault();
     var currentX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
-        currentDistance = (startX === 0) ? 0 : Math.abs(currentX - startX),
+        currentDistance = (startX === 0) ? 0 : Math.abs(currentX - startX);
         // allow if movement < 1 sec
         currentTime = e.timeStamp;
     if (startTime !== 0 && currentTime - startTime < maxTime && currentDistance > maxDistance) {
@@ -108,10 +108,9 @@ $( document ).on( "mousedown", ".cardDiv", function() {
           
         } else {
           console.log(index + " The end");
+          alert("You have reached the last card in your deck!");
         }
-        
-
-        
+     
       } else if (currentX > startX) {
         // swipe right
 
@@ -122,6 +121,7 @@ $( document ).on( "mousedown", ".cardDiv", function() {
           $('.cardDiv').eq(index).fadeIn();
           console.log(index);
         } else {
+          alert("You are at the first card in your deck!");
           console.log(index + " The beginning");
         }
 
@@ -131,6 +131,4 @@ $( document ).on( "mousedown", ".cardDiv", function() {
       startX = 0;
     }
 });
-  
-})
 
