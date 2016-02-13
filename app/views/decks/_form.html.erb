@@ -24,14 +24,13 @@
     <%= f.label :category_id %><br>
     <%= f.select :category_id, @categories, :include_blank => true %>
   </div>
-
   <div class="field">
     <%= f.label :creation_date %><br>
-    <%= f.datetime_select :creation_date %>
+    <%= f.label DateTime.current %>
   </div>
-  <div class="field">
+ <div class="field">
     <%= f.label :last_modified %><br>
-    <%= f.datetime_select :last_modified %>
+    <%= f.label DateTime.current %>
   </div>
   <div class="actions">
     <%= f.submit %>
