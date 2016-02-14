@@ -57,7 +57,14 @@ var toggleCardSide = function () {
 
 };
 
+var showFirstCard = function () {
+  
+  $('.cardDiv').eq(0).fadeIn();
+  
+};
+
 $( document ).on( "click", ".cardSide" , toggleCardSide);
 $( document ).on( "click", "#nextCardButton" , nextCard);
 $( document ).on( "click", "#previousCardButton" , previousCard);
 $( document ).on( "click", "#render_partial_deck a" , jumpToCard);
+$( document ).on( "click", "#selectDeck" , showFirstCard);
