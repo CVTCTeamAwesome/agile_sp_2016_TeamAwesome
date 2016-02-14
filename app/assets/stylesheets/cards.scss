@@ -247,14 +247,14 @@ div.card_show ul.div_nav li {
 }
 
 .fa-chevron-left, .fa-chevron-right {
-  color: aqua;
-  text-shadow: 1px 0px 3px rgba(0, 0, 0, .5);
+  text-shadow: 1px 0px 3px rgba(0, 0, 0, 1);
 }
 
 .fa-chevron-left {
   position: absolute;
-  top: 240px;
-  left: -50px;
+  top: 460px;
+  left: 0px;
+  z-index: 999;
   background: -webkit-linear-gradient(right, #878787, #000);
   background: linear-gradient(right, #878787, #000);
   -webkit-background-clip: text;
@@ -263,8 +263,9 @@ div.card_show ul.div_nav li {
 
 .fa-chevron-right {
   position: absolute;
-  top: 240px;
-  right: 310px;
+  top: 460px;
+  left: 430px;
+  z-index: 999;
   background: -webkit-linear-gradient(left, #878787, #000);
   background: linear-gradient(left, #878787, #000);
   -webkit-background-clip: text;

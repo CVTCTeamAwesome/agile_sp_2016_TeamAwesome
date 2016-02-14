@@ -26,15 +26,15 @@ var jumpToCard = function (e) {
 };
 
 var nextCard = function () {
-
+  
   index++;
   resetCard();
   if (index > $('.cardDiv').length - 1) {
     index = 0;
-  }
+  };
   
-  hideShowCard;
-  
+  hideShowCard();
+  console.log('working'); 
 };
 
 var previousCard = function () {
@@ -43,10 +43,9 @@ var previousCard = function () {
   resetCard();
   if (index < 0) {
     index = $('.cardDiv').length - 1;
-  }
+  };
   
-  hideShowCard;
-
+  hideShowCard();
 };
 
 var toggleCardSide = function () {
@@ -63,7 +62,7 @@ var toggleCardSide = function () {
 
 var resetDeck = function () {
   index = 0;
-  hideShowCard;
+  hideShowCard();
 }
 
 $( document ).on( "click", ".cardSide" , toggleCardSide);
@@ -107,11 +106,12 @@ $target.bind(startEvent, function(e) {
       if (index + 1 < $('.cardDiv').length) {
         index ++;
         resetCard();
-        hideShowCard;
+        hideShowCard();
         
       } else {
-        resetDeck;  // This is not setup yet
-        alert("You have reached the last card in your deck!");
+       
+        resetDeck();  // This is not setup yet
+        
       }
 
     } else if (currentX > startX) {
@@ -120,11 +120,12 @@ $target.bind(startEvent, function(e) {
       if (index > 0) {
         index--;
         resetCard();
-        hideShowCard;
+        hideShowCard();
         
       } else {
+        
         index = $('.cardDiv').length;
-        alert("You are at the first card in your deck!");
+        
       }
 
     }
