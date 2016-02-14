@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>All Decks</h1>
+
+<div class="all_decks_overview">
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Number of Cards</th>
+        <th>Last Modified</th>
+        <th colspan="4"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @decks.each do |deck| %>
+        <tr>
+          <td><%= link_to deck.title, deck %></td>
+          <td><%= deck.description %></td>
+          <td><%= deck.category.name rescue "No category assigned"%></td>
+          <td><%= deck.cards.size %></td>
+          <td><%= time_ago_in_words(deck.last_modified) %> ago</td>
+          <td><%= link_to 'Edit', edit_deck_path(deck) %></td>
+          <td><%= link_to 'Delete', deck, method: :delete, data: { confirm: 'Are you sure you want to delete the deck ' + deck.title + '?' } %></td>
+          <td><%= link_to "Manage Cards", deck_cards_path(deck, @cards) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <ul class="div_nav">
+    <li><%= link_to 'New Deck', new_deck_path(@deck) %></li>
+  </ul>
+  
+</div>
