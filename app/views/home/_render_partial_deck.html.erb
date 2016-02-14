@@ -16,7 +16,6 @@
     <div class="buttons">
       <%= button_tag "Previous Card", :id => 'previousCardButton' %>
       <%= button_tag "Next Card", :id => 'nextCardButton' %>
-<!--      <%= button_tag "Show Answer", :id => 'showAnswerButton' %>-->
       <p id="showAnswerText">Question</p>
     </div>
   </div>
@@ -33,6 +32,7 @@
                font-size:<%= card.font_size %>;"><%= card.answer_text %></p>
         </div>
       </div>
+    <% end %>
   </div>
 
 <% else %>

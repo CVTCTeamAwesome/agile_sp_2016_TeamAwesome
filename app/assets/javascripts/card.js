@@ -59,6 +59,7 @@ var toggleCardSide = function () {
 
 var showFirstCard = function () {
   
+  console.log("AJAX CALL INSIDE IT");
   $('.cardDiv').eq(0).fadeIn();
   
 };
@@ -67,4 +68,4 @@ $( document ).on( "click", ".cardSide" , toggleCardSide);
 $( document ).on( "click", "#nextCardButton" , nextCard);
 $( document ).on( "click", "#previousCardButton" , previousCard);
 $( document ).on( "click", "#render_partial_deck a" , jumpToCard);
-$( document ).on( "click", "#selectDeck" , showFirstCard);
+$( document ).on( "ajaxStop", showFirstCard);
