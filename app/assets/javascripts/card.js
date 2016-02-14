@@ -76,7 +76,7 @@ var maxTime = 1000,
 // allow movement if < 1000 ms (1 sec)
 maxDistance = 50,
 // swipe movement of 50 pixels triggers the swipe
-$target = $('.cardContainer'),
+target = $(this),
 startX = 0,
 startTime = 0,
 touch = "ontouchend" in document,
@@ -84,7 +84,7 @@ startEvent = (touch) ? 'touchstart' : 'mousedown',
 moveEvent = (touch) ? 'touchmove' : 'mousemove',
 endEvent = (touch) ? 'touchend' : 'mouseup';
 
-$target.bind(startEvent, function(e) {
+target.bind(startEvent, function(e) {
   // prevent image drag (Firefox)
   e.preventDefault();
   startTime = e.timeStamp;
@@ -95,7 +95,7 @@ $target.bind(startEvent, function(e) {
 }).bind(moveEvent, function(e) {
   e.preventDefault();
   var currentX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
-      currentDistance = (startX === 0) ? 0 : Math.abs(currentX - startX);
+      currentDistance = (startX === 0) ? 0 : Math.abs(currentX - startX),
       // allow if movement < 1 sec
       currentTime = e.timeStamp;
   if (startTime !== 0 && currentTime - startTime < maxTime && currentDistance > maxDistance) {
@@ -104,15 +104,18 @@ $target.bind(startEvent, function(e) {
       // swipe left
 
       if (index + 1 < $('.cardDiv').length) {
-        index ++;
+        index += 1;
         resetCard();
-        hideShowCard();
-        
+
+        $('.cardDiv').hide();
+        $('.cardDiv').eq(index).fadeIn();
+        console.log(index);
+
       } else {
-       
-        resetDeck();  // This is not setup yet
-        
+        console.log(index + " The end");
       }
+
+
 
     } else if (currentX > startX) {
       // swipe right
@@ -120,12 +123,11 @@ $target.bind(startEvent, function(e) {
       if (index > 0) {
         index--;
         resetCard();
-        hideShowCard();
-        
+        $('.cardDiv').hide();
+        $('.cardDiv').eq(index).fadeIn();
+        console.log(index);
       } else {
-        
-        index = $('.cardDiv').length;
-        
+        console.log(index + " The beginning");
       }
 
     }
