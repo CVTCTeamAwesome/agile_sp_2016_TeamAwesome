@@ -8,6 +8,12 @@
   </head>
   <body>
     <div id="wrapper">
+      
+      <header id="main_title">
+        <h1>Flash Cards</h1>
+        <h2>by Team Awesome</h2>
+      </header>
+      
       <nav>
         <ul>
           <li><%=link_to_unless_current 'Home', root_url %></li>
@@ -16,7 +22,14 @@
           <li><%= link_to_unless_current 'Categories', categories_url %></li>
         </ul>
       </nav>
-      <%= yield %>
+      
+      <div id="main_nav_button">
+        <p>&#9776;</p>
+      </div>
+      
+      <main>
+        <%= yield %>
+      </main>
     </div>
 
   </body>
