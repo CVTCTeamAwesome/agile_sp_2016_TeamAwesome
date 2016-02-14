@@ -180,16 +180,16 @@ div.card_back:after {
 }
 
 p.card_side_description {
-  color: #fff;
+  background-color: #ffffff;
+  border-radius: .7em;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif; 
   font-size: 1em;
+  font-weight: 900;
   left: 4px;
-  opacity: 80%;
+  padding: 1px 4px;
   position: absolute;
-  text-shadow: 1px 1px 1px #000,
-    1px 0 1px #000,
-    -1px -1px 1px #000,
-    -1px 0 1px #000;
-  top: 2px;
+  top: 4px;
 }
 
 p.card_text {
