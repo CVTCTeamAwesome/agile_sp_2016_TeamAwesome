@@ -91,7 +91,7 @@ nav {
   box-shadow: 1px 1px 5px #777,
     1px 1px 3px #ccc inset,
     -1px -1px 3px #ccc inset;
-  display: none;
+  display: block;
   height: auto;
   margin: 2px auto 10px;
   position: absolute;
