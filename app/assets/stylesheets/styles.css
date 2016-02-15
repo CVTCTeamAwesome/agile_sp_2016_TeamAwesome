@@ -70,6 +70,7 @@ nav {
   text-align: center;
   top: 0.5em;
   width: 40%;
+  z-index: 10;
 }
 
 nav:focus,
@@ -271,10 +272,58 @@ div.deck_show p.title {
 }
 
 
+/* Views > Cards > New/Edit */
+div.card_editor {
+  background: #fff;
+  border: 1px solid #333;
+  border-radius: 1em;
+  box-shadow: 3px 3px 3px #333;
+  display: none;
+  /*float: none;*/
+  left: 0.125em;
+  min-width: 15em;
+  padding: 1em;
+  position: absolute;
+  top: 0.125em;
+  width: 15%;
+  z-index: 9;
+}
+
+div.card_editor div.field {
+  margin: 0;
+}
+
+div.card_editor:hover,
+div.card_editor:focus {
+  display: block;
+}
+
+div#card_editor_button {
+  border: 1px solid #999;
+  border-radius: 0.25em;
+  box-shadow: 2px 2px 4px #ccc inset,
+   -4px -4px 8px #ccc inset;
+  display: inline-block;
+  font-size: 2em;
+  margin: 0.25em auto 1em;
+  padding: 0.25em 0.5em;
+  text-transform: uppercase;
+}
+
+div#card_editor_button:hover,
+div#card_editor_button:focus {
+  background: #f00;
+  color: #fff;
+}
+
+div#card_editor_button:active ~ div.card_editor {
+  display: block;
+}
+
 /* Card's Actual On-Screen Presentation */
 div.card_display {
-  float: left;
-  min-width: 66%;
+  float: none;
+  min-width: 88%;
 }
 
 div.card_front,
@@ -289,6 +338,20 @@ div.card_back {
   position: relative;
   width: 45%;
 }
+
+/*
+div.card_front:hover,
+div.card_front:focus,
+div.card_back:hover,
+div.card_back:focus {
+  border: 1px solid #f00;
+  box-shadow: 2px 2px 4px #f00 inset,
+    -2px -2px 4px #f00 inset,
+    2px 2px 4px #000 inset,
+    -2px -2px 4px #000 inset,
+    3px 3px 3px #333;
+} */
+
 
 div.card_front:after,
 div.card_back:after {
@@ -333,18 +396,10 @@ div.cards_display_index {
   border: 1px solid #aaa;
   border-radius: 2em;
   box-shadow: 1px 1px 3px #ccc inset;
-  float: left;
-  margin: 1%;
+  float: none;
+  margin: 2em auto;
   padding: 1em;
-  width: 28%;
-}
-
-/* Views > Cards > New/Edit */
-div.card_editor {
-  float: left;
-  min-width: 15em;
-  padding: 1em;
-  width: 15%;
+  width: 88%;
 }
 
 /* Views > Cards > Show */

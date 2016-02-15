@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <div id="card_editor_button">
+    <p>Edit Contents</p>
+  </div>
+
   <div class="card_editor">
 
     <div class="field">
@@ -44,7 +48,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :font_style %>
+      <%= f.label :font_style %><br>
       <%= f.select :font_style, [ 'Arial', 'Comic Sans MS', 'Courier New', 'Georgia', 'Lucida Sans Typewriter', 'Palatino', 'Papyrus', 'Times New Roman', 'Trebushet MS', 'Verdana' ], :prompt => 'Select One' %>
     </div>
 
