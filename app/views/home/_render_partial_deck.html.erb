@@ -23,8 +23,8 @@
   <div>
     <% cardsArray.each_with_index do |card, index| %>
       <div class="cardDiv card_display <%= card.name %><%= card.id %>" style="display:none;">
-        <div style="<%= picture_styles card %>" class="cardSide card_front questionTextDiv">
-          <p class="card_text front" style="<%= questionsText card %>"><%= card.question_text %></p>
+        <div style="<%= displayPicture_styles card %>" class="cardSide card_front questionTextDiv">
+          <p class="card_text front" style="<%= displayQuestionsText card %>"><%= card.question_text %></p>
         </div>
         <div style="color:<%= card.foreground_color %>; display:none;
                background-color:<%= card.background_color %>;" class="cardSide card_back answerTextDiv">

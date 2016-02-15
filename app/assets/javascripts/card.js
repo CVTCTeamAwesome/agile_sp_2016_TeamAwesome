@@ -59,7 +59,6 @@ var toggleCardSide = function () {
 
 var showFirstCard = function () {
   
-  console.log("AJAX CALL INSIDE IT");
   $('.cardDiv').eq(0).fadeIn();
   
 };
