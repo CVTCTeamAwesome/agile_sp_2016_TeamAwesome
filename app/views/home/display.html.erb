@@ -9,7 +9,7 @@
   <section>
     <%= form_tag("/displayDeck", method: "post", :remote => true) do %>
       <%= select_tag 'deck_select', options_from_collection_for_select(@decks, "id", "title") %>
-      <%= button_tag "Select Deck" %>
+      <%= button_tag "Select Deck", :id => 'selectDeck' %>
     <% end %>
 
     <div id="render_partial_deck" style="display:none;"></div>

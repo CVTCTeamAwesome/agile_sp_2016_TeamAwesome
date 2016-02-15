@@ -370,8 +370,8 @@ p.card_text {
 
 p#showAnswerText {
   position: absolute;
-  top: 240px;
-  left: 150px;
+  left: 45%;
+  margin-bottom: 10px;
   font-size: 20px;
   font-weight: 800;
 }
@@ -522,8 +522,6 @@ div.card_show ul.div_nav li strong{
 .fa-chevron-left {
   position: absolute;
   top: 45%;
-  left: -55px;
-  z-index: 999;
   background: -webkit-linear-gradient(right, #878787, #000);
   background: linear-gradient(right, #878787, #000);
   -webkit-background-clip: text;
@@ -533,8 +531,6 @@ div.card_show ul.div_nav li strong{
 .fa-chevron-right {
   position: absolute;
   top: 45%;
-  right: -60px;
-  z-index: 999;
   background: -webkit-linear-gradient(left, #878787, #000);
   background: linear-gradient(left, #878787, #000);
   -webkit-background-clip: text;
@@ -544,3 +540,26 @@ div.card_show ul.div_nav li strong{
 //.fa-chevron-left:hover, .fa-chevron-right:hover {
 //  -webkit-text-fill-color: blue;
 //}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.cardSide {
+  border: 1px solid #000;
+  border-radius: 1em;
+  box-shadow: 3px 3px 3px #333;
+  display: inline-block;
+  margin-left: 25%;
+  max-height: 100%;
+  padding: 1%;
+  position: relative;
+  width: 45%;
+}
+
+.cardSide:after {
+  content: '';
+  display: block;
+  padding-top: 150%;
+}
