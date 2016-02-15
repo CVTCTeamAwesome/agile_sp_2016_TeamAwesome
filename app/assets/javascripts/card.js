@@ -28,10 +28,10 @@ var jumpToCard = function (e) {
 var nextCard = function () {
   
   index++;
-  resetCard();
   if (index > $('.cardDiv').length - 1) {
     index = 0;
-  };
+  }
+  resetCard();
   
   hideShowCard();
   console.log('working'); 
@@ -43,7 +43,7 @@ var previousCard = function () {
   resetCard();
   if (index < 0) {
     index = $('.cardDiv').length - 1;
-  };
+  }
   
   hideShowCard();
 };
@@ -60,15 +60,16 @@ var toggleCardSide = function () {
 
 };
 
-var resetDeck = function () {
-  index = 0;
-  hideShowCard();
-}
-
+var showFirstCard = function () {
+  
+  $('.cardDiv').eq(0).fadeIn();
+  
+};
 $( document ).on( "click", ".cardSide" , toggleCardSide);
 $( document ).on( "click", ".fa-chevron-right" , nextCard);
 $( document ).on( "click", ".fa-chevron-left" , previousCard);
 $( document ).on( "click", "#render_partial_deck a" , jumpToCard);
+$( document ).on( "ajaxStop", showFirstCard);
 
 //http://wowmotty.blogspot.com/2011/10/adding-swipe-support.html
 
@@ -76,7 +77,6 @@ var maxTime = 1000,
 // allow movement if < 1000 ms (1 sec)
 maxDistance = 50,
 // swipe movement of 50 pixels triggers the swipe
-target = $(this),
 startX = 0,
 startTime = 0,
 touch = "ontouchend" in document,
@@ -102,36 +102,13 @@ $( document ).on(startEvent, ".cardSide", function(e) {
 
     if (currentX < startX) {
       // swipe left
-
-      if (index + 1 < $('.cardDiv').length) {
-        index += 1;
-        resetCard();
-
-        hideShowCard();
-        console.log(index);
-
-      } else {
-        console.log(index + " The end");
-      }
-
-
-
+      nextCard();
     } else if (currentX > startX) {
       // swipe right
-
-      if (index > 0) {
-        index--;
-        resetCard();
-        hideShowCard();
-        console.log(index);
-      } else {
-        console.log(index + " The beginning");
-      }
-
+      previousCard();
     }
 
     startTime = 0;
     startX = 0;
   }
 });
-
