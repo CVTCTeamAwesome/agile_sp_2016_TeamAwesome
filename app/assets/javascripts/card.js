@@ -60,6 +60,12 @@ var toggleCardSide = function () {
 
 };
 
+var showFirstCard = function () {
+  
+  $('.cardDiv').eq(0).fadeIn();
+  
+};
+
 var resetDeck = function () {
   index = 0;
   hideShowCard();
@@ -69,6 +75,7 @@ $( document ).on( "click", ".cardSide" , toggleCardSide);
 $( document ).on( "click", ".fa-chevron-right" , nextCard);
 $( document ).on( "click", ".fa-chevron-left" , previousCard);
 $( document ).on( "click", "#render_partial_deck a" , jumpToCard);
+$( document ).on( "ajaxStop", showFirstCard);
 
 //http://wowmotty.blogspot.com/2011/10/adding-swipe-support.html
 
@@ -136,4 +143,3 @@ target.bind(startEvent, function(e) {
     startX = 0;
   }
 });
-
