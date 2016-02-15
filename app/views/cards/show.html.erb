@@ -3,16 +3,16 @@
 <div class="card_show">
   
   <ul class="div_nav">
-    <li>Card ID: <%= @card.id %></li>
-    <li>Card Name: <%= @card.name %></li>
-    <li>Visible: <%= @card.visible %></li>
+    <li><strong>Card ID:</strong> <%= @card.id %></li>
+    <li><strong>Card Name:</strong> <%= @card.name %></li>
+    <li><Strong>Visible:</strong> <%= @card.visible %></li>
   </ul>
 
   <%= render 'card_display' %>
 
   <ul class="div_nav center">
-    <li><%= link_to 'Edit', edit_deck_card_path(@deck, @card) %></li>
-    <li><%= link_to 'Back', deck_cards_path(@deck, @card) %></li>
+    <li><%= link_to 'Edit Card', edit_deck_card_path(@deck, @card) %></li>
+    <li><%= link_to 'Back to List', deck_cards_path(@deck, @card) %></li>
   </ul>
 
 </div>
