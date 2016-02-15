@@ -541,6 +541,30 @@ div.card_show ul.div_nav li strong{
   -webkit-text-fill-color: transparent;
 }
 
-//.fa-chevron-left:hover, .fa-chevron-right:hover {
-//  -webkit-text-fill-color: blue;
-//}
+/*
+.fa-chevron-left:hover, .fa-chevron-right:hover {
+  -webkit-text-fill-color: blue;
+}*/
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.cardSide {
+  border: 1px solid #000;
+  border-radius: 1em;
+  box-shadow: 3px 3px 3px #333;
+  display: inline-block;
+  margin-left: 25%;
+  max-height: 100%;
+  padding: 1%;
+  position: relative;
+  width: 45%;
+}
+
+.cardSide:after {
+  content: '';
+  display: block;
+  padding-top: 150%;
+}
