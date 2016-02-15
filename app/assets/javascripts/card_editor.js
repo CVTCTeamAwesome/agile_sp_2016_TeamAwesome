@@ -10,30 +10,17 @@ $( document ).on("change", "input#card_background_color", function () {
 });
 
 $( document ).on("change", "#card_font_style", function () {
- $("p.card_text").css("font-family", $( this ).val());
+  $("p.card_text").css("font-family", $( this ).val());
 });
 
 $( document ).on("change", "#card_font_size", function () {
- $("p.card_text").css("font-size", $( this ).val());
+  $("p.card_text").css("font-size", $( this ).val());
 });
     
-$( document ).on ( "keyup", "textarea#card_question_text", function () {
-    $("div.card_front p.card_text").html($( this ).val());
+$( document ).on("keyup", "textarea#card_question_text", function () {
+  $("div.card_front p.card_text").html($( this ).val());
 });
 
-$( document ).on ( "keyup", "textarea#card_answer_text", function () {
-    $("div.card_back p.card_text").html($( this ).val());
+$( document ).on("keyup", "textarea#card_answer_text", function () {
+  $("div.card_back p.card_text").html($( this ).val());
 });
-
-// code to update image after one selected, not working right now due
-// to inability to access the full file path; looking into this
-//$( document ).on ( "change", "input#card_picture", function () {
-//  var image = $( this ).val();
-//  image = image.replace("C:\\fakepath\\", "");
-//  $("div.card_front").css({
-//    "background" : "url(\"" + image + "\") no-repeat center",
-//    "background-size" : "contain"
-//  });
-//});
-    
-

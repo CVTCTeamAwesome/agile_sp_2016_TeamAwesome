@@ -5,6 +5,7 @@ body {
 div#wrapper {
   background: #fff;
   box-shadow: 3px 3px 6px #333;
+  display: block;
   min-height: 90%;
   margin: 1% auto;
   overflow: hidden;
@@ -409,7 +410,7 @@ div.card_show ul.div_nav li strong{
 
 
 /* ---- 320 x 480 screen in landscape --------- */
-@media screen and (orientation:landscape) {
+@media only screen and (orientation:landscape) {
   
   div.cards_display_index {
     width: 45%;
@@ -423,7 +424,7 @@ div.card_show ul.div_nav li strong{
 
 
 /* ---- 768 wide screen in portrait ----------- */
-@media screen and (min-width: 768px) {
+@media only screen and (min-device-width: 768px) {
   
   body {
     font-size: 1em;
@@ -470,7 +471,7 @@ div.card_show ul.div_nav li strong{
 
 
 /* ---- 800 wide screen in landscape --------- */
-@media screen and (min-width: 800px) and (orientation: landscape) {
+@media only screen and (min-device-width: 800px) {
   
   img.team_awesome_logo {
     top: 0;
@@ -537,9 +538,11 @@ div.card_show ul.div_nav li strong{
   -webkit-text-fill-color: transparent;
 }
 
-//.fa-chevron-left:hover, .fa-chevron-right:hover {
-//  -webkit-text-fill-color: blue;
-//}
+/*
+.fa-chevron-left:hover, .fa-chevron-right:hover {
+  -webkit-text-fill-color: blue;
+}
+*/
 
 .cardContainer {
   display: flex;

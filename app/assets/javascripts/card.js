@@ -22,7 +22,6 @@ var jumpToCard = function (e) {
   resetCard();
   $clickedCard.fadeIn();
   index = $clickedCard.index();
-  
 };
 
 var nextCard = function () {
@@ -84,31 +83,3 @@ startEvent = (touch) ? 'touchstart' : 'mousedown',
 moveEvent = (touch) ? 'touchmove' : 'mousemove',
 endEvent = (touch) ? 'touchend' : 'mouseup';
 
-$( document ).on(startEvent, ".cardSide", function(e) {
-  // prevent image drag (Firefox)
-  e.preventDefault();
-  startTime = e.timeStamp;
-  startX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
-}).bind(endEvent, function(e) {
-  startTime = 0;
-  startX = 0;
-}).bind(moveEvent, function(e) {
-  e.preventDefault();
-  var currentX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
-      currentDistance = (startX === 0) ? 0 : Math.abs(currentX - startX),
-      // allow if movement < 1 sec
-      currentTime = e.timeStamp;
-  if (startTime !== 0 && currentTime - startTime < maxTime && currentDistance > maxDistance) {
-
-    if (currentX < startX) {
-      // swipe left
-      nextCard();
-    } else if (currentX > startX) {
-      // swipe right
-      previousCard();
-    }
-
-    startTime = 0;
-    startX = 0;
-  }
-});
