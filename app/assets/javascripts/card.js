@@ -84,7 +84,7 @@ startEvent = (touch) ? 'touchstart' : 'mousedown',
 moveEvent = (touch) ? 'touchmove' : 'mousemove',
 endEvent = (touch) ? 'touchend' : 'mouseup';
 
-target.bind(startEvent, function(e) {
+$( document ).on(startEvent, ".cardSide", function(e) {
   // prevent image drag (Firefox)
   e.preventDefault();
   startTime = e.timeStamp;
