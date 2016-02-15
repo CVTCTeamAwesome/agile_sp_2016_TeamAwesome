@@ -25,7 +25,7 @@ a {
     color: #666;
   }
 
-  &:hover {
+   &.no-touch :hover {
     color: #fff;
     background-color: #000;
   }

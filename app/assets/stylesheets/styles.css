@@ -511,3 +511,36 @@ div.card_show ul.div_nav li strong{
     margin: 0 3em;
   }
 }
+
+
+
+/* --- Views > Home > Display > Forward and Back Arrows --- */
+.fa-chevron-left, .fa-chevron-right {
+  text-shadow: 1px 0px 3px rgba(0, 0, 0, 1);
+}
+
+.fa-chevron-left {
+  position: absolute;
+  top: 45%;
+  left: -55px;
+  z-index: 999;
+  background: -webkit-linear-gradient(right, #878787, #000);
+  background: linear-gradient(right, #878787, #000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-chevron-right {
+  position: absolute;
+  top: 45%;
+  right: -60px;
+  z-index: 999;
+  background: -webkit-linear-gradient(left, #878787, #000);
+  background: linear-gradient(left, #878787, #000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+//.fa-chevron-left:hover, .fa-chevron-right:hover {
+//  -webkit-text-fill-color: blue;
+//}

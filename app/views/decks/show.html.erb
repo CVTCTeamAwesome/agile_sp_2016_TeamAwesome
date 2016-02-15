@@ -12,6 +12,20 @@
   </p>
 
   <p>
+    <strong>Category:</strong>
+    <% if @deck.category.present? %>
+      <%= @deck.category.name %>
+    <% else %>
+      No Category assigned
+    <% end %>
+  </p>
+  
+  <p>
+    <strong>Number of Cards:</strong>
+    <%= @deck.cards.size %>
+  </p>
+  
+  <p>
     <strong>Creation date:</strong>
     <%= @deck.creation_date %>
   </p>
@@ -20,6 +34,8 @@
     <strong>Last modified:</strong>
     <%= @deck.last_modified %>
   </p>
+  
+  
   
   <ul class="div_nav left">
     <li><%= link_to 'Edit Deck', edit_deck_path(@deck) %></li>

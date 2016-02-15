@@ -1,56 +1,65 @@
 <% cardsArray = Array.new %>
 
-<% @selectedDeck.cards.each do |card| %>
+<div id="jumpToCard">
+  <% @selectedDeck.cards.each do |card| %>
   <% if card.visible == true %>
     <% cardsArray.push(card) %>
     <a href="#" class="<%= cardsArray.last.name %><%= cardsArray.last.id %>"><%= cardsArray.last.name %></a>
   <% end %>
 <% end %>
-  
-<br>
+</div>  
+
 
 <% if cardsArray.size > 0 %> 
 
-  <div class="current_deck">
+<div class="current_deck">
     <h3><%= @selectedDeck.title %> - Current Card:</h3>
     <div class="buttons">
-      <%= button_tag "Previous Card", :id => 'previousCardButton' %>
-      <%= button_tag "Next Card", :id => 'nextCardButton' %>
-<!--      <%= button_tag "Show Answer", :id => 'showAnswerButton' %>-->
+      
+      
       <p id="showAnswerText">Question</p>
     </div>
   </div>
 
-  <div>
+  <div class="cardContainer">
     <% cardsArray.each_with_index do |card, index| %>
-      <% if index == 0 %>
+    <% if index == 0 %>
         <div class="cardDiv card_display <%= card.name %><%= card.id %>">
           <div style="<%= picture_styles card %>" class="cardSide card_front questionTextDiv">
+            <i class="fa fa-chevron-left fa-5x faa-pulse animated-hover"></i>
             <% if card.picture.url === "" %>
               <p class="card_text front" style="font-family:<%= card.font_style %>;
                  font-size:<%= card.font_size %>;
                 "><%= card.question_text %></p>
             <% end %>
+            <i class="fa fa-chevron-right fa-5x faa-pulse animated-hover"></i>
           </div>
           <div style="color:<%= card.foreground_color %>; display:none;
                  background-color:<%= card.background_color %>;" class="cardSide card_back answerTextDiv">
+            <i class="fa fa-chevron-left fa-5x faa-pulse animated-hover"></i>
             <p class="card_text" style="font-family:<%= card.font_style %>;
                  font-size:<%= card.font_size %>;"><%= card.answer_text %></p>
+            <i class="fa fa-chevron-right fa-5x faa-pulse animated-hover"></i>
           </div>
+          
         </div>
       <% else %>
         <div class="cardDiv card_display <%= card.name %><%= card.id %>" style="display:none;">
           <div style="<%= picture_styles card %>" class="cardSide card_front questionTextDiv">
+            <i class="fa fa-chevron-left fa-5x faa-pulse animated-hover"></i>
             <% if card.picture.url === "" %>
               <p class="card_text front" style="font-family:<%= card.font_style %>;
                  font-size:<%= card.font_size %>;
                 "><%= card.question_text %></p>
-            <% end %>
+            <% end %> 
+            <i class="fa fa-chevron-right fa-5x faa-pulse animated-hover"></i>
           </div>
           <div style="color:<%= card.foreground_color %>; display:none;
                  background-color:<%= card.background_color %>;" class="cardSide card_back answerTextDiv">
+            <i class="fa fa-chevron-left fa-5x faa-pulse animated-hover"></i>
             <p class="card_text" style="font-family:<%= card.font_style %>;
                  font-size:<%= card.font_size %>;"><%= card.answer_text %></p>
+            <i class="fa fa-chevron-right fa-5x faa-pulse animated-hover"></i>
           </div>
         </div>
       <% end %>
