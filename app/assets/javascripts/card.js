@@ -107,8 +107,7 @@ $( document ).on(startEvent, ".cardSide", function(e) {
         index += 1;
         resetCard();
 
-        $('.cardDiv').hide();
-        $('.cardDiv').eq(index).fadeIn();
+        hideShowCard();
         console.log(index);
 
       } else {
@@ -123,8 +122,7 @@ $( document ).on(startEvent, ".cardSide", function(e) {
       if (index > 0) {
         index--;
         resetCard();
-        $('.cardDiv').hide();
-        $('.cardDiv').eq(index).fadeIn();
+        hideShowCard();
         console.log(index);
       } else {
         console.log(index + " The beginning");
