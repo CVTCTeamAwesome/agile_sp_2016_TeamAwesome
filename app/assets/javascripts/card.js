@@ -91,7 +91,7 @@ startEvent = (touch) ? 'touchstart' : 'mousedown',
 moveEvent = (touch) ? 'touchmove' : 'mousemove',
 endEvent = (touch) ? 'touchend' : 'mouseup';
 
-target.bind(startEvent, function(e) {
+$( document ).on(startEvent, ".cardSide", function(e) {
   // prevent image drag (Firefox)
   e.preventDefault();
   startTime = e.timeStamp;
@@ -114,8 +114,7 @@ target.bind(startEvent, function(e) {
         index += 1;
         resetCard();
 
-        $('.cardDiv').hide();
-        $('.cardDiv').eq(index).fadeIn();
+        hideShowCard();
         console.log(index);
 
       } else {
@@ -130,8 +129,7 @@ target.bind(startEvent, function(e) {
       if (index > 0) {
         index--;
         resetCard();
-        $('.cardDiv').hide();
-        $('.cardDiv').eq(index).fadeIn();
+        hideShowCard();
         console.log(index);
       } else {
         console.log(index + " The beginning");
