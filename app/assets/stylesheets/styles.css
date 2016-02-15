@@ -13,6 +13,8 @@ div#wrapper {
   width: 95%;
 }
 
+
+/* All Views > Submit Button */
 input[type=submit] {
   background: #fff;
   border: 1px solid #999;
@@ -29,7 +31,8 @@ input[type=submit]:focus {
   color: #fff;
 }
 
-/* Main Header in Application Layout */
+
+/* App Layout > Header */
 header#main_title {
   background: #000;
   border-radius: 0.25em;
@@ -51,7 +54,7 @@ header#main_title h2 {
 }
 
 
-/* Main Layout Nav */
+/* App Layout > Nav */
 nav {
   background: #fff;
   border: 1px solid #999;
@@ -92,7 +95,7 @@ nav a {
 }
 
 
-/* Main Nav Button for Mobile */
+/* App Layout > Nav Button for Mobile Popup */
 div#main_nav_button {
   background: #fff;
   border: 1px solid #999;
@@ -116,7 +119,6 @@ div#main_nav_button:active ~ nav {
   display: block;
 }
 
-
 div#main_nav_button p {
   color: #000;
   font-size: 2.5em;
@@ -124,6 +126,7 @@ div#main_nav_button p {
 }
 
 
+/* App Layout > Main Section */
 main {
   margin: 0.375em;
 }
@@ -135,11 +138,14 @@ img.team_awesome_logo {
   width: 100%;
 }
 
+
+/* Views > Decks > Index */
 div.deck_index {
   overflow-x: scroll;
 }
 
-/* Views > (ALL VIEWS) > Index */
+
+/* All Pages > Table */
 table {
   background: #efefef;
   box-shadow: 2px 2px 4px #ccc;
@@ -193,6 +199,8 @@ div.home_display div.current_deck div.buttons {
 }
 
 
+
+
 ul.card_name {
   margin: 1em;
   text-align: center;
@@ -214,7 +222,7 @@ ul.card_name li a {
 }
 
 
-/* Views > (ALL VIEWS) > Sub-Nav Divs */
+/* All Views > Sub-Nav Div */
 ul.div_nav {
   margin: 1em 0;
 }
@@ -252,7 +260,7 @@ ul.div_nav.right li {
 }
 
 
-/* Views > Decks > Show */
+/* Decks > Show */
 div.deck_show p{
   font-size: 1.25em;
   margin: 0.5em 0;
