@@ -51,6 +51,47 @@ header#main_title h2 {
 }
 
 
+/* Main Layout Nav */
+nav {
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 1em;
+  box-shadow: 1px 1px 5px #777,
+    1px 1px 3px #ccc inset,
+    -1px -1px 3px #ccc inset;
+  display: none;
+  height: auto;
+  margin: 2px auto 10px;
+  position: absolute;
+  right: 0.75em;
+  text-align: center;
+  top: 0.5em;
+  width: 40%;
+}
+
+nav:focus,
+nav:hover {
+  display: block;
+}
+
+nav ul li {
+  font-size: 1.25em;
+  list-style: none;
+  margin: 1em 0.5em;
+}
+
+nav a {
+  border: 1px solid #999;
+  border-radius: 5em;
+  box-shadow: 2px 2px 4px #ccc inset,
+    -4px -4px 8px #ccc inset;
+  margin: 3em 0;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  width: 100%;
+}
+
+
 /* Main Nav Button for Mobile */
 div#main_nav_button {
   background: #fff;
@@ -83,46 +124,6 @@ div#main_nav_button p {
 }
 
 
-/* Main Layout Nav */
-nav {
-  background: #fff;
-  border: 1px solid #999;
-  border-radius: 1em;
-  box-shadow: 1px 1px 5px #777,
-    1px 1px 3px #ccc inset,
-    -1px -1px 3px #ccc inset;
-  display: block;
-  height: auto;
-  margin: 2px auto 10px;
-  position: absolute;
-  right: 0.75em;
-  text-align: center;
-  top: 0.5em;
-  width: 40%;
-}
-
-nav:focus,
-nav:hover {
-  display: block;
-}
-
-nav ul li {
-  font-size: 1.25em;
-  list-style: none;
-  margin: 1em 0.5em;
-}
-
-nav a {
-  border: 1px solid #999;
-  border-radius: 5em;
-  box-shadow: 2px 2px 4px #ccc inset,
-    -4px -4px 8px #ccc inset;
-  margin: 3em 0;
-  padding: 0.25em 0.5em;
-  text-decoration: none;
-  width: 100%;
-}
-
 main {
   margin: 0.375em;
 }
@@ -133,6 +134,42 @@ img.team_awesome_logo {
   max-width: 640px; 
   width: 100%;
 }
+
+div.deck_index {
+  overflow-x: scroll;
+}
+
+/* Views > (ALL VIEWS) > Index */
+table {
+  background: #efefef;
+  box-shadow: 2px 2px 4px #ccc;
+}
+
+table th {
+  background: #cecece;
+}
+
+table th,
+table td {
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  padding: 0.125em 0.5em;
+}
+
+table th:last-of-type {
+  background: #ffffff;
+  border-right: none;
+  border-top: none;
+  box-shadow: 6px 0 4px #fff,
+    0 -6px 4px #fff,
+    4px -4px 4px #fff;
+}
+
+table td:first-of-type {
+  font-weight: bold;
+}
+
+
 
 /* Views > Home > Display */
 div.home_display section {
