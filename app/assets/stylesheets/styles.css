@@ -133,6 +133,7 @@ main {
 }
 
 img.team_awesome_logo {
+  display: block;
   height: auto;
   margin: 1em auto;
   max-width: 640px; 
@@ -160,6 +161,7 @@ table th,
 table td {
   border-top: 1px solid #ccc;
   border-left: 1px solid #ccc;
+  font-size: 0.88em;
   padding: 0.125em 0.5em;
 }
 
@@ -198,8 +200,6 @@ div.home_display div.current_deck h3 {
 div.home_display div.current_deck div.buttons {
   margin: 1em 0 3em 6em;
 }
-
-
 
 
 ul.card_name {
@@ -339,20 +339,6 @@ div.card_back {
   width: 45%;
 }
 
-/*
-div.card_front:hover,
-div.card_front:focus,
-div.card_back:hover,
-div.card_back:focus {
-  border: 1px solid #f00;
-  box-shadow: 2px 2px 4px #f00 inset,
-    -2px -2px 4px #f00 inset,
-    2px 2px 4px #000 inset,
-    -2px -2px 4px #000 inset,
-    3px 3px 3px #333;
-} */
-
-
 div.card_front:after,
 div.card_back:after {
   content: '';
@@ -404,7 +390,6 @@ div.cards_display_index {
 
 /* Views > Cards > Show */
 div.card_show {
-  border: 1px solid #f00;
   margin: 0.125em auto;
 }
 
@@ -414,6 +399,115 @@ div.card_show div.card_back {
   width: 45%;
 }
 
+div.card_show ul.div_nav li {
+  display: block;
+}
+
 div.card_show ul.div_nav li strong{
   text-decoration: underline;
+}
+
+
+/* ---- 320 x 480 screen in landscape --------- */
+@media screen and (orientation:landscape) {
+  
+  div.cards_display_index {
+    width: 45%;
+  }
+  
+  img.team_awesome_logo {
+    position: relative;
+    top: -6em;
+  }
+}
+
+
+/* ---- 768 wide screen in portrait ----------- */
+@media screen and (min-width: 768px) {
+  
+  body {
+    font-size: 1em;
+  }
+  nav {
+    display: inline;
+    position: relative;
+  }
+  
+  nav:hover,
+  nav:focus {
+    display: inline;
+  }
+  
+  nav ul li {
+    display: inline;
+  }
+  
+  div#main_nav_button {
+    display: none;
+  }
+  
+  div.card_show ul.div_nav {
+    font-size: 1.25em;
+    margin: 2%;
+    text-align: center;
+  }
+  
+  div.card_show ul.div_nav li {
+    display: inline-block;
+  }
+  
+  div.card_show ul.div_nav li strong{
+  text-decoration: underline;
+  }
+  
+  div.cards_display_index {
+    float: left;
+    margin: 1em;
+    width: 40%;
+  }
+}
+
+
+
+/* ---- 800 wide screen in landscape --------- */
+@media screen and (min-width: 800px) and (orientation: landscape) {
+  
+  img.team_awesome_logo {
+    top: 0;
+  }
+  
+  table th,
+  table td {
+    padding: 0.66em;
+  }
+  div#card_editor_button {
+    display: none;
+  }
+  
+  div.card_editor {
+    border: none;
+    box-shadow: none;
+    display: block;
+    float: left;
+    position: relative;
+  }
+  
+  div.card_editor div.field {
+    margin: 0.5em;
+    width: 15%;
+  }
+  
+  div.card_display {
+    float: left;
+    min-width: 75%;
+  }
+  
+  div.cards_display_index {
+    margin: 0.5em;
+    width: 25%;
+  }
+  
+  div.card_show ul.div_nav li {
+    margin: 0 3em;
+  }
 }
