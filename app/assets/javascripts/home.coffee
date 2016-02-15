@@ -3,7 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 `
-alert("running home.js");
 var index = 0;
 
 var resetCard = function () {

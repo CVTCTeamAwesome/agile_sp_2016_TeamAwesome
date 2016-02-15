@@ -4,7 +4,6 @@
 
 # Auto-update Card Editing page on attribute values changed
 `
-alert("running cards.js");
 $( document ).on("change", "input#card_foreground_color", function () {
   $("div.card_front p.card_text").css("color", $( this ).val());
   $("div.card_back p.card_text").css("color", $( this ).val());
