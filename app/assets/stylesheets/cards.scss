@@ -37,12 +37,18 @@ nav a {
 
 
 /* Views > Home > Display */
+
+#jumpToCard a:active {
+  color:blue;
+} 
+
 div.home_display section {
   margin: 1em;
 }
 
 div.home_display div.current_deck {
   margin: 1em auto;
+  padding-bottom: 30px;
 }
 
 div.home_display div.current_deck h3 {
@@ -147,7 +153,9 @@ div.deck_show p.title {
 
 /* Card's Actual On-Screen Presentation */
 div.card_display {
+  position: relative;
   float: left;
+  margin-left: 30px;
   min-width: 66%;
 }
 
@@ -188,7 +196,7 @@ p.card_text {
   line-height: normal;
   position: absolute;
   text-align: center;
-  top: 35%;
+  top: 45%;
   width: 95%;
   word-break: break-all;
 }
@@ -196,7 +204,7 @@ p.card_text {
 p#showAnswerText {
   position: absolute;
   top: 240px;
-  left: 150px;
+  left: 180px;
   font-size: 20px;
   font-weight: 800;
 }
@@ -237,3 +245,33 @@ div.card_show ul.div_nav li {
   font-size: 1.5em;
   margin: 2%;
 }
+
+.fa-chevron-left, .fa-chevron-right {
+  text-shadow: 1px 0px 3px rgba(0, 0, 0, 1);
+}
+
+.fa-chevron-left {
+  position: absolute;
+  top: 460px;
+  left: 0px;
+  z-index: 999;
+  background: -webkit-linear-gradient(right, #878787, #000);
+  background: linear-gradient(right, #878787, #000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-chevron-right {
+  position: absolute;
+  top: 460px;
+  left: 430px;
+  z-index: 999;
+  background: -webkit-linear-gradient(left, #878787, #000);
+  background: linear-gradient(left, #878787, #000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+//.fa-chevron-left:hover, .fa-chevron-right:hover {
+//  -webkit-text-fill-color: blue;
+//}

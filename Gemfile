@@ -5,6 +5,7 @@ gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523b
 gem 'aws-sdk'
 gem 'rails_12factor', group: :production
 gem 'figaro'
+gem 'capybara'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
