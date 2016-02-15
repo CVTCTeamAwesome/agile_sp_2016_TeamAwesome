@@ -252,8 +252,8 @@ div.card_show ul.div_nav li {
 
 .fa-chevron-left {
   position: absolute;
-  top: 460px;
-  left: 0px;
+  top: 45%;
+  left: -55px;
   z-index: 999;
   background: -webkit-linear-gradient(right, #878787, #000);
   background: linear-gradient(right, #878787, #000);
@@ -263,8 +263,8 @@ div.card_show ul.div_nav li {
 
 .fa-chevron-right {
   position: absolute;
-  top: 460px;
-  left: 430px;
+  top: 45%;
+  right: -60px;
   z-index: 999;
   background: -webkit-linear-gradient(left, #878787, #000);
   background: linear-gradient(left, #878787, #000);
