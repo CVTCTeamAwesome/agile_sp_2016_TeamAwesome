@@ -1,8 +1,14 @@
 <h1>Flash Cards</h1>
 <br>
+<% if user_signed_in? %>
+  <p>You are logged in as <%= current_user.email %></p>
+<% end %>
 
-<%= button_to 'New User Session', new_user_session_path %>
+<%= button_to 'Login', new_user_session_path %>
 <%= button_to 'New User Registration', user_registration_path %>
+<%= button_to 'Sign Out', destroy_user_session_path, :method => :delete %>
+<!--
 <p>BY</p>
 <br>
-<%= image_tag("team_awesome.png", :alt => "Team Awesome", :class => "team_awesome_logo") %>
+-->
+<!--<%= image_tag("team_awesome.png", :alt => "Team Awesome", :class => "team_awesome_logo") %>-->
