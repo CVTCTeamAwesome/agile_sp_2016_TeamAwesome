@@ -23,5 +23,8 @@ module Flashcard
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.serve_static_files = true
+    
+    # Forces application to not access the DB or load models when precompiling your assets for Devise.
+    config.assets.initialize_on_precompile = false
   end
 end
