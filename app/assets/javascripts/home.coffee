@@ -72,7 +72,7 @@ var showFirstCard = function () {
 };
 
 $( document ).on( "click", ".cardSide" , toggleCardSide);
-$( document ).on( "tap", ".cardSide", toggleCardSide);
+$( document ).on( "touchstart", ".cardSide", toggleCardSide);
 $( document ).on( "click", ".fa-chevron-right" , nextCard);
 $( document ).on( "click", ".fa-chevron-left" , previousCard);
 $( document ).on( "click", "#render_partial_deck a" , jumpToCard);

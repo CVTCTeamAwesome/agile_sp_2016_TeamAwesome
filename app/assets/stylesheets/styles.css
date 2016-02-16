@@ -134,17 +134,20 @@ nav a {
 
 /* App Layout > Nav Button for Mobile Popup */
 div#main_nav_button {
-  background: #fff;
+  /*background: #fff;
   border: 1px solid #999;
   border-radius: 2em;
   box-shadow: 1px 1px 5px #777,
     1px 1px 3px #ccc inset,
     -1px -1px 3px #ccc inset;
-  opacity: 0.33;
-  padding: 0.125em 0.2em 0.9em 0.25em;
+  opacity: 0.5;
+  padding: 0.25em 0.2em 0.9em 0.25em;*/
+  opacity: 0.66;
   position: absolute;
   right: 0.125em;
+  right: 0.5em;
   top: 0.125em;
+  top: 0.66em;
 }
 
 div#main_nav_button:focus,
@@ -158,7 +161,7 @@ div#main_nav_button:active ~ nav {
 
 div#main_nav_button p {
   color: #000;
-  font-size: 2.5em;
+  font-size: 3em;
   font-weight: bold;
 }
 
