@@ -13,7 +13,7 @@ module ApplicationHelper
       "color:#{@card.foreground_color};
        background-color:#{@card.background_color};
        font-family:#{@card.font_style};
-       font-size:#{@card.font_size};"
+       font-size:#{@card.font_size}vw;"
     end
   end
 
@@ -21,12 +21,12 @@ module ApplicationHelper
   def cardText
     if @card.picture?
       "color:#{@card.foreground_color};
-       font-size:#{@card.font_size};
+       font-size:#{@card.font_size}vw;
        font-family:#{@card.font_style};
        top: 75%"
     else
       "color:#{@card.foreground_color};
-       font-size:#{@card.font_size};
+       font-size:#{@card.font_size}vw;
        font-family:#{@card.font_style};"
     end
   end
@@ -65,12 +65,12 @@ module ApplicationHelper
     if card.picture?
       "color:#{card.foreground_color};
        font-family:#{card.font_style};
-       font-size:#{card.font_size};
+       font-size:#{card.font_size}vw;
        top: 75%"
     else
       "color:#{card.foreground_color};
        font-family:#{card.font_style};
-       font-size:#{card.font_size};"
+       font-size:#{card.font_size}vw;"
     end
   end
   
@@ -88,7 +88,7 @@ module ApplicationHelper
       "color:#{card.foreground_color};
        background-color:#{card.background_color};
        font-family:#{card.font_style};
-       font-size:#{card.font_size};"
+       font-size:#{card.font_size}vw;"
     end
   end
   

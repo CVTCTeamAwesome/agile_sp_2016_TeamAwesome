@@ -298,20 +298,24 @@ div.deck_show p.title {
 }
 
 
+/* Views > Cards > _form */
+div.card_edit,
+div.card_new {
+  min-height: 420px;
+}
+
 /* Views > Cards > New/Edit */
 div.card_editor {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.88);
   border: 1px solid #333;
   border-radius: 1em;
   box-shadow: 3px 3px 3px #333;
   display: none;
-  /*float: none;*/
-  left: 0.125em;
-  min-width: 15em;
+  margin: 0 auto;
   padding: 1em;
   position: absolute;
   top: 0.125em;
-  width: 15%;
+  width: 88%;
   z-index: 9;
 }
 
@@ -472,6 +476,10 @@ div.card_show ul.div_nav li strong{
     display: none;
   }
   
+  div.card_editor {
+    width: 50%;
+  }
+  
   div.card_show ul.div_nav {
     font-size: 1.25em;
     margin: 2%;
@@ -495,8 +503,8 @@ div.card_show ul.div_nav li strong{
 
 
 
-/* ---- 800 wide screen in landscape --------- */
-@media only screen and (min-device-width: 800px) {
+/* ---- 1024 wide screen in landscape --------- */
+@media only screen and (min-device-width: 1024px) {
   
   img.team_awesome_logo {
     top: 0;
@@ -516,6 +524,7 @@ div.card_show ul.div_nav li strong{
     display: block;
     float: left;
     position: relative;
+    width: 13em;
   }
   
   div.card_editor div.field {

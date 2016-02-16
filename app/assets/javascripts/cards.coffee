@@ -19,7 +19,7 @@ $( document ).on("change", "#card_font_style", function () {
 });
 
 $( document ).on("change", "#card_font_size", function () {
-  $("p.card_text").css("font-size", $( this ).val());
+  $("p.card_text").css("font-size", $( this ).val() + "vw");
 });
     
 $( document ).on("keyup", "textarea#card_question_text", function () {
