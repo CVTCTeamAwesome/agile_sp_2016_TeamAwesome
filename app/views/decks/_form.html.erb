@@ -22,7 +22,9 @@
 
   <div class="field">
     <%= f.label :category_id %><br>
-    <%= f.select :category_id, @categories, :include_blank => true %>
+    <div class="select">
+      <%= f.select :category_id, @categories, :include_blank => true %>
+    </div>
   </div>
 
   <div class="field">
@@ -32,7 +34,7 @@
     <%= f.label "Last modified: #{Date.current}" %><br>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'positive' %>
   </div>
 
   <div class="button_cancel">

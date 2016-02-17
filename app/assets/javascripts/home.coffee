@@ -5,18 +5,21 @@
 `
 var index = 0;
 
+
 var resetCard = function () {
 
   $('.answerTextDiv').hide();
   $('.questionTextDiv').show();
-  $('#showAnswerText').html("Question");
+  $('#cardSideDescription').html("Question:");
   
 };
+
 
 var hideShowCard = function () {
   $('.cardDiv').hide();
   $('.cardDiv').eq(index).fadeIn();
 };
+
 
 var jumpToCard = function (e) {
   
@@ -30,6 +33,7 @@ var jumpToCard = function (e) {
   
 };
 
+
 var nextCard = function () {
   
   index++;
@@ -42,28 +46,33 @@ var nextCard = function () {
   console.log('working'); 
 };
 
+
 var previousCard = function () {
 
   index--;
   resetCard();
   if (index < 0) {
+      j
     index = $('.cardDiv').length - 1;
   }
   
   hideShowCard();
 };
 
+
 var toggleCardSide = function () {
   
-  if ($('#showAnswerText').html() == "Question") {
-    $('#showAnswerText').html("Answer");
+  if ($('#cardSideDescription').html() == "Question:") {
+      
+    $('#cardSideDescription').html("Answer:");
   }else{
-    $('#showAnswerText').html("Question");
+    
+    $('#cardSideDescription').html("Question:");
   }
   
   $('.cardSide').toggle();
-
 };
+
 
 var showFirstCard = function () {
   
@@ -71,12 +80,14 @@ var showFirstCard = function () {
   
 };
 
+
 $( document ).on( "click", ".cardSide" , toggleCardSide);
 $( document ).on( "touchstart", ".cardSide", toggleCardSide);
 $( document ).on( "click", ".fa-chevron-right" , nextCard);
 $( document ).on( "click", ".fa-chevron-left" , previousCard);
 $( document ).on( "click", "#render_partial_deck a" , jumpToCard);
 $( document ).on( "ajaxStop", showFirstCard);
+
 
 //http://wowmotty.blogspot.com/2011/10/adding-swipe-support.html
 

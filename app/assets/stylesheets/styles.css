@@ -17,12 +17,11 @@ main h1 {
   margin-bottom: 0.66em;
 }
 
-
-/* Edit/New Views */
-label {
-  font-weight: bold;
+main h2, main h3, main h4, main h5, main h6 {
+  margin-bottom: 0.33em;
 }
 
+/* Edit/New Views */
 input[type=text],
 textarea,
 select {
@@ -31,17 +30,43 @@ select {
   padding: 0.125em;
 }
 
+select {
+  border: 0;
+  font-size: 16px;
+}
+
+div.select {
+  border: 1px solid #999;
+  box-shadow: 1px 1px 1px #999 inset,
+    -1px -1px 1px #ccc inset;
+  display: inline;
+  margin-right: 0.5em;
+  padding: 0.125em 0 0.25em 0.125em;
+}
+
+label {
+  display: inline-block;
+  margin-top: 0.25em;
+  text-transform: capitalize;
+}
 
 /* All Views > Submit Button */
 input[type=submit],
 button {
-  background: #d8ffdb;
+  background: initial;
   border: 1px solid #999;
   border-radius: 0.25em;
-  box-shadow: 2px 2px 4px #cbffcf inset,
-   -4px -4px 8px #7ace80 inset;
+  box-shadow: 2px 2px 4px #ccc inset,
+   -4px -4px 8px #ccc inset;
   font-size: 1em;
   padding: 0.25em 0.5em;
+}
+
+input[type=submit].positive,
+button.positive {
+  background: #d8ffdb;
+  box-shadow: 2px 2px 4px #cbffcf inset,
+   -4px -4px 8px #7ace80 inset;
 }
 
 div.button_cancel a {
@@ -215,23 +240,6 @@ div.home_display section {
   margin: 1em;
 }
 
-div.home_display div.current_deck {
-  margin: 1em auto;
-}
-
-div.home_display div.current_deck h3 {
-  border: 1px solid #000;
-  display: inline;
-  font-size: 1.5em;
-  margin: 0.5em auto;
-  padding: 0.25em;
-}
-
-div.home_display div.current_deck div.buttons {
-  margin: 1em 0 3em 6em;
-}
-
-
 ul.card_name {
   margin: 1em;
   text-align: center;
@@ -319,11 +327,7 @@ div.card_editor {
   position: absolute;
   top: 0.125em;
   width: 88%;
-  z-index: 9;
-}
-
-div.card_editor div.field {
-  margin: 0;
+  z-index: 11;
 }
 
 div.card_editor:hover,
@@ -553,6 +557,35 @@ div.card_show ul.div_nav li strong{
 
 
 /* --- Views > Home > Display > Forward and Back Arrows --- */
+div#jumpToCard {
+  border: 1px solid #999;
+  border-radius: 0.25em;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+div#jumpToCard h4 {
+  display: inline;
+}
+
+div#jumpToCard a {
+  border: 1px solid #ccc;
+  border-radius: 0.125em;
+  box-shadow: 2px 2px 4px #ccc inset,
+   -4px -4px 8px #ccc inset;
+  margin: auto 0.25em;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+}
+
+p#cardSideDescription {
+  display: block;
+  font-size: 1.25em;
+  font-weight: bold;
+  margin: 1em auto 0.33em;
+  text-align: center;
+}
+
 .fa-chevron-left, .fa-chevron-right {
   text-shadow: 1px 0px 3px rgba(0, 0, 0, 1);
 }
@@ -581,18 +614,19 @@ div.card_show ul.div_nav li strong{
 }
 */
 
-.questionTextDiv {
+div.questionTextDiv,
+div.answerTextDiv {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-.cardContainer {
+div.cardContainer {
   display: flex;
   justify-content: center;
 }
 
-.cardSide {
+div.cardSide {
   border: 1px solid #000;
   border-radius: 1em;
   box-shadow: 3px 3px 3px #333;
@@ -604,7 +638,7 @@ div.card_show ul.div_nav li strong{
   width: 45%;
 }
 
-.cardSide:after {
+div.cardSide:after {
   content: '';
   display: block;
   padding-top: 150%;
