@@ -9,9 +9,9 @@
 <% end %>
 </div>  
 
-<% if cardsArray.size > 0 %> 
-
-<div class="current_deck">
+<% if cardsArray.size > 0 %>
+  <% cardsArray = cardsArray.shuffle %>
+  <div class="current_deck">
     <h3><%= @selectedDeck.title %> - Current Card:</h3>
     <div class="buttons">
       <p id="showAnswerText">Question</p>
