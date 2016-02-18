@@ -5,8 +5,8 @@
   <%= render 'form' %>
 
   <ul class="div_nav left">
-    <li><%= link_to 'Show Deck', @deck %></li>
-    <li><%= link_to 'Back to Decks', decks_path %></li>
+    <li><%= link_to 'Show Deck', current_user_deck_path(current_user, @deck) %></li>
+    <li><%= link_to 'Back to Decks', current_user_decks_path(current_user, @deck) %></li>
   </ul>
 
 </div>

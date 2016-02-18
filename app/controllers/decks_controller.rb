@@ -1,5 +1,5 @@
 class DecksController < ApplicationController
-
+  before_action :authenticate_user!
   before_action :get_categories
   before_action :set_deck, only: [:show, :edit, :update, :destroy]
 
@@ -32,7 +32,7 @@ class DecksController < ApplicationController
     
     respond_to do |format|
       if @deck.save
-        format.html { redirect_to @deck, notice: 'Deck was successfully created.' }
+        format.html { redirect_to current_user_deck_path(current_user, @deck), notice: 'Deck was successfully created.' }
         format.json { render :show, status: :created, location: @deck }
       else
         format.html { render :new }
@@ -61,7 +61,7 @@ class DecksController < ApplicationController
   def destroy
     @deck.destroy
     respond_to do |format|
-      format.html { redirect_to decks_url, notice: 'Deck was successfully destroyed.' }
+      format.html { redirect_to current_user_decks_url(current_user, @decks), notice: 'Deck was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

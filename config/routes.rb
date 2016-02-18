@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   get 'cards/index'
 
-  resources :decks do
-    resources :cards
+  resources :current_user do
+    resources :decks do
+      resources :cards
+    end
   end
   
   resources :categories

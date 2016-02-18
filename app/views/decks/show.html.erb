@@ -38,10 +38,10 @@
   
   
   <ul class="div_nav left">
-    <li><%= link_to 'Edit Deck', edit_deck_path(@deck) %></li>
-    <li><%= link_to 'New Card', new_deck_card_path(@deck) %></li>
-    <li><%= link_to "Manage Cards", deck_cards_path(@deck, @cards) %></li>
-    <li><%= link_to 'Back to Decks', decks_path %></li>
+    <li><%= link_to 'Edit Deck', edit_current_user_deck_path(current_user, @deck) %></li>
+    <li><%= link_to 'New Card', new_current_user_deck_card_path(current_user, @deck) %></li>
+    <li><%= link_to "Manage Cards", current_user_deck_cards_path(current_user, @deck, @cards) %></li>
+    <li><%= link_to 'Back to Decks', current_user_decks_path(current_user, @decks) %></li>
   </ul>
 
 </div>
