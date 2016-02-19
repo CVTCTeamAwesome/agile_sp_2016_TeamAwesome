@@ -6,7 +6,7 @@ class DecksController < ApplicationController
   # GET /decks
   # GET /decks.json
   def index
-    @decks = Deck.all
+    @decks = current_user.decks.all
   end
 
   # GET /decks/1
@@ -16,7 +16,7 @@ class DecksController < ApplicationController
 
   # GET /decks/new
   def new
-    @deck = Deck.new
+    @deck = current_user.decks.build
   end
 
   # GET /decks/1/edit
@@ -26,13 +26,13 @@ class DecksController < ApplicationController
   # POST /decks
   # POST /decks.json
   def create
-    @deck = Deck.new(deck_params)
+    @deck = current_user.decks.new(deck_params)
     @deck.creation_date = DateTime.current
     @deck.last_modified = DateTime.current
     
     respond_to do |format|
       if @deck.save
-        format.html { redirect_to current_user_deck_path(current_user, @deck), notice: 'Deck was successfully created.' }
+        format.html { redirect_to @deck, notice: 'Deck was successfully created.' }
         format.json { render :show, status: :created, location: @deck }
       else
         format.html { render :new }
@@ -61,7 +61,7 @@ class DecksController < ApplicationController
   def destroy
     @deck.destroy
     respond_to do |format|
-      format.html { redirect_to current_user_decks_url(current_user, @decks), notice: 'Deck was successfully destroyed.' }
+      format.html { redirect_to decks_url, notice: 'Deck was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -75,7 +75,7 @@ class DecksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def deck_params
-      params.require(:deck).permit(:title, :description, :category_id, :creation_date, :last_modified)
+      params.require(:deck).permit(:title, :description, :category_id, :creation_date, :last_modified, :user_id)
     end
   
     def get_categories
