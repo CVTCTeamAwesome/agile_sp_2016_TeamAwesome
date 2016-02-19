@@ -1,12 +1,12 @@
 class DecksController < ApplicationController
-
+  before_action :authenticate_user!
   before_action :get_categories
   before_action :set_deck, only: [:show, :edit, :update, :destroy]
 
   # GET /decks
   # GET /decks.json
   def index
-    @decks = Deck.all
+    @decks = current_user.decks.all
   end
 
   # GET /decks/1
@@ -16,7 +16,7 @@ class DecksController < ApplicationController
 
   # GET /decks/new
   def new
-    @deck = Deck.new
+    @deck = current_user.decks.build
   end
 
   # GET /decks/1/edit
@@ -26,7 +26,7 @@ class DecksController < ApplicationController
   # POST /decks
   # POST /decks.json
   def create
-    @deck = Deck.new(deck_params)
+    @deck = current_user.decks.new(deck_params)
     @deck.creation_date = DateTime.current
     @deck.last_modified = DateTime.current
     
@@ -75,7 +75,7 @@ class DecksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def deck_params
-      params.require(:deck).permit(:title, :description, :category_id, :creation_date, :last_modified)
+      params.require(:deck).permit(:title, :description, :category_id, :creation_date, :last_modified, :user_id)
     end
   
     def get_categories
