@@ -23,7 +23,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :name %><br>
+      <%= f.label :name, 'Card Name' %><br>
       <%= f.text_field :name, :required => true %>
     </div>
 
@@ -43,18 +43,22 @@
     </div>
 
     <div class="field">
-      <%= f.label :foreground_color %><br>
+      <%= f.label :foreground_color, 'Font Color' %><br>
       <%= f.color_field :foreground_color %>
     </div>
 
     <div class="field">
       <%= f.label :font_style %><br>
-      <%= f.select :font_style, [ 'Arial', 'Comic Sans MS', 'Courier New', 'Georgia', 'Lucida Sans Typewriter', 'Palatino', 'Papyrus', 'Times New Roman', 'Trebushet MS', 'Verdana' ], :prompt => 'Select One' %>
+      <div class="select">
+        <%= f.select :font_style, [ 'Arial', 'Comic Sans MS', 'Courier New', 'Georgia', 'Lucida Sans Typewriter', 'Palatino', 'Papyrus', 'Times New Roman', 'Trebushet MS', 'Verdana' ], :prompt => 'Select One' %>
+      </div>
     </div>
 
     <div class="field">
       <%= f.label :font_size %><br>
-      <%= f.select :font_size, [ '10pt', '12pt', '14pt', '16pt', '18pt', '20pt', '22pt', '24pt', '26pt', '28pt', '30pt' ], :prompt => 'Select One' %>
+      <div class="select">
+        <%= f.select :font_size, [ '2', '2.5', '3', '3.5', '4', '4.5', '5' ], :promvw => 'Select One' %>
+      </div>
     </div>
     
     <div class="field">
@@ -71,7 +75,11 @@
     <% end %>
     
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit :class => 'positive' %>
+    </div>
+  
+    <div class="button_cancel">
+      <%= link_to 'Cancel', deck_cards_path(@deck, @cards) %>
     </div>
 
   </div>
