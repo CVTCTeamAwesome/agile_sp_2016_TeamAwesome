@@ -20,7 +20,13 @@ div.home_login {
   display: inline-block;
   float: right;
   margin-right: 0.5em;
-  padding: 0.125em 0 0.25em 0.125em;
+  padding: 0.25em;
+  text-align: center;
+}
+
+div.home_login form {
+  display: inline-block;
+  margin: 0.5em auto 0.25em;
 }
 
 main h1 {

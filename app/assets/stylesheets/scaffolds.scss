@@ -39,6 +39,22 @@ div {
 
 #notice {
   color: green;
+  display: none;
+}
+
+.notice,
+.alert {
+  color: green;
+  font-size: 1.5em;
+  margin: 1em;
+}
+
+.notice {
+  color: green;
+}
+
+.alert {
+  color: red;
 }
 
 .field_with_errors {
