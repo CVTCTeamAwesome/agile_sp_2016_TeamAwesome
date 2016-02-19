@@ -1,25 +1,22 @@
 <% cardsArray = Array.new %>
 
 <div id="jumpToCard">
+  <h4><%= @selectedDeck.title %> (Specific Card):</h4>
   <% @selectedDeck.cards.each do |card| %>
   <% if card.visible == true %>
     <% cardsArray.push(card) %>
-    <a href="#" class="<%= cardsArray.last.name %><%= cardsArray.last.id %>"><%= cardsArray.last.name %></a>
+    <a href="#" class="<%= cardsArray.last.name %><%= cardsArray.last.id %>"><%= cardsArray.last.name %></a>&nbsp;
   <% end %>
 <% end %>
 </div>  
 
 <% if cardsArray.size > 0 %>
   <% cardsArray = cardsArray.shuffle %>
-  <div class="current_deck">
-    <h3><%= @selectedDeck.title %> - Current Card:</h3>
-    <div class="buttons">
-      <p id="showAnswerText">Question</p>
-    </div>
-  </div>
-
+  <p id="cardSideDescription">Question:</p>
   <div class="cardContainer">
+    
     <i class="fa fa-chevron-left fa-5x faa-pulse animated-hover"></i>
+    
     <% cardsArray.each_with_index do |card, index| %>
       <div class="cardDiv card_display <%= card.name %><%= card.id %>" style="display:none;">
         <div style="<%= displayPicture_styles card %>" class="cardSide questionTextDiv">
@@ -32,7 +29,9 @@
         </div>
       </div>
     <% end %>
+    
     <i class="fa fa-chevron-right fa-5x faa-pulse animated-hover"></i>
+    
   </div>
 
 <% else %>

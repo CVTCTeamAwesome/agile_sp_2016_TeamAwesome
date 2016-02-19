@@ -1,4 +1,5 @@
 class CardsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_deck
   before_action :set_card, only: [:show, :edit, :update, :destroy, :remove_photo]
 
@@ -26,7 +27,7 @@ class CardsController < ApplicationController
   # POST /cards
   # POST /cards.json
   def create
-     @card = @deck.cards.build(card_params)
+    @card = @deck.cards.build(card_params)
 
     respond_to do |format|
       if @card.save
@@ -44,7 +45,7 @@ class CardsController < ApplicationController
   def update
     respond_to do |format|
       if @card.update(card_params)
-        format.html { redirect_to deck_cards_path(@deck, @card), notice: 'Card was successfully updated.' }
+        format.html { redirect_to deck_card_path(@deck, @card), notice: 'Card was successfully updated.' }
         format.json { render :show, status: :ok, location: @card }
       else
         format.html { render :edit }
@@ -58,13 +59,13 @@ class CardsController < ApplicationController
   def destroy
     @card.destroy
     respond_to do |format|
-      format.html { redirect_to deck_cards_path(@deck), notice: 'Card was successfully destroyed.' }
+      format.html { redirect_to deck_cards_path(@deck, @card), notice: 'Card was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
    def remove_picture
-    @card = @deck.cards.find(params[:id])
+    @card = deck.cards.find(params[:id])
     @card.picture = nil
     @card.save
     respond_to do |format|
@@ -79,7 +80,7 @@ class CardsController < ApplicationController
   private
   
   def set_deck
-    @deck = Deck.find(params[:deck_id])
+    @deck = current_user.decks.find(params[:deck_id])
   end
   
     # Use callbacks to share common setup or constraints between actions.
