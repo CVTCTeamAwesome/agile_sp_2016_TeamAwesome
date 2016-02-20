@@ -306,6 +306,7 @@ ul.div_nav.center li {
 /* Sub-Navs, Left-Aligning (use class="div_nav center") */
 ul.div_nav.left li {
   text-align: left;
+  display: inline;
 }
 
 /* Sub-Navs, Right-Aligning (use class="div_nav right") */
