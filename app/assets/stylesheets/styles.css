@@ -468,6 +468,13 @@ div.card_show ul.div_nav li strong{
   padding: 7px 0 9px 0;
 }
 
+.alert {
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 0, 0, 1);
+  padding: 7px 0 9px 0;
+}
+
 
 /* ---- 320 x 480 screen in landscape --------- */
 @media only screen and (orientation:landscape) {
