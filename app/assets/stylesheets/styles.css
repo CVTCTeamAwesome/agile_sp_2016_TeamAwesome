@@ -279,7 +279,7 @@ ul.card_name li a {
 
 /* All Views > Sub-Nav Div */
 ul.div_nav {
-  margin: 1em 0;
+  margin: 1em 0 1em -.5em;
 }
 
 ul.div_nav li {
@@ -307,6 +307,7 @@ ul.div_nav.center li {
 ul.div_nav.left li {
   text-align: left;
   display: inline;
+  margin-right: -.9em;
 }
 
 /* Sub-Navs, Right-Aligning (use class="div_nav right") */
