@@ -85,13 +85,12 @@ function setupHammerListeners() {
   var mc = new Hammer(cardDiv);
   mc.on("swipeleft", nextCard);
   mc.on("swiperight", previousCard);
+  mc.on("tap", toggleCardSide);
 };
 
 $( document ).ready(setupHammerListeners);
 $( document ).on( 'page:load', setupHammerListeners);
 
-$( document ).on( "click", ".cardSide" , toggleCardSide);
-$( document ).on( "touchstart", ".cardSide", toggleCardSide);
 $( document ).on( "click", ".fa-chevron-right" , nextCard);
 $( document ).on( "click", ".fa-chevron-left" , previousCard);
 $( document ).on( "click", "#render_partial_deck a" , jumpToCard);
