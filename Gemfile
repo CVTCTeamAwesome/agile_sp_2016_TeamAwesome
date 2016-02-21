@@ -10,9 +10,6 @@ gem 'capybara'
 # Devise Authentication
 gem 'devise'
 
-# OmniAuth Facebook
-gem 'omniauth-facebook'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use postgresql as the database for Active Record
