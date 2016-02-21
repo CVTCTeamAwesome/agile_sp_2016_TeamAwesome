@@ -3,6 +3,9 @@
 ###Facebook
 When adding facebook, we need to add a couple new lines to the application.yml file. Those lines are in a file on Slack. Facebook will not work on your local computer, Facebook requires a callback url to be whitelisted for Facebook to return the authentication to. We only have https://cvtcteamawesome-chaselukea.c9users.io/ and http://www.cvtcteamawesome.com whitelisted.
 
+  APP_ID: ''
+  APP_SECRET: ''
+
 ###Feb 7th: Project Update to PostgreSQL & Figaro - Setup Guide
 When doing the latest pull, we've updated to postgres as our database and added figaro. You will need to run the following:
   `bundle install`
