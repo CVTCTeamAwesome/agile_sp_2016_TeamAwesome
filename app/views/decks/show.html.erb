@@ -27,13 +27,13 @@
   
   <p>
     <strong>Creation date:</strong>
-    <%=@deck.creation_date.strftime('%D')%>
+    <%=@deck.creation_date.strftime("%B %d, %Y")%>
   </p>
   
 
   <p>
     <strong>Last modified:</strong>
-    <%= @deck.last_modified.strftime('%D')%>
+    <%= @deck.last_modified.strftime("%B %d, %Y")%>
   </p>
   
   
