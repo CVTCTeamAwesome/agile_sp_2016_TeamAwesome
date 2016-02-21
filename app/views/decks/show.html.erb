@@ -27,13 +27,13 @@
   
   <p>
     <strong>Creation date:</strong>
-    <%="#{Date.current.to_formatted_s(:long_ordinal)}"%>
+    <%=@deck.creation_date.strftime('%D')%>
   </p>
   
 
   <p>
     <strong>Last modified:</strong>
-    <%= "#{Date.current.to_formatted_s(:long_ordinal)} "%>
+    <%= @deck.last_modified.strftime('%D')%>
   </p>
   
   
