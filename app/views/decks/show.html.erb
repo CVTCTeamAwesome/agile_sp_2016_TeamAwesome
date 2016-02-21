@@ -27,12 +27,13 @@
   
   <p>
     <strong>Creation date:</strong>
-    <%= @deck.creation_date %>
+    <%="#{Date.current.to_formatted_s(:long_ordinal)}"%>
   </p>
+  
 
   <p>
     <strong>Last modified:</strong>
-    <%= @deck.last_modified %>
+    <%= "#{Date.current.to_formatted_s(:long_ordinal)} "%>
   </p>
   
   

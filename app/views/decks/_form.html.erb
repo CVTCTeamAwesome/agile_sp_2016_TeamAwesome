@@ -29,10 +29,12 @@
 
   <!--
   <div class="field">
-    <%= f.label "Creation date: #{Date.current}" %><br>
+    <%= f.label "Creation date: #{Date.current.to_formatted_s(:long_ordinal)}" %><br>
   </div>
+  -->
+  <!--
   <div class="field">
-    <%= f.label "Last modified: #{Date.current}" %><br>
+    <%= f.label "Last modified: #{Date.current.to_formatted_s(:long_ordinal)} " %><br>
   </div>
   -->
 
