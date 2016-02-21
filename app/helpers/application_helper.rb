@@ -15,20 +15,6 @@ module ApplicationHelper
        font-family:#{@card.font_style};
        font-size:#{@card.font_size}vw;"
     end
-    if card.picture?
-      "color:#{card.foreground_color};
-       background-color:#{card.background_color};
-       background-image: url(\"#{card.picture.url}\");
-       background-repeat: no-repeat;
-       background-position: center;
-       background-size: auto 50%;
-       font-family:#{card.font_style};"
-    else
-      "color:#{card.foreground_color};
-       background-color:#{card.background_color};
-       font-family:#{card.font_style};
-       font-size:#{card.font_size}vw;"
-    end
   end
 
 #Styles for card_text
@@ -42,16 +28,6 @@ module ApplicationHelper
       "color:#{@card.foreground_color};
        font-size:#{@card.font_size}vw;
        font-family:#{@card.font_style};"
-    end
-    if card.picture?
-      "color:#{card.foreground_color};
-       font-size:#{card.font_size}vw;
-       font-family:#{card.font_style};
-       top: 75%"
-    else
-      "color:#{card.foreground_color};
-       font-size:#{card.font_size}vw;
-       font-family:#{card.font_style};"
     end
   end
   
