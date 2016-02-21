@@ -1,8 +1,7 @@
 <h1>Flash Cards</h1>
 
 <div class="home_login">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+
   <% if user_signed_in? %>
     <p>You are logged in as <%= current_user.email %></p>
   <% end %>
@@ -13,6 +12,5 @@
 </div>
 
 <div class="home_index">
-  <p>BY</p>
   <%= image_tag("team_awesome.png", :alt => "Team Awesome", :class => "team_awesome_logo") %>
 </div>

@@ -13,12 +13,14 @@ div#wrapper {
   width: 95%;
 }
 
+
+/* Login */
 div.home_login {
   border: 1px solid #999;
   box-shadow: 1px 1px 1px #999 inset,
     -1px -1px 1px #ccc inset;
   display: inline-block;
-  float: right;
+  float: none;
   margin-right: 0.5em;
   padding: 0.25em;
   text-align: center;
@@ -29,6 +31,12 @@ div.home_login form {
   margin: 0.5em auto 0.25em;
 }
 
+
+/* Main Section */
+main {
+  margin: 0.375em;
+}
+
 main h1 {
   margin-bottom: 0.66em;
 }
@@ -36,6 +44,7 @@ main h1 {
 main h2, main h3, main h4, main h5, main h6 {
   margin-bottom: 0.33em;
 }
+
 
 /* Edit/New Views */
 input[type=text],
@@ -65,6 +74,7 @@ label {
   margin-top: 0.25em;
   text-transform: capitalize;
 }
+
 
 /* All Views > Submit Button */
 input[type=submit],
@@ -158,7 +168,7 @@ nav:hover {
 nav ul li {
   font-size: 1.25em;
   list-style: none;
-  margin: 1em 0.5em;
+  margin: 1.5em 0.5em;
 }
 
 nav a {
@@ -208,12 +218,9 @@ div#main_nav_button p {
 
 
 /* App Layout > Main Section */
-main {
-  margin: 0.375em;
-}
-
 img.team_awesome_logo {
   display: block;
+  float: left;
   height: auto;
   margin: 1em auto;
   max-width: 640px; 
@@ -277,9 +284,95 @@ ul.card_name li a {
 }
 
 
+/* --- Views > Home > Display --- */
+div#jumpToCard {
+  border: 1px solid #999;
+  border-radius: 0.25em;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+div#jumpToCard h4 {
+  display: inline;
+}
+
+div#jumpToCard a {
+  border: 1px solid #ccc;
+  border-radius: 0.125em;
+  box-shadow: 2px 2px 4px #ccc inset,
+   -4px -4px 8px #ccc inset;
+  margin: auto 0.25em;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+}
+
+p#cardSideDescription {
+  display: block;
+  font-size: 1.25em;
+  font-weight: bold;
+  margin: 1em auto 0.33em;
+  text-align: center;
+}
+
+div.questionTextDiv,
+div.answerTextDiv {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+div.cardContainer {
+  display: flex;
+  justify-content: center;
+}
+
+div.cardSide {
+  border: 1px solid #000;
+  border-radius: 1em;
+  box-shadow: 3px 3px 3px #333;
+  display: inline-block;
+  margin-left: 25%;
+  max-height: 100%;
+  padding: 1%;
+  position: relative;
+  width: 45%;
+}
+
+div.cardSide:after {
+  content: '';
+  display: block;
+  padding-top: 150%;
+}
+
+
+/* --- Views > Home > Display > Forward and Back Arrows --- */
+.fa-chevron-left, .fa-chevron-right {
+  text-shadow: 1px 0px 3px rgba(0, 0, 0, 1);
+}
+
+.fa-chevron-left {
+  position: absolute;
+  top: 45%;
+  background: -webkit-linear-gradient(right, #878787, #000);
+  background: linear-gradient(right, #878787, #000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-chevron-right {
+  position: absolute;
+  top: 45%;
+  background: -webkit-linear-gradient(left, #878787, #000);
+  background: linear-gradient(left, #878787, #000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 /* All Views > Sub-Nav Div */
 ul.div_nav {
-  margin: 1em 0 1em -.5em;
+  margin: 1em auto;
+  /* margin: 1em 0 1em -.5em; */
 }
 
 ul.div_nav li {
@@ -298,25 +391,25 @@ ul.div_nav li a {
   text-decoration: none;
 }
 
-/* Sub-Navs, Center-Aligning (use class="div_nav left") */
-ul.div_nav.center li {
+/* Sub-Navs, Center-Aligning (use class="div_nav center") */
+ul.div_nav.center {
   text-align: center;
 }
 
-/* Sub-Navs, Left-Aligning (use class="div_nav center") */
-ul.div_nav.left li {
+/* Sub-Navs, Left-Aligning (use class="div_nav left") */
+ul.div_nav.left {
   text-align: left;
-  display: inline;
-  margin-right: -.9em;
+  /* display: inline;
+  margin-right: -.9em; */
 }
 
 /* Sub-Navs, Right-Aligning (use class="div_nav right") */
-ul.div_nav.right li {
+ul.div_nav.right {
   text-align: right;
 }
 
 
-/* Decks > Show */
+/* Views > Decks > Show */
 div.deck_show p{
   font-size: 1.25em;
   margin: 0.5em 0;
@@ -332,6 +425,7 @@ div.card_edit,
 div.card_new {
   min-height: 420px;
 }
+
 
 /* Views > Cards > New/Edit */
 div.card_editor {
@@ -374,6 +468,7 @@ div#card_editor_button:focus {
 div#card_editor_button:active ~ div.card_editor {
   display: block;
 }
+
 
 /* Card's Actual On-Screen Presentation */
 div.card_display {
@@ -443,6 +538,7 @@ div.cards_display_index {
   width: 88%;
 }
 
+
 /* Views > Cards > Show */
 div.card_show {
   margin: 0.125em auto;
@@ -478,17 +574,30 @@ div.card_show ul.div_nav li strong{
 }
 
 
+/* --------- RESPONSIVE MEDIA QUERIES ----------- */
+
+
 /* ---- 320 x 480 screen in landscape --------- */
 @media only screen and (orientation:landscape) {
+  
+  ul.div_nav li {
+    display: inline;
+  }
   
   div.cards_display_index {
     width: 45%;
   }
   
-  img.team_awesome_logo {
-    position: relative;
-    top: -6em;
+}
+
+
+/* ---- 480 wide screen in portrait --------- */
+@media only screen and (min-device-width: 480px) {
+  
+  ul.div_nav li {
+    display: inline;
   }
+  
 }
 
 
@@ -509,6 +618,14 @@ div.card_show ul.div_nav li strong{
   }
   
   nav ul li {
+    display: inline;
+  }
+  
+  div.home_login {
+    float: right;
+  }
+  
+  ul.div_nav li {
     display: inline;
   }
   
@@ -540,7 +657,6 @@ div.card_show ul.div_nav li strong{
     width: 40%;
   }
 }
-
 
 
 /* ---- 1024 wide screen in landscape --------- */
@@ -588,90 +704,4 @@ div.card_show ul.div_nav li strong{
 
 
 
-/* --- Views > Home > Display > Forward and Back Arrows --- */
-div#jumpToCard {
-  border: 1px solid #999;
-  border-radius: 0.25em;
-  margin: 0.5em;
-  padding: 0.5em;
-}
 
-div#jumpToCard h4 {
-  display: inline;
-}
-
-div#jumpToCard a {
-  border: 1px solid #ccc;
-  border-radius: 0.125em;
-  box-shadow: 2px 2px 4px #ccc inset,
-   -4px -4px 8px #ccc inset;
-  margin: auto 0.25em;
-  padding: 0.25em 0.5em;
-  text-decoration: none;
-}
-
-p#cardSideDescription {
-  display: block;
-  font-size: 1.25em;
-  font-weight: bold;
-  margin: 1em auto 0.33em;
-  text-align: center;
-}
-
-.fa-chevron-left, .fa-chevron-right {
-  text-shadow: 1px 0px 3px rgba(0, 0, 0, 1);
-}
-
-.fa-chevron-left {
-  position: absolute;
-  top: 45%;
-  background: -webkit-linear-gradient(right, #878787, #000);
-  background: linear-gradient(right, #878787, #000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.fa-chevron-right {
-  position: absolute;
-  top: 45%;
-  background: -webkit-linear-gradient(left, #878787, #000);
-  background: linear-gradient(left, #878787, #000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/*
-.fa-chevron-left:hover, .fa-chevron-right:hover {
-  -webkit-text-fill-color: blue;
-}
-*/
-
-div.questionTextDiv,
-div.answerTextDiv {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-div.cardContainer {
-  display: flex;
-  justify-content: center;
-}
-
-div.cardSide {
-  border: 1px solid #000;
-  border-radius: 1em;
-  box-shadow: 3px 3px 3px #333;
-  display: inline-block;
-  margin-left: 25%;
-  max-height: 100%;
-  padding: 1%;
-  position: relative;
-  width: 45%;
-}
-
-div.cardSide:after {
-  content: '';
-  display: block;
-  padding-top: 150%;
-}
