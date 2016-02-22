@@ -10,7 +10,7 @@ gem 'capybara'
 # Devise Authentication
 gem 'devise'
 
-# OmniAuth Facebook
+# OmniAuth Facebook Authentication
 gem 'omniauth-facebook'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -57,7 +57,6 @@ GEM
     aws-sdk-resources (2.2.14)
       aws-sdk-core (= 2.2.14)
     bcrypt (3.1.10)
-    bcrypt (3.1.10-x86-mingw32)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
