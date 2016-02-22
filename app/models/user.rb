@@ -3,8 +3,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-	 :omniauthable, :omniauth_providers => [:facebook]
+         :recoverable, :rememberable, :trackable, :validatable
   
   # user_signed_in? - verify a user is signed in
   # current_user    - for the current signed-in user
@@ -14,6 +13,8 @@ class User < ActiveRecord::Base
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
+      # Future implementation: uncomment the following two
+      # lines for pulling the Facebook user's name and image
       #user.name = auth.info.name
       #user.image = auth.info.image
     end

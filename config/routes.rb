@@ -9,11 +9,9 @@ Rails.application.routes.draw do
 
   get 'cards/index'
 
-
   resources :decks do
     resources :cards
   end
-
   
   resources :categories
   
