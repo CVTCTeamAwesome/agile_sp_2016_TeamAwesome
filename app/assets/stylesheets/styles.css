@@ -236,8 +236,7 @@ div.deck_index {
 
 /* All Pages > Table */
 table {
-  background: #efefef;
-  box-shadow: 2px 2px 4px #ccc;
+
 }
 
 table th {
@@ -587,17 +586,82 @@ div.card_show ul.div_nav li strong{
   div.cards_display_index {
     width: 45%;
   }
-  
+ 
 }
 
 
 /* ---- 480 wide screen in portrait --------- */
-@media only screen and (min-device-width: 480px) {
+@media only screen and (max-device-width: 767px) {
+  
+  main > h1 {
+    background-color: darkslateblue;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    font-size: 3em;
+    padding-top: 1em;
+    margin-top: 35px;
+    height: 50px;
+    width: 100%;
+  }
   
   ul.div_nav li {
     display: inline;
   }
+    
+  /* All Decks table styling */
+  table {
+    border: 0;
+    background-color: #fff;
+    width: 98%;
+  }
   
+  table thead {
+    display: none;
+  }
+  
+  table tr {
+    margin-bottom: 20px;
+    display: block;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .6);
+  }
+
+  table td {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+  }
+  
+  table td a:hover {
+    color: rgba(0, 0, 0, 1);
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+
+  table td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+  
+  .links {
+    text-align: center;
+    background-color: black;
+  }
+  
+  .links a {
+    text-decoration: none;
+    color: white;
+    line-height: 20px;
+    font-size: 1.5em;
+  }
+  
+  .links a:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+ 
 }
 
 
