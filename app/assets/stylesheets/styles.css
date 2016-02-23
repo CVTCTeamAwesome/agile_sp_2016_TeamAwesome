@@ -590,8 +590,9 @@ div.card_show ul.div_nav li strong{
 }
 
 
-/* ---- 480 wide screen in portrait --------- */
-@media only screen and (max-device-width: 767px) {
+
+/* ---- 768 wide screen in portrait --------- */
+@media only screen and (min-width: 200px) {
   
   main > h1 {
     background-color: darkslateblue;
@@ -603,20 +604,12 @@ div.card_show ul.div_nav li strong{
     height: 50px;
     width: 100%;
   }
-  
-  ul.div_nav li {
-    display: inline;
-  }
-    
+
   /* All Decks table styling */
   table {
     border: 0;
     background-color: #fff;
     width: 98%;
-  }
-  
-  table thead {
-    display: none;
   }
   
   table tr {
@@ -661,12 +654,44 @@ div.card_show ul.div_nav li strong{
   .links a:hover {
     color: rgba(255, 255, 255, 1);
   }
+  
+  table.categories td:first-child {
+    padding: 5px;
+    font-size: 1.5em;
+  }
  
+}
+
+@media only screen and (min-width: 480px) {
+    
+  ul.div_nav li {
+    display: inline;
+  }
+    
+  table.categories {
+    width: 20em;
+  }
+  
+  .category_tables {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .category_tables table {
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  table th, table td {
+    padding: 0.66em; 
+  }
+  
 }
 
 
 /* ---- 768 wide screen in portrait ----------- */
-@media only screen and (min-device-width: 768px) {
+@media only screen and (min-width: 768px) {
   
   body {
     font-size: 1em;
@@ -697,6 +722,18 @@ div.card_show ul.div_nav li strong{
     display: none;
   }
   
+  .tables {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tables table {
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em;
+  }
+
   div.card_editor {
     width: 50%;
   }
@@ -724,7 +761,7 @@ div.card_show ul.div_nav li strong{
 
 
 /* ---- 1024 wide screen in landscape --------- */
-@media only screen and (min-device-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   
   img.team_awesome_logo {
     top: 0;
@@ -765,7 +802,3 @@ div.card_show ul.div_nav li strong{
     margin: 0 3em;
   }
 }
-
-
-
-
