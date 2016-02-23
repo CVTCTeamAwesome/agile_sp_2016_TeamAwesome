@@ -11,7 +11,7 @@
       <table>
         <tbody>
             <tr>
-              <td data-label="Title"><%= link_to deck.title, deck %></td>
+              <td><%= link_to deck.title, deck %></td>
               <td data-label="Description"><%= deck.description %></td>
               <td data-label="Category"><%= deck.category.name rescue "No category assigned"%></td>
               <td data-label="Number of Cards"><%= deck.cards.count %></td>

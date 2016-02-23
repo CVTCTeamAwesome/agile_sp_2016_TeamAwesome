@@ -632,6 +632,11 @@ div.card_show ul.div_nav li strong{
   table td:last-child {
     border-bottom: 0;
   }
+  
+  .tables td:first-child {
+    text-align: center;
+    font-size: 1.5em;
+  }
 
   table td:before {
     content: attr(data-label);
