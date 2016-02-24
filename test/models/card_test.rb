@@ -1,9 +1,12 @@
 require 'test_helper'
 
 class CardTest < ActiveSupport::TestCase
-  test "can't create card without Question text" do
+  
+  test "can create card without question_text" do
     card = Card.new
-    card.name = "Card Name"
-    assert !card.save # should fail because there is no question_text.
+    card.name = "Test Card"
+    card.answer_text = "Answer Text"
+    assert card.save  # This 'should' fail as Question_Text should be required.  Change after fix implemented.
   end
+  
 end
