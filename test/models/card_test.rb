@@ -18,4 +18,13 @@ class CardTest < ActiveSupport::TestCase
     assert card.save
   end
   
+  test "can create card with picture" do
+    card = Card.new
+    card.name = "Test Card2"
+    card.answer_text = "Answer Text"
+    card.question_text = "This is question_text"
+    card.picture = File.new('test/models/ineedit.jpg')
+    assert card.save
+  end
+  
 end
