@@ -136,7 +136,7 @@ header#main_title h2 {
 nav {
   background: #fff;
   border: 1px solid #999;
-  border-radius: 1em;
+  border-radius: 0.25em;
   box-shadow: 1px 1px 5px #777,
     1px 1px 3px #ccc inset,
     -1px -1px 3px #ccc inset;
@@ -150,29 +150,6 @@ nav {
   width: 40%;
   z-index: 10;
 }
-
-nav:focus,
-nav:hover {
-  display: block;
-}
-
-nav ul li {
-  font-size: 1.25em;
-  list-style: none;
-  margin: 1.5em 0.5em;
-}
-
-nav a {
-  border: 1px solid #999;
-  border-radius: 0.5em;
-  box-shadow: 2px 2px 4px #ccc inset,
-    -4px -4px 8px #ccc inset;
-  margin: 3em 0;
-  padding: 0.25em 0.5em 0.5em;
-  text-decoration: none;
-  width: 100%;
-}
-
 
 /* App Layout > Nav Button for Mobile Popup */
 div#main_nav_button {
@@ -595,8 +572,46 @@ div.card_show ul.div_nav li strong{
     height: 50px;
     width: 100%;
   }
+  
+  /*---------Nav Styling----------------*/
+  
+  nav > ul > li {
+    
+  }
+  
+  nav:focus,
+  nav:hover {
+    display: block;
+  }
+  
+  nav ul li {
+    list-style: none;
+    background-color: rgba(255, 255, 255, 1);
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    height: 2em;
+    padding-top: 1em;
+  }
+  
+  nav ul li:first-child {
+    border-top-left-radius: 0.25em;
+    border-top-right-radius: 0.25em;
+  }
+  
+  nav ul li:last-child {
+    border-bottom-left-radius: 0.25em;
+    border-bottom-right-radius: 0.25em;
+    border-bottom: none;
+  }
+  
+  #main_nav a {
+    font-size: 1em;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: rgba(0, 0, 0, 1);
+    padding: 20px 30px;
+  }
 
-  /* All Decks table styling */
+  /*---------All Decks table styling------------*/
   table {
     border: 0;
     background-color: #fff;
@@ -728,9 +743,18 @@ div.card_show ul.div_nav li strong{
 }
 
 @media only screen and (min-width: 480px) {
-    
-  ul.div_nav li {
-    display: inline;
+
+  nav ul li {
+    list-style: none;
+    background-color: rgba(255, 255, 255, 1);
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    height: 3em;
+    padding-top: 1.5em;
+  }
+      
+  #main_nav a {
+    font-size: 2em;
+    padding: 20px 50px;
   }
     
   table.categories {
@@ -766,6 +790,8 @@ div.card_show ul.div_nav li strong{
   body {
     font-size: 1em;
   }
+  
+  /*------NAV-----*/
   nav {
     display: inline;
     position: relative;
@@ -776,9 +802,26 @@ div.card_show ul.div_nav li strong{
     display: inline;
   }
   
-  nav ul li {
+  #main_nav li {
+    width: 5em;
+    padding-top: 0.5em;
     display: inline;
+    border: none;
   }
+
+  #main_nav li a {
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0);
+    height: 1em;
+    font-size: 1.25em;
+    padding: 5px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.25em;
+    box-shadow: 2px 2px 4px #ccc inset, -4px -4px 8px #ccc inset;
+  }
+
+  /*----------------------*/
+  
   
   div.home_login {
     float: right;
