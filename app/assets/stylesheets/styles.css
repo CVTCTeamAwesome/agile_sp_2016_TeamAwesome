@@ -55,20 +55,6 @@ select {
   padding: 0.125em;
 }
 
-select {
-  border: 0;
-  font-size: 16px;
-}
-
-div.select {
-  border: 1px solid #999;
-  box-shadow: 1px 1px 1px #999 inset,
-    -1px -1px 1px #ccc inset;
-  display: inline;
-  margin-right: 0.5em;
-  padding: 0.125em 0 0.25em 0.125em;
-}
-
 label {
   display: inline-block;
   margin-top: 0.25em;
@@ -93,18 +79,23 @@ button.positive {
   background: #d8ffdb;
   box-shadow: 2px 2px 4px #cbffcf inset,
    -4px -4px 8px #7ace80 inset;
+  font-size: 1em;
 }
 
-div.button_cancel a {
+div.button_cancel  {
+  text-align: center;
   border: 1px solid #999;
   border-radius: 0.25em;
   background: #f7dada;
   box-shadow: 2px 2px 4px #ffe6e6 inset,
    -4px -4px 8px #ebb3b3 inset;
-  color: #000;
   display: inline-block;
-  font-size: 1em;
   padding: 0.25em 0.5em;
+}
+
+div.button_cancel a {
+  font-size: 1em;
+  color: #000;
   text-decoration: none;
 }
 
@@ -145,7 +136,7 @@ header#main_title h2 {
 nav {
   background: #fff;
   border: 1px solid #999;
-  border-radius: 1em;
+  border-radius: 0.25em;
   box-shadow: 1px 1px 5px #777,
     1px 1px 3px #ccc inset,
     -1px -1px 3px #ccc inset;
@@ -159,29 +150,6 @@ nav {
   width: 40%;
   z-index: 10;
 }
-
-nav:focus,
-nav:hover {
-  display: block;
-}
-
-nav ul li {
-  font-size: 1.25em;
-  list-style: none;
-  margin: 1.5em 0.5em;
-}
-
-nav a {
-  border: 1px solid #999;
-  border-radius: 0.5em;
-  box-shadow: 2px 2px 4px #ccc inset,
-    -4px -4px 8px #ccc inset;
-  margin: 3em 0;
-  padding: 0.25em 0.5em 0.5em;
-  text-decoration: none;
-  width: 100%;
-}
-
 
 /* App Layout > Nav Button for Mobile Popup */
 div#main_nav_button {
@@ -236,8 +204,7 @@ div.deck_index {
 
 /* All Pages > Table */
 table {
-  background: #efefef;
-  box-shadow: 2px 2px 4px #ccc;
+
 }
 
 table th {
@@ -246,8 +213,6 @@ table th {
 
 table th,
 table td {
-  border-top: 1px solid #ccc;
-  border-left: 1px solid #ccc;
   font-size: 0.88em;
   padding: 0.125em 0.5em;
 }
@@ -429,7 +394,7 @@ div.card_new {
 
 /* Views > Cards > New/Edit */
 div.card_editor {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid #333;
   border-radius: 1em;
   box-shadow: 3px 3px 3px #333;
@@ -561,6 +526,7 @@ div.card_show ul.div_nav li strong{
 /* Alert and Notice */
 .notice {
   text-align: center;
+  margin-top: 2em;
   color: rgba(255, 255, 255, 1);
   background-color: rgba(21, 212, 43, 1);
   padding: 7px 0 9px 0;
@@ -568,6 +534,7 @@ div.card_show ul.div_nav li strong{
 
 .alert {
   text-align: center;
+  margin-top: 2em;
   color: rgba(255, 255, 255, 1);
   background-color: rgba(255, 0, 0, 1);
   padding: 7px 0 9px 0;
@@ -587,26 +554,289 @@ div.card_show ul.div_nav li strong{
   div.cards_display_index {
     width: 45%;
   }
-  
+ 
 }
 
 
-/* ---- 480 wide screen in portrait --------- */
-@media only screen and (min-device-width: 480px) {
+
+/* ---- max 480 wide screen in portrait --------- */
+@media only screen and (min-width: 200px) {
   
-  ul.div_nav li {
-    display: inline;
+  main > h1 {
+    background-color: darkslateblue;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    font-size: 3em;
+    padding-top: 1em;
+    margin-top: 35px;
+    height: 50px;
+    width: 100%;
   }
   
+  /*---------Nav Styling----------------*/
+  
+  nav > ul > li {
+    
+  }
+  
+  nav:focus,
+  nav:hover {
+    display: block;
+  }
+  
+  nav ul li {
+    list-style: none;
+    background-color: rgba(255, 255, 255, 1);
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    height: 2em;
+    padding-top: 1em;
+  }
+  
+  nav ul li:first-child {
+    border-top-left-radius: 0.25em;
+    border-top-right-radius: 0.25em;
+  }
+  
+  nav ul li:last-child {
+    border-bottom-left-radius: 0.25em;
+    border-bottom-right-radius: 0.25em;
+    border-bottom: none;
+  }
+  
+  #main_nav a {
+    font-size: 1em;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: rgba(0, 0, 0, 1);
+    padding: 20px 30px;
+  }
+
+  /*---------All Decks table styling------------*/
+  table {
+    border: 0;
+    background-color: #fff;
+    width: 98%;
+  }
+  
+  table tr {
+    margin-bottom: 20px;
+    display: block;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .6);
+    border-radius: 1em;
+  }
+
+  table td {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  table td a:hover {
+    color: rgba(0, 0, 0, 1);
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+  
+  .tables td:first-child {
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  table td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+  
+  .links {
+    text-align: center;
+    background-color: black;
+    border-top: 1px solid #ccc;
+  }
+  .links:last-child {
+    border-bottom-left-radius: 0.75em;
+    border-bottom-right-radius: 0.75em;
+  }
+  
+  .links a {
+    text-decoration: none;
+    color: white;
+    line-height: 20px;
+    font-size: 1.5em;
+  }
+  
+  .links a:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  table.categories td:first-child {
+    padding: 15px;
+    font-size: 1.5em;
+  }
+  
+  /*------------Card Editor------------*/
+  .card_editor .field {
+    margin-bottom: 5px;
+  }
+
+  .card_editor input, .card_editor textarea {
+    width: 90%; 
+  }
+      
+  div.card_editor textarea {
+    font-size: 1.5em;
+    width: 98%; 
+  }
+  
+  div.card_editor #card_name {
+    width: 96%;
+  }
+  .card_editor select {
+    font-size: 1.5em;
+  }
+  
+  div.card_editor input[type='checkbox'] {
+    -webkit-appearance:none;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 3px;
+    border: 2px solid rgba(0, 0, 0, 1);
+    display: inline-block;
+  }
+  
+  div.color_field {
+    margin-left: 3em;
+    padding: 3px;
+  }
+  
+  div.color_field .field {
+    display: inline-block;
+    margin: 2px 5px;
+    text-align: center;
+  }
+  
+  #card_background_color, #card_foreground_color {
+    width: 8em;
+    height: 5em;
+  }
+  
+  div.card_editor .actions {
+    display: inline-block;
+  }
+  
+  div.card_editor .actions input, div.card_editor > .button_cancel {
+    width: 10em;
+    line-height: 3em;
+    margin-right: 1em;
+    margin-left: 1em;
+    display: inline-block;
+  }
+  
+  div.card_editor #card_picture {
+    font-size: 1.5em;
+  }
+  
+  /*------Deck Edit-------*/
+  .deck_edit #deck_description, .deck_edit #deck_category_id, .deck_edit #deck_title {
+    font-size: 1.5em;
+  }
+    
+  .deck_edit #deck_title {
+    width: 94%
+  }
+  
+  .deck_edit #deck_description {
+    width: 96%;
+  }
+  
+  .deck_edit .positive {
+    padding: 10px 30px;
+  }
+
+  .deck_edit .button_cancel {
+    padding: 9px 48px;
+  }
+  
+  /*--------Edit Category--------*/
+  .category_edit #category_name {
+    font-size: 1.5em;
+  }
+  
+  .category_edit .button_cancel {
+    padding: 9px 48px;
+  }
+  
+  .category_edit .positive {
+    padding: 10px 20px;
+  }
+ 
+}
+
+@media only screen and (min-width: 480px) {
+
+  nav ul li {
+    list-style: none;
+    background-color: rgba(255, 255, 255, 1);
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    height: 3em;
+    padding-top: 1.5em;
+  }
+      
+  #main_nav a {
+    font-size: 1.5em;
+    padding: 20px 50px;
+  }
+    
+  table.categories {
+    width: 20em;
+  }
+  
+  .category_tables {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .category_tables table {
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  table th, table td {
+    padding: 0.66em; 
+  }
+  
+  /*------------Card Editor------------*/
+  div.card_editor {
+    width: 60%;
+  }
+  
+    
+  /*--------Deck Edit-----------*/
+      
+  .deck_edit #deck_title {
+    width: 59%
+  }
+  
+  .deck_edit #deck_description {
+    width: 60%;
+  }
+
 }
 
 
 /* ---- 768 wide screen in portrait ----------- */
-@media only screen and (min-device-width: 768px) {
+@media only screen and (min-width: 768px) {
   
   body {
     font-size: 1em;
   }
+  
+  /*------NAV-----*/
   nav {
     display: inline;
     position: relative;
@@ -617,9 +847,26 @@ div.card_show ul.div_nav li strong{
     display: inline;
   }
   
-  nav ul li {
+  #main_nav li {
+    width: 5em;
+    padding-top: 0.5em;
     display: inline;
+    border: none;
   }
+
+  #main_nav li a {
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0);
+    height: 1em;
+    font-size: 1.25em;
+    padding: 5px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.25em;
+    box-shadow: 2px 2px 4px #ccc inset, -4px -4px 8px #ccc inset;
+  }
+
+  /*----------------------*/
+  
   
   div.home_login {
     float: right;
@@ -633,10 +880,18 @@ div.card_show ul.div_nav li strong{
     display: none;
   }
   
-  div.card_editor {
-    width: 50%;
+  .tables {
+    display: flex;
+    flex-wrap: wrap;
   }
-  
+
+  .tables table {
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em;
+  }
+
   div.card_show ul.div_nav {
     font-size: 1.25em;
     margin: 2%;
@@ -656,11 +911,93 @@ div.card_show ul.div_nav li strong{
     margin: 1em;
     width: 40%;
   }
+  
+  /*-----Card Editor------*/
+  
+  div.card_editor {
+    width: 25em;
+  }
+  
+  .card_editor input, .card_editor textarea {
+    width: 98%; 
+  }
+  
+  .card_editor .field {
+    margin-bottom: 10px;
+  }
+  
+  .card_editor input, .card_editor textarea {
+    width: 90%; 
+  }
+      
+  div.card_editor textarea {
+    font-size: 1em;
+    width: 98%; 
+  }
+  
+  div.card_editor #card_name {
+    width: 96%;
+  }
+  .card_editor select {
+    font-size: 1em;
+  }
+  
+  div.card_editor input[type='checkbox'] {
+    -webkit-appearance:none;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 3px;
+    border: 2px solid rgba(0, 0, 0, 1);
+    display: inline-block;
+  }
+  
+  div.color_field {
+    margin-left: 3em;
+    padding: 3px;
+  }
+  
+  div.color_field .field {
+    display: inline-block;
+    margin: 2px 5px;
+    text-align: center;
+  }
+  
+  #card_background_color, #card_foreground_color {
+    width: 8em;
+    height: 5em;
+  }
+  
+  .field label {
+    margin-bottom: 5px;
+  }
+
+  div.card_editor .actions input, div.card_editor > .button_cancel {
+    width: 7em;
+    margin: 0 .5em;
+    display: inline-block;
+  }
+  
+  div.card_editor #card_picture {
+    font-size: 1em;
+  }
+  
+  /*--------Deck Edit-----------*/
+      
+  .deck_edit #deck_title {
+    width: 49%
+  }
+  
+  .deck_edit #deck_description {
+    width: 50%;
+  }
+  
+ 
 }
 
 
 /* ---- 1024 wide screen in landscape --------- */
-@media only screen and (min-device-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   
   img.team_awesome_logo {
     top: 0;
@@ -670,6 +1007,7 @@ div.card_show ul.div_nav li strong{
   table td {
     padding: 0.66em;
   }
+  
   div#card_editor_button {
     display: none;
   }
@@ -700,8 +1038,22 @@ div.card_show ul.div_nav li strong{
   div.card_show ul.div_nav li {
     margin: 0 3em;
   }
+  
+  /*------Card Editor------*/
+   
+  
+  div.color_field {
+        margin-left: 0px;
+  }
+  
+  #card_background_color, #card_foreground_color {
+    width: 7em;
+    height: 1.5em;
+    display: block;
+  }
+  
+  div.card_editor #card_picture {
+    font-size: 0.75em;
+  }
+  
 }
-
-
-
-
