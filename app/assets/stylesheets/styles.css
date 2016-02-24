@@ -739,6 +739,40 @@ div.card_show ul.div_nav li strong{
   div.card_editor #card_picture {
     font-size: 1.5em;
   }
+  
+  /*------Deck Edit-------*/
+  .deck_edit #deck_description, .deck_edit #deck_category_id, .deck_edit #deck_title {
+    font-size: 1.5em;
+  }
+    
+  .deck_edit #deck_title {
+    width: 94%
+  }
+  
+  .deck_edit #deck_description {
+    width: 96%;
+  }
+  
+  .deck_edit .positive {
+    padding: 10px 30px;
+  }
+
+  .deck_edit .button_cancel {
+    padding: 9px 48px;
+  }
+  
+  /*--------Edit Category--------*/
+  .category_edit #category_name {
+    font-size: 1.5em;
+  }
+  
+  .category_edit .button_cancel {
+    padding: 9px 48px;
+  }
+  
+  .category_edit .positive {
+    padding: 10px 20px;
+  }
  
 }
 
@@ -778,6 +812,17 @@ div.card_show ul.div_nav li strong{
   
   /*------------Card Editor------------*/
   div.card_editor {
+    width: 60%;
+  }
+  
+    
+  /*--------Deck Edit-----------*/
+      
+  .deck_edit #deck_title {
+    width: 59%
+  }
+  
+  .deck_edit #deck_description {
     width: 60%;
   }
 
@@ -936,6 +981,17 @@ div.card_show ul.div_nav li strong{
   div.card_editor #card_picture {
     font-size: 1em;
   }
+  
+  /*--------Deck Edit-----------*/
+      
+  .deck_edit #deck_title {
+    width: 49%
+  }
+  
+  .deck_edit #deck_description {
+    width: 50%;
+  }
+  
  
 }
 
