@@ -10,4 +10,12 @@ class CardTest < ActiveSupport::TestCase
     assert card.errors[:question_text].include?("can't be blank")
   end
   
+  test "can create card with either question_text" do
+    card = Card.new
+    card.name = "Test Card2"
+    card.answer_text = "Answer Text"
+    card.question_text = "This is question_text"
+    assert card.save
+  end
+  
 end
