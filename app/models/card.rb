@@ -10,5 +10,6 @@ class Card < ActiveRecord::Base
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   
   validates_presence_of :name, :answer_text
-  validates_presence_of :question_text
+  validates_presence_of :question_text, presence: true, unless: -> (card){card.picture.present?}
+  
 end
