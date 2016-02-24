@@ -2,6 +2,10 @@
 
 <div class="card_index">
 
+  <ul class="div_nav left">
+    <li><%= link_to 'New Category', new_category_path(@category) %></li>
+  </ul>
+  
   <div class="category_tables"> 
     <% @categories.each do |category| %>
       <table class="categories">
@@ -21,11 +25,4 @@
       </table>
     <% end %>
   </div>
-
-  <br>
-
-  <ul class="div_nav left">
-    <li><%= link_to 'New Category', new_category_path(@category) %></li>
-  </ul>
-  
 </div>

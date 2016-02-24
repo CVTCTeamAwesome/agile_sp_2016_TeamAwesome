@@ -394,7 +394,7 @@ div.card_new {
 
 /* Views > Cards > New/Edit */
 div.card_editor {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid #333;
   border-radius: 1em;
   box-shadow: 3px 3px 3px #333;
@@ -657,8 +657,8 @@ div.card_show ul.div_nav li strong{
     border-top: 1px solid #ccc;
   }
   .links:last-child {
-    border-bottom-left-radius: 1em;
-    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 0.75em;
+    border-bottom-right-radius: 0.75em;
   }
   
   .links a {
@@ -681,7 +681,7 @@ div.card_show ul.div_nav li strong{
   .card_editor .field {
     margin-bottom: 5px;
   }
-  
+
   .card_editor input, .card_editor textarea {
     width: 90%; 
   }
