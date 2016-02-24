@@ -6,9 +6,12 @@
     <p>You are logged in as <%= current_user.email %></p>
   <% end %>
 
-  <%= button_to 'Login', new_user_session_path %>
-  <%= button_to 'New User', user_registration_path %>
-  <%= button_to 'Sign Out', destroy_user_session_path, :method => :delete %>
+  <% if user_signed_in? %>
+    <%= button_to 'Sign Out', destroy_user_session_path, :method => :delete %>
+  <% else %>
+    <%= button_to 'Login', new_user_session_path %>
+    <%= button_to 'New User', user_registration_path %>
+  <% end %>
 
   <hr>
 

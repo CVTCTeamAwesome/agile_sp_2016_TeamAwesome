@@ -864,6 +864,10 @@ div.card_show ul.div_nav li strong{
     border-radius: 0.25em;
     box-shadow: 2px 2px 4px #ccc inset, -4px -4px 8px #ccc inset;
   }
+  
+  #main_nav li.main_nav_logins {
+    display: none;
+  }
 
   /*----------------------*/
   
