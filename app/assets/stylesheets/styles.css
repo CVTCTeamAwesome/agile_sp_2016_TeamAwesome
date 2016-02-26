@@ -439,6 +439,7 @@ div#card_editor_button:active ~ div.card_editor {
 div.card_display {
   float: none;
   min-width: 88%;
+  overflow: hidden;
 }
 
 div.card_front,
@@ -452,6 +453,7 @@ div.card_back {
   padding: 1%;
   position: relative;
   width: 45%;
+  overflow: hidden;
 }
 
 div.card_front:after,
@@ -479,8 +481,9 @@ p.card_text {
   position: absolute;
   text-align: center;
   top: 35%;
-  width: 95%;
-  word-break: break-all;
+  left: 4px;
+  width: 93%;
+  word-wrap: break-word;
 }
 
 p#showAnswerText {
@@ -789,6 +792,22 @@ div.card_show ul.div_nav li strong{
   .category_edit .positive {
     padding: 10px 20px;
   }
+  
+  /* --- Views > Home > Display > Forward and Back Arrows --- */
+  i.fa-chevron-left {
+    display: none;
+  }
+
+  i.fa-chevron-right {
+    display: none;
+  }
+  
+  
+  /*-------Display Cards Styling--------*/
+  div.cardSide {
+    margin-left: 0;
+    width: 96%;
+  }
  
 }
 
@@ -841,7 +860,41 @@ div.card_show ul.div_nav li strong{
   .deck_edit #deck_description {
     width: 60%;
   }
+  
+  /* --- Views > Home > Display > Forward and Back Arrows --- */
+  i.fa-chevron-left {
+    display: inline;
+    top: 65%;
+    left: 3%;
+  }
 
+  i.fa-chevron-right {
+    display: inline;
+    top: 65%;
+    right: 3%;
+  }
+  
+  div.cardSide {
+    margin-left: 3.5%;
+    width: 90%;
+  }
+
+}
+
+@media only screen and (min-width: 568px) {
+  /* --- Views > Home > Display > Forward and Back Arrows --- */
+  i.fa-chevron-left {
+    left: 12.25%;
+  }
+
+  i.fa-chevron-right {
+    right: 12%;
+  }
+  
+  div.cardSide {
+    margin-left: 16%;
+    width: 65%;
+  }
 }
 
 
@@ -1012,6 +1065,20 @@ div.card_show ul.div_nav li strong{
     width: 50%;
   }
   
+  /* --- Views > Home > Display > Forward and Back Arrows --- */
+  i.fa-chevron-left {
+    left: 21.25%;
+  }
+
+  i.fa-chevron-right {
+    right: 23%;
+  }
+  
+  div.cardSide {
+    margin-left: 25%;
+    width: 45%;
+  }
+  
  
 }
 
@@ -1076,4 +1143,12 @@ div.card_show ul.div_nav li strong{
     font-size: 0.75em;
   }
   
+  /* --- Views > Home > Display > Forward and Back Arrows --- */
+  i.fa-chevron-left {
+    left: 24.25%;
+  }
+
+  i.fa-chevron-right {
+    right: 25%;
+  }
 }
