@@ -610,6 +610,22 @@ div.card_show ul.div_nav li strong{
     color: rgba(0, 0, 0, 1);
     padding: 20px 30px;
   }
+  
+  
+  /*---------Home Page Styling----------*/
+  div#home_top_ten {
+    border: 2px solid aqua;
+    width: 98%;
+    height: 300px;
+  }
+  
+  div#home_all_decks {
+    border: 2px solid purple;
+    width: 98%;
+    height: 600px;   
+  }
+  
+  
 
   /*---------All Decks table styling------------*/
   table {
@@ -873,7 +889,7 @@ div.card_show ul.div_nav li strong{
   
   
   div.home_login {
-    float: right;
+/*    float: right;*/
   }
   
   ul.div_nav li {
