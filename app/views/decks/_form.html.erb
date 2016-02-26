@@ -38,6 +38,18 @@
   </div>
   -->
 
+  <div class="field">
+    <ul class="div_nav">
+    <% if @deck.slug.present? %>
+      <% path = (url_for controller: "shared_decks", action: "show", id: @deck.slug, only_path: false) %>
+      <!-- <p>Note shared at <%= link_to path, path, {id: "share_url"} %></p> -->
+      <li><%= link_to 'Stop Sharing', unshare_deck_path(@deck), method: :patch %></li>
+    <% else %>
+      <li><%= link_to 'Share this Deck', share_deck_path(@deck), method: :patch %></li>
+    <% end %>
+    </ul>
+  </div>
+
   <div class="actions">
     <%= f.submit :class => 'positive' %>
   </div>

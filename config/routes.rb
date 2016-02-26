@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
   resources :decks do
     resources :cards
+    member do
+      patch :share
+      patch :unshare
+    end
   end
   
   resources :categories
@@ -21,6 +25,8 @@ Rails.application.routes.draw do
   post '/displayDeck' => 'home#render_partial_deck'
   
   get 'decks/:deck_id/cards/:id/remove_picture', to: 'cards#remove_picture', as: 'remove_card_picture'
+  
+  get 'shared_decks/:id', to: 'shared_decks#show'
   
   #root controller: 'home', action: 'index'
   root to: 'home#index'
