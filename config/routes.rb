@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   
   get '/display', to: 'home#display', as: 'display'
   
+  get '/display/:id', to: 'home#display'
+  
   post '/displayDeck' => 'home#render_partial_deck'
   
   get 'decks/:deck_id/cards/:id/remove_picture', to: 'cards#remove_picture', as: 'remove_card_picture'

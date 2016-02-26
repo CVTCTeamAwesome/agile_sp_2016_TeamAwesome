@@ -2,20 +2,8 @@
 
 <div class="home_display">
   
-  <section>
-    <h3>Select Your Deck</h3>
-    
-    <div id="deckSelect">
-      <%= form_tag("/displayDeck", method: "post", :remote => true) do %>
-        <div class="select">
-        <%= select_tag 'deck_select', options_from_collection_for_select(@decks, "id", "title") %>
-        </div>
-        <%= button_tag "Select Deck", :id => 'selectDeck' %>
-      <% end %>
-    </div>
+  <h3><%= @deck.title %></h3>
 
-    <div id="render_partial_deck" style="display:none;"></div>
-    
-  </section>
+  <div id="render_partial_deck" style="display:none;"></div>
   
 </div>
