@@ -19,6 +19,13 @@
               <td class="links"><%= link_to 'Edit ', edit_deck_path(deck) %></td> 
               <td class="links"><%= link_to 'Delete', deck, method: :delete, data: { confirm: 'Are you sure you want to delete the deck ' + deck.title + '?' } %></td>
               <td class="links"><%= link_to "Manage Cards", deck_cards_path(deck, @cards) %></td>
+              <td class="links">
+                <% if deck.slug.present? %>
+                <%= link_to 'Stop Sharing Deck', unshare_deck_path(deck), method: :patch %>
+                <% else %>
+                  <%= link_to 'Share This Deck', share_deck_path(deck), method: :patch %>
+                <% end %>
+              </td>
             </tr>
         </tbody>
       </table>
