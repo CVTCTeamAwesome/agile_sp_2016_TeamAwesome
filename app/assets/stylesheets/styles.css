@@ -439,6 +439,7 @@ div#card_editor_button:active ~ div.card_editor {
 div.card_display {
   float: none;
   min-width: 88%;
+  overflow: hidden;
 }
 
 div.card_front,
@@ -452,6 +453,7 @@ div.card_back {
   padding: 1%;
   position: relative;
   width: 45%;
+  overflow: hidden;
 }
 
 div.card_front:after,
@@ -479,7 +481,7 @@ p.card_text {
   position: absolute;
   text-align: center;
   top: 35%;
-  left: 13px;
+  left: 4px;
   width: 93%;
   word-wrap: break-word;
 }
