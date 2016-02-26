@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   respond_to :html, :js
   
   def index
+    @decks = Deck.all
   end
 
   def display
