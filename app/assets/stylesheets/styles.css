@@ -479,8 +479,9 @@ p.card_text {
   position: absolute;
   text-align: center;
   top: 35%;
-  width: 95%;
-  word-break: break-all;
+  left: 13px;
+  width: 93%;
+  word-wrap: break-word;
 }
 
 p#showAnswerText {
