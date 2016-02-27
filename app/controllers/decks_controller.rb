@@ -32,7 +32,7 @@ class DecksController < ApplicationController
     
     respond_to do |format|
       if @deck.save
-        format.html { redirect_to @deck, notice: 'Deck was successfully created.' }
+        format.html { redirect_to decks_url, notice: 'Deck was successfully created.' }
         format.json { render :show, status: :created, location: @deck }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class DecksController < ApplicationController
      @deck.last_modified = DateTime.current
     respond_to do |format|
       if @deck.update(deck_params)
-        format.html { redirect_to @deck, notice: 'Deck was successfully updated.' }
+        format.html { redirect_to decks_url, notice: 'Deck was successfully updated.' }
         format.json { render :show, status: :ok, location: @deck }
       else
         format.html { render :edit }
