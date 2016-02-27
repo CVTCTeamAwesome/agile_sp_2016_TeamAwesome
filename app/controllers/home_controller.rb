@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   respond_to :html, :js
   
   def index
-    @decks = Deck.where("slug is not null")
+    @decks = Deck.where("slug is not null", :order => "title")
     @decksTopTen = Deck.where("slug is not null", :order => "updated_at DESC", :limit => 10 )
   end
 
