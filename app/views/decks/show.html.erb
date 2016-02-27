@@ -44,8 +44,39 @@
     <% end %>
     <li><%= link_to 'Edit Deck', edit_deck_path(@deck) %></li>
     <li><%= link_to 'New Card', new_deck_card_path(@deck) %></li>
-    <li><%= link_to "Manage Cards", deck_cards_path(@deck, @cards) %></li>
     <li><%= link_to 'Back to Decks', decks_path %></li>
   </ul>
+  
+  <div>
+  <% @cards.each do |card| %>
+
+    <div class="cards_display_index">
+
+      <ul class="card_name">
+        <li><%= link_to card.name, deck_card_path(@deck, card) %></li>
+      </ul>
+
+      <div class="card_front" style="<%= picture_styles card %>">
+
+        <p class="card_side_description">QUESTION</p>
+        <p class="card_text" style="<%= questionsText card %>"><%= card.question_text %></p>
+
+      </div>
+      <div class="card_back" style="background:<%= card.background_color %>">
+
+        <p class="card_side_description">ANSWER</p>
+        <p class="card_text" style="color:<%= card.foreground_color %>;font-family:<%= card.font_style %>"><%= card.answer_text %></p>
+
+      </div>
+
+      <ul class="div_nav center">
+        <li><%= link_to 'Edit', edit_deck_card_path(@deck, card) %></li>
+        <li><%= link_to 'Delete', [@deck, card], method: :delete, data: { confirm: 'Are you sure you want to delete the card ' + card.name + '?' } %></li>
+      </ul>
+
+    </div>
+  <% end %>
+
+  </div>
 
 </div>
