@@ -80,12 +80,13 @@ var showFirstCard = function () {
 };
 
 function setupHammerListeners() {
-  var cardDiv = document.getElementById("render_partial_deck");
+  var cardDiv = document.getElementById("card_deck");
   console.log(cardDiv);
   var mc = new Hammer(cardDiv);
   mc.on("swipeleft", nextCard);
   mc.on("swiperight", previousCard);
   mc.on("tap", toggleCardSide);
+  showFirstCard();
 };
 
 $( document ).ready(setupHammerListeners);
