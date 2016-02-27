@@ -6,11 +6,11 @@ class HomeController < ApplicationController
   end
 
   def display
-    @deck = Deck.find(params[:id])
+    @selectedDeck = Deck.find(params[:id])
+    @selectedDeckCards = @selectedDeck.cards.where(visible: true).shuffle
   end
   
   def render_partial_deck
-    @selectedDeck = @deck
     @selectedDeckCards = @selectedDeck.cards.where(visible: true).shuffle
   end
   
