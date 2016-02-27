@@ -80,12 +80,13 @@ var showFirstCard = function () {
 };
 
 function setupHammerListeners() {
-  var cardDiv = document.getElementById("render_partial_deck");
+  var cardDiv = document.getElementById("card_deck");
   console.log(cardDiv);
   var mc = new Hammer(cardDiv);
   mc.on("swipeleft", nextCard);
   mc.on("swiperight", previousCard);
   mc.on("tap", toggleCardSide);
+  showFirstCard();
 };
 
 $( document ).ready(setupHammerListeners);
@@ -93,7 +94,7 @@ $( document ).on( 'page:load', setupHammerListeners);
 
 $( document ).on( "click", ".fa-chevron-right" , nextCard);
 $( document ).on( "click", ".fa-chevron-left" , previousCard);
-$( document ).on( "click", "#render_partial_deck a" , jumpToCard);
+$( document ).on( "click", "#card_deck a" , jumpToCard);
 $( document ).on( "ajaxStop", showFirstCard);
 
 `

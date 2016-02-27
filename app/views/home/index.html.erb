@@ -22,7 +22,29 @@
 <div class="home_index">
   <div id="home_top_ten">
     <h2>Top 10 Shared Decks</h2>
-  </div>
+    
+  <div class="tables"> 
+    <% @decks.each do |deck| %>
+    <% if deck.slug.present? %>
+      <table>
+        <tbody>
+            <tr>
+              <% showPath = (url_for controller: "shared_decks", action: "show", id: deck.slug, only_path: false) %>
+              <% displayPath = (url_for controller: "home", action: "display", id: deck.id, only_path: false) %>
+              
+              <td><%= link_to deck.title, showPath, {id: "share_url"} %></td>
+              <td data-label="Description"><%= deck.description %></td>
+              <td data-label="Category"><%= deck.category.name rescue "No category assigned"%></td>
+              <td data-label="Number of Cards"><%= deck.cards.count %></td>
+              <td data-label="Last Modified"><%= time_ago_in_words(deck.last_modified) %> ago</td>
+              <td class="links"><%= link_to "Play this Deck", displayPath, {id: "share_url"} %></td>
+            </tr>
+        </tbody>
+      </table>
+    <% end %>
+    <% end %>
+  </div> 
+    
   <div id="home_all_decks">
     <h2>All Decks</h2>
   </div>

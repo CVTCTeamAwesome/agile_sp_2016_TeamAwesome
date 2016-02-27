@@ -1,7 +1,7 @@
 class DecksController < ApplicationController
   before_action :authenticate_user!
   before_action :get_categories
-  before_action :set_deck, only: [:show, :edit, :update, :destroy]
+  before_action :set_deck, only: [:show, :edit, :update, :destroy, :share, :unshare]
 
   # GET /decks
   # GET /decks.json
@@ -64,6 +64,32 @@ class DecksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to decks_url, notice: 'Deck was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+  
+  def share
+    respond_to do |format|
+      @deck.share
+      if @deck.save
+        format.html { redirect_to edit_deck_path(@deck), notice: 'Deck was successfully shared.' }
+        format.json { render :show, status: :ok, location: @deck }
+      else
+        format.html { render :edit }
+        format.json { render json: @deck.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  
+  def unshare
+    respond_to do |format|
+      @deck.unshare
+      if @deck.save
+        format.html { redirect_to edit_deck_path(@deck), notice: 'Deck was successfully unshared.' }
+        format.json { render :show, status: :ok, location: @deck }
+      else
+        format.html { render :edit }
+        format.json { render json: @deck.errors, status: :unprocessable_entity }
+      end
     end
   end
 

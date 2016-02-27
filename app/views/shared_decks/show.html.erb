@@ -1,0 +1,41 @@
+<div id="shared_decks">
+
+  <div class="tables"> 
+      <table>
+        <tbody>
+            <tr>
+              <td><h2><%= @deck.title %></h2></td>
+              <td data-label="Description"><%= @deck.description %></td>
+              <td data-label="Category"><%= @deck.category.name rescue "No category assigned"%></td>
+              <td data-label="Number of Cards"><%= @deck.cards.count %></td>
+              <td data-label="Last Modified"><%= time_ago_in_words(@deck.last_modified) %> ago</td>
+            </tr>
+        </tbody>
+      </table>
+  </div> 
+  
+  <%= @cards.each do |card| %>
+
+    <div class="cards_display_index">
+
+      <ul class="card_name">
+        <li><h3><%= card.name %></h3></li>
+      </ul>
+
+      <div class="card_front" style="<%= picture_styles card %>">
+
+        <p class="card_side_description">QUESTION</p>
+        <p class="card_text" style="<%= questionsText card %>"><%= card.question_text %></p>
+
+      </div>
+      <div class="card_back" style="background:<%= card.background_color %>">
+
+        <p class="card_side_description">ANSWER</p>
+        <p class="card_text" style="color:<%= card.foreground_color %>;font-family:<%= card.font_style %>"><%= card.answer_text %></p>
+
+      </div>
+
+    </div>
+  <% end %>
+  
+</div>

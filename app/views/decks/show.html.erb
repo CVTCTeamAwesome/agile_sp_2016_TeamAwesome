@@ -37,6 +37,11 @@
   
   
   <ul class="div_nav left">
+    <% if @deck.slug.present? %>
+      <li><%= link_to 'Unshare Deck', unshare_deck_path(@deck), method: :patch %></li>
+    <% else %>
+      <li><%= link_to 'Share Deck', share_deck_path(@deck), method: :patch %></li>
+    <% end %>
     <li><%= link_to 'Edit Deck', edit_deck_path(@deck) %></li>
     <li><%= link_to 'New Card', new_deck_card_path(@deck) %></li>
     <li><%= link_to 'Back to Decks', decks_path %></li>
