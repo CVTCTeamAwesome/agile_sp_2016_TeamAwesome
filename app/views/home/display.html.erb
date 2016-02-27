@@ -3,7 +3,7 @@
 <div id="card_deck">
 
   <div id="jumpToCard">
-    <h4><%= @selectedDeck.title %> (Specific Card):</h4>
+    <h4>Jump To Specific Card:</h4>
     <% @selectedDeckCards.each do |card| %>
       <a href="#" class="<%= card.name %><%= card.id %>"><%= card.name %></a>&nbsp;
     <% end %>
