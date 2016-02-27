@@ -619,13 +619,11 @@ div.card_show ul.div_nav li strong{
   div#home_top_ten {
     border: 2px solid aqua;
     width: 98%;
-    height: 300px;
   }
   
   div#home_all_decks {
     border: 2px solid purple;
-    width: 98%;
-    height: 600px;   
+    width: 98%; 
   }
   
   
