@@ -68,15 +68,19 @@ class DecksController < ApplicationController
   end
   
   def share
-    respond_to do |format|
-      @deck.share
-      if @deck.save
-        format.html { redirect_to edit_deck_path(@deck), notice: 'Deck was successfully shared.' }
-        format.json { render :show, status: :ok, location: @deck }
-      else
-        format.html { render :edit }
-        format.json { render json: @deck.errors, status: :unprocessable_entity }
+    if @deck.description? && @deck.category_id?
+      respond_to do |format|
+        @deck.share
+        if @deck.save
+          format.html { redirect_to edit_deck_path(@deck), notice: 'Deck was successfully shared.' }
+          format.json { render :show, status: :ok, location: @deck }
+        else
+          format.html { render :edit }
+          format.json { render json: @deck.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to edit_deck_path(@deck), alert: 'Deck must have a description and a category assigned to be shared.'
     end
   end
   
