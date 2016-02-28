@@ -628,6 +628,11 @@ div.card_show ul.div_nav li strong{
     z-index: 999;
   }
   
+  div.home_login p {
+    padding: 2px 4px;
+  }
+  
+  
   div.home_login h3 {
     border-bottom: 1px solid rgba(0, 0, 0, 1);
     margin-bottom: 0;
@@ -1038,11 +1043,6 @@ div.card_show ul.div_nav li strong{
   }
 
   /*----------------------*/
-  
-  
-  div.home_login {
-/*    float: right;*/
-  }
   
   ul.div_nav li {
     display: inline;
