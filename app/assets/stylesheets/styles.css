@@ -670,7 +670,7 @@ div.card_show ul.div_nav li strong{
     margin-top: 2em;
   }
   
-  #home_all_decks > h2 {
+  #home_all_decks > h2, #home_top_ten > h2 {
     text-align: center;
     background-color: darkslateblue;
     color: rgba(255, 255, 255, 1);
