@@ -5,64 +5,67 @@
   <% if user_signed_in? %>
     <p>You are logged in as <%= current_user.email %></p>
   <% end %>
+  <h3>Sign In:</h3>
+  <ul>
+    <% if user_signed_in? %>
+      <li><%= button_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
+    <% else %>
+      <li id="facebook"><%= link_to "Facebook", user_omniauth_authorize_path(:facebook) %></li>
+      <li id="google"><%= link_to "Google+", user_omniauth_authorize_path(:google_oauth2) %></li>
+      <li><%= button_to 'Login', new_user_session_path %></li>
+      <li><%= button_to 'New User', user_registration_path %></li>
+    <% end %>
+  </ul>
 
-  <% if user_signed_in? %>
-    <%= button_to 'Sign Out', destroy_user_session_path, :method => :delete %>
-  <% else %>
-    <%= button_to 'Login', new_user_session_path %>
-    <%= button_to 'New User', user_registration_path %>
-  <% end %>
 
-  <hr>
-
-  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-  <%= link_to "Sign in with Google+", user_omniauth_authorize_path(:google_oauth2) %>
 </div>
 
 <div class="home_index">
   <div id="home_top_ten">
-    <h2>Top 10 Shared Decks</h2>
+  <h2>Top 10 Shared Decks</h2>
     
-  <div class="tables"> 
-    <% @decksTopTen.each do |deck| %>
-      <table>
-        <tbody>
-            <tr>
-              <% showPath = (url_for controller: "shared_decks", action: "show", id: deck.slug, only_path: false) %>
-              <% displayPath = (url_for controller: "home", action: "display", id: deck.id, only_path: false) %>
-              
-              <td><%= link_to deck.title, showPath, {id: "share_url"} %></td>
-              <td data-label="Description"><%= deck.description %></td>
-              <td data-label="Category"><%= deck.category.name rescue "No category assigned"%></td>
-              <td data-label="Number of Cards"><%= deck.cards.count %></td>
-              <td data-label="Last Modified"><%= time_ago_in_words(deck.last_modified) %> ago</td>
-              <td class="links"><%= link_to "Play this Deck", displayPath, {id: "share_url"} %></td>
-            </tr>
-        </tbody>
-      </table>
-    <% end %>
-  </div> 
-    
-  <div id="home_all_decks">
-    <h2>All Decks</h2>
-  <div class="tables"> 
-    <% @decks.each do |deck| %>
-      <table>
-        <tbody>
-            <tr>
-              <% showPath = (url_for controller: "shared_decks", action: "show", id: deck.slug, only_path: false) %>
-              <% displayPath = (url_for controller: "home", action: "display", id: deck.id, only_path: false) %>
-              
-              <td><%= link_to deck.title, showPath, {id: "share_url"} %></td>
-              <td data-label="Description"><%= deck.description %></td>
-              <td data-label="Category"><%= deck.category.name rescue "No category assigned"%></td>
-              <td data-label="Number of Cards"><%= deck.cards.count %></td>
-              <td data-label="Last Modified"><%= time_ago_in_words(deck.last_modified) %> ago</td>
-              <td class="links"><%= link_to "Play this Deck", displayPath, {id: "share_url"} %></td>
-            </tr>
-        </tbody>
-      </table>
-    <% end %>
-  </div> 
+    <div class="tables"> 
+      <% @decksTopTen.each do |deck| %>
+        <table>
+          <tbody>
+              <tr>
+                <% showPath = (url_for controller: "shared_decks", action: "show", id: deck.slug, only_path: false) %>
+                <% displayPath = (url_for controller: "home", action: "display", id: deck.id, only_path: false) %>
+
+                <td><%= link_to deck.title, showPath, {id: "share_url"} %></td>
+                <td data-label="Description"><%= deck.description %></td>
+                <td data-label="Category"><%= deck.category.name rescue "No category assigned"%></td>
+                <td data-label="Number of Cards"><%= deck.cards.count %></td>
+                <td data-label="Last Modified"><%= time_ago_in_words(deck.last_modified) %> ago</td>
+                <td class="links"><%= link_to "Play this Deck", displayPath, {id: "share_url"} %></td>
+              </tr>
+          </tbody>
+        </table>
+      <% end %>
+    </div> 
   </div>
+  
+  <div id="home_all_decks">
+    <h2>All Shared Decks</h2>
+    <div class="tables"> 
+      <% @decks.each do |deck| %>
+        <table>
+          <tbody>
+              <tr>
+                <% showPath = (url_for controller: "shared_decks", action: "show", id: deck.slug, only_path: false) %>
+                <% displayPath = (url_for controller: "home", action: "display", id: deck.id, only_path: false) %>
+
+                <td><%= link_to deck.title, showPath, {id: "share_url"} %></td>
+                <td data-label="Description"><%= deck.description %></td>
+                <td data-label="Category"><%= deck.category.name rescue "No category assigned"%></td>
+                <td data-label="Number of Cards"><%= deck.cards.count %></td>
+                <td data-label="Last Modified"><%= time_ago_in_words(deck.last_modified) %> ago</td>
+                <td class="links"><%= link_to "Play this Deck", displayPath, {id: "share_url"} %></td>
+              </tr>
+          </tbody>
+        </table>
+      <% end %>
+    </div> 
+  </div>
+  
 </div>

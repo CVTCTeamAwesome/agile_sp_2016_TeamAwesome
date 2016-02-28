@@ -13,32 +13,13 @@ div#wrapper {
   width: 95%;
 }
 
-
-/* Login */
-div.home_login {
-  border: 1px solid #999;
-  box-shadow: 1px 1px 1px #999 inset,
-    -1px -1px 1px #ccc inset;
-  display: inline-block;
-  float: none;
-  margin-right: 0.5em;
-  padding: 0.25em;
-  text-align: center;
-}
-
-div.home_login form {
-  display: inline-block;
-  margin: 0.5em auto 0.25em;
-}
-
-
 /* Main Section */
 main {
   margin: 0.375em;
 }
 
 main h1 {
-  margin-bottom: 0.66em;
+  margin-bottom: 0.4em;
 }
 
 main h2, main h3, main h4, main h5, main h6 {
@@ -616,18 +597,86 @@ div.card_show ul.div_nav li strong{
   
   
   /*---------Home Page Styling----------*/
-  div#home_top_ten {
-    border: 2px solid aqua;
-    width: 98%;
-    height: 300px;
+  div.home_login {
+    border: 1px solid #999;
+    display: inline-block;
+    text-align: center;
+    float: right;
+    margin-bottom: 10px;
+  }
+  
+  div.home_login h3 {
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    margin-bottom: 0;
+    padding: 5px 0;
+  }
+
+  div.home_login form.button_to input {
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 0 0;
+    padding: 3px 20px;
+  }
+  
+  div.home_login ul li {
+    list-style-type: none;
+    width: 8em;
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    font-size: 1em;
+    padding: 0.25em 0.5em;
+  }
+ 
+  #facebook {
+    background-color: blue;
+  }
+  #google {
+    background-color: red;
+  }
+    
+  div.home_login ul li:hover {
+    background-color: rgba(0, 0, 0, 1);
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  #facebook:hover, #google:hover {
+    background-color: rgba(0, 0, 0, 1);
+  }
+  
+  div.home_login ul li a:hover, #facebook a:hover, #google a:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  #facebook, #google {
+    line-height: 25px;
+  }
+ 
+  #facebook a, #google a {
+    color: rgba(255, 255, 255, 1);
+    padding: 5px 10px;
+  }
+  
+  div.home_login ul li a {
+    text-decoration: none;
+    
+  }
+  
+  div.home_index {
+    clear: both;
   }
   
   div#home_all_decks {
-    border: 2px solid purple;
-    width: 98%;
-    height: 600px;   
+/*    border: 2px solid purple;*/
+    width: 98%; 
+    margin-top: 2em;
   }
   
+  #home_all_decks > h2, #home_top_ten > h2 {
+    text-align: center;
+    background-color: darkslateblue;
+    color: rgba(255, 255, 255, 1);
+    width: 102%;
+    padding: .5em 0;
+  }
   
 
   /*---------All Decks table styling------------*/
