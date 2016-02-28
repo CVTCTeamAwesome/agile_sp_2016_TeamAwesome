@@ -37,6 +37,7 @@
   
   
   <ul class="div_nav left">
+    <li><%= link_to "Play this Deck", (url_for controller: "home", action: "display", id: @deck.id) %></li>
     <% if @deck.slug.present? %>
       <li><%= link_to 'Unshare Deck', unshare_deck_path(@deck), method: :patch %></li>
     <% else %>
