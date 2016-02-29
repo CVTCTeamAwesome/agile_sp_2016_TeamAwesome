@@ -1,14 +1,15 @@
-<h1>Flash Cards</h1>
-
 <div class="home_login">
-
   <% if user_signed_in? %>
     <p>You are logged in as <%= current_user.email %></p>
   <% end %>
-  <h3>Sign In:</h3>
+  <% if user_signed_in? %>
+    <h3 id="signed_out"><%= button_to 'Sign Out', destroy_user_session_path, :method => :delete %></h3>
+  <% else %>
+    <h3>Sign In:</h3>
+  <% end %>
   <ul>
     <% if user_signed_in? %>
-      <li><%= button_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
+      
     <% else %>
       <li id="facebook"><%= link_to "Facebook", user_omniauth_authorize_path(:facebook) %></li>
       <li id="google"><%= link_to "Google+", user_omniauth_authorize_path(:google_oauth2) %></li>
@@ -16,8 +17,11 @@
       <li><%= button_to 'New User', user_registration_path %></li>
     <% end %>
   </ul>
+</div>
 
-
+<div id="home_heading">
+  <%= image_tag("mountains.jpg", :alt => "Flash Cards") %>
+  <h1>Flash Cards</h1>
 </div>
 
 <div class="home_index">

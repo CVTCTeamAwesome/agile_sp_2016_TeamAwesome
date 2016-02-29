@@ -6,16 +6,16 @@ div#wrapper {
   background: #fff;
   box-shadow: 3px 3px 6px #333;
   min-height: 90%;
-  margin: 1% auto;
+  margin: 0 auto;
   overflow: hidden;
-  padding: 1%;
+  padding: 0;
   position: relative;
   width: 95%;
 }
 
 /* Main Section */
 main {
-  margin: 0.375em;
+  margin: 0.375em 0;
 }
 
 main h1 {
@@ -544,13 +544,13 @@ div.card_show ul.div_nav li strong{
 /* ---- max 480 wide screen in portrait --------- */
 @media only screen and (min-width: 200px) {
   
-  main > h1 {
+  main h1 {
     background-color: darkslateblue;
     text-align: center;
     color: rgba(255, 255, 255, 1);
     font-size: 3em;
     padding-top: 1em;
-    margin-top: 35px;
+    margin-top: 0;
     height: 50px;
     width: 100%;
   }
@@ -593,15 +593,45 @@ div.card_show ul.div_nav li strong{
     padding: 20px 30px;
   }
   
+  h3#signed_out {
+    border-bottom: none;
+    width: 100%;
+  }
+  
   
   /*---------Home Page Styling----------*/
+
+  div#home_heading img {
+    float: left;
+    top: 0;
+    width: 180%;
+    object-fit: cover;
+  }
+  
+  div#home_heading h1 {
+    position: absolute;
+    top: 12%;
+    background-color: rgba(255, 255, 255, .5);
+    color: cornflowerblue;
+  }
+  
   div.home_login {
+    position: absolute;
+    right: 5%;
+    top: 25%;
     border: 1px solid #999;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, .5);
     display: inline-block;
     text-align: center;
-    float: right;
     margin-bottom: 10px;
+    z-index: 999;
   }
+  
+  div.home_login p {
+    padding: 2px 4px;
+  }
+  
   
   div.home_login h3 {
     border-bottom: 1px solid rgba(0, 0, 0, 1);
@@ -670,7 +700,7 @@ div.card_show ul.div_nav li strong{
   
   #home_all_decks > h2, #home_top_ten > h2 {
     text-align: center;
-    background-color: darkslateblue;
+    background-color: cornflowerblue;
     color: rgba(255, 255, 255, 1);
     width: 102%;
     padding: .5em 0;
@@ -872,7 +902,15 @@ div.card_show ul.div_nav li strong{
     font-size: 1.5em;
     padding: 20px 50px;
   }
-    
+  
+  div#home_heading img {
+    width: 135%;
+  }
+  
+  div#home_heading h1 {
+    top: 8%;
+  }
+  
   table.categories {
     width: 20em;
   }
@@ -929,6 +967,12 @@ div.card_show ul.div_nav li strong{
 }
 
 @media only screen and (min-width: 568px) {
+  
+  div#home_heading img {
+    width: 110%;
+  }
+  
+  
   /* --- Views > Home > Display > Forward and Back Arrows --- */
   i.fa-chevron-left {
     left: 12.25%;
@@ -951,6 +995,19 @@ div.card_show ul.div_nav li strong{
   body {
     font-size: 1em;
   }
+  
+  div#home_heading img {
+    width: 100%;
+  }
+  
+  div#home_heading h1 {
+    top: 9%;
+  }
+  
+  .notice, .alert {
+    margin-top: 12px;
+  }
+  
   
   /*------NAV-----*/
   nav {
@@ -986,11 +1043,6 @@ div.card_show ul.div_nav li strong{
   }
 
   /*----------------------*/
-  
-  
-  div.home_login {
-/*    float: right;*/
-  }
   
   ul.div_nav li {
     display: inline;
