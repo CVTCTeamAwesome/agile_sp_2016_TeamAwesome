@@ -263,7 +263,7 @@ Devise.setup do |config|
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development?
   
   config.omniauth :facebook, ENV["APP_ID"], ENV["APP_SECRET"]
-  config.omniauth :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_SECRET"],
+  config.omniauth :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_SECRET"], skip_jwt: true,
     :client_options => {:ssl => {:ca_path => '/usr/lib/ssl/certs/ca-certificates.crt'}}
 
 end
